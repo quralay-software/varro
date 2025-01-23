@@ -10,7 +10,7 @@ const PageTitle = (props) => {
                       <div className="wpo-breadcumb-wrap">
                           <h2 style={{ fontFamily: 'Arial' }}>{props.pageTitle}</h2>
                           <ol>
-                              <li><Link href="/home">Главная</Link></li>
+                              <li><Link href="/pages/home-n">Главная</Link></li>
                               <li><span>{props.pagesub}</span></li>
                           </ol>
                       </div>

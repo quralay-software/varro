@@ -14,7 +14,7 @@ const OrderRecivedSec = ({cartList}) => {
                 <div className="row">
                     <div className="order-top">
                         <h2>Thank You For Your Order! <span>your order has been recived</span></h2>
-                        <Link href='/home' className="theme-btn-s3">Back Home</Link>
+                        <Link href='/pages/home-n' className="theme-btn-s3">Back Home</Link>
                     </div>
                     <Grid className="cartStatus">
                             <Grid container spacing={3}>

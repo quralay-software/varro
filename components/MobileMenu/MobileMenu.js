@@ -8,12 +8,12 @@ const menus = [
     {
         id: 1,
         title: 'Home',
-        link: '/home',
+        link: '/home-n',
         submenu: [
             {
                 id: 11,
                 title: 'Home style 1',
-                link: '/home'
+                link: '/home-n'
             },
             {
                 id: 12,
@@ -23,7 +23,7 @@ const menus = [
             {
                 id: 13,
                 title: 'Home style 3',
-                link: '/home3'
+                link: '/home'
             },
             {
                 id: 14,

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import MobileMenu from '../MobileMenu/MobileMenu'
 import { connect } from "react-redux";
 import { removeFromCart } from "../../store/actions/action";
-import Logo from '/public/images/logo.svg'
+import Logo from '/public/images/varro.png'
 import HeaderTopbar from '../HeaderTopbar';
 import Image from 'next/image';
 
@@ -13,7 +13,6 @@ const Header2 = (props) => {
     const ClickHandler = () => {
         window.scrollTo(10, 0);
     }
-
 
     return (
         <header id="header">
