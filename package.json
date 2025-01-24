@@ -44,5 +44,8 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.6",
     "swiper": "^8.4.5"
+  },
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.7.3"
   }
 }
