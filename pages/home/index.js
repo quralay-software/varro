@@ -12,7 +12,7 @@ import BlogSection2 from '../../components/BlogSection2/BlogSection2';
 import Footer from '../../components/footer/Footer';
 import ServiceSection from "../../components/ServiceSection/ServiceSection";
 
-export const HomePage = () => {
+const HomePage = () => {
     return (
         <Fragment>
             <Navbar hclass={'wpo-header-style-3'} topbarNone={'topbar-none'} />
@@ -30,3 +30,5 @@ export const HomePage = () => {
         </Fragment>
     )
 };
+
+export default HomePage;
