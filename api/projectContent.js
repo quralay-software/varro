@@ -1,4 +1,4 @@
-export const projectContent = [
+const projectContent = [
   {
     slug: 'oil-and-gas-extraction',
     title: 'Добыча нефти и газа',
@@ -198,3 +198,5 @@ export const projectContent = [
   },
   // Add more projects here as needed
 ];
+
+export default projectContent;

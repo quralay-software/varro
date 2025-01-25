@@ -8,8 +8,8 @@ import Contact from './contact';
 import RelatedProject from './related';
 import Footer from '../../components/footer/Footer';
 import Image from 'next/image';
+import projectContent from "../../api/projectContent";
 
-import { projectContent } from '../../api/ProjectContent';
 
 const ProjectSinglePage = (props) => {
     const router = useRouter();
