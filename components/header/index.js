@@ -44,7 +44,7 @@ const Header = (props) => {
                                     <button className="menu-close"><i className="ti-close"></i></button>
                                     <ul className="nav navbar-nav mb-2 mb-lg-0">
                                         <li className="menu-item-has-children">
-                                            <Link onClick={ClickHandler} href="/">Home</Link>
+                                            <Link onClick={ClickHandler} style={{ fontFamily: 'Arial' }} href="/">Главная</Link>
                                            {/* <ul className="sub-menu">
                                                 <li><Link onClick={ClickHandler} href="/">Home style 1</Link></li>
                                                 <li><Link onClick={ClickHandler} href="/home2">Home style 2</Link></li>
@@ -78,7 +78,7 @@ const Header = (props) => {
                                             </ul>
                                         </li>*/}
                                         <li className="menu-item-has-children">
-                                            <Link onClick={ClickHandler} href="/service-2">Service</Link>
+                                            <Link onClick={ClickHandler} style={{ fontFamily: 'Arial' }} href="/service-2">Проекты</Link>
                                             {/*<ul className="sub-menu">
                                                 <li><Link onClick={ClickHandler} href="/service">Service 1</Link></li>
                                                 <li><Link onClick={ClickHandler} href="/service-2">Service 2</Link></li>
@@ -87,7 +87,7 @@ const Header = (props) => {
                                             </ul>*/}
                                         </li>
                                         <li className="menu-item-has-children">
-                                            <Link onClick={ClickHandler} href="/blog-left-sidebar">Blog</Link>
+                                            <Link onClick={ClickHandler} style={{ fontFamily: 'Arial' }} href="/blog-left-sidebar">Блог</Link>
                                            {/* <ul className="sub-menu">
                                                 <li><Link onClick={ClickHandler} href="/blog">Blog right sidebar</Link></li>
                                                 <li><Link onClick={ClickHandler} href="/blog-left-sidebar">Blog left sidebar</Link></li>
@@ -105,7 +105,9 @@ const Header = (props) => {
                                                 </li>
                                             </ul>*/}
                                         </li>
-                                        <li><Link onClick={ClickHandler} href="/contact">Contact</Link></li>
+                                        <li><Link onClick={ClickHandler} style={{ fontFamily: 'Arial' }} href="/contact">
+                                            Контакты
+                                        </Link></li>
                                     </ul>
                                 </div>
                             </div>

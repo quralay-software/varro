@@ -43,37 +43,39 @@ const Hero3 = () => {
           <div className="hero-container">
               <div className="hero-inner">
                   <div className="container">
-                      <div className="row align-items-center">
-                          <div className="col-lg-6 col-md-10 col-12">
-                              <motion.div
-                                className="wpo-static-hero-inner"
-                                variants={containerVariants}
-                                initial="hidden"
-                                animate="visible"
-                              >
-                                  <motion.span variants={itemVariants}>
-                                      Максимизация ценности ресурсов <br />
-                                      через устойчивое развитие
-                                  </motion.span>
-                                  <motion.h2
-                                    className="title"
-                                    variants={itemVariants}
-                                  >
-                                      VARRO OPERATING GROUP
-                                  </motion.h2>
-                                  <motion.div variants={itemVariants}>
-                                      <Link href="/about" className="theme-btn">
-                                          Узнать больше
-                                      </Link>
-                                  </motion.div>
-                              </motion.div>
-                          </div>
-                      </div>
+                  <div className="row align-items-center">
+                    <div
+                        className="col-12 borde border-red-500"
+                    >
+                        <motion.div
+                            className="wpo-static-hero-inner mt-24"
+                            variants={containerVariants}
+                            initial="hidden"
+                            animate="visible"
+                        >
+                            <motion.span variants={itemVariants} className="d-flex flex-column">
+                                <span className="d-md-inline d-block">Максимизация ценности ресурсов</span>
+                                <span className="d-md-inline d-block">через устойчивое развитие</span>
+                            </motion.span>
+                            <motion.h2
+                                className="title"
+                                variants={itemVariants}
+                            >
+                                VARRO OPERATING GROUP
+                            </motion.h2>
+                            <motion.div variants={itemVariants}>
+                                <Link href="/about" className="theme-btn">
+                                    Узнать больше
+                                </Link>
+                            </motion.div>
+                        </motion.div>
+                    </div>
+                  </div>
                   </div>
               </div>
           </div>
           <motion.div
-            className="slider-img-4"
+            className="slider-img-4 border-none shadow-none"
             variants={imageVariants}
             initial="hidden"
             animate="visible"
