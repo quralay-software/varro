@@ -1749,7 +1749,7 @@
 
 .mobileMenu {
     position: fixed;
-    left: -300px;
+    left: -200px;
     top: 0;
     z-index: 9999;
     height: 100vh;
@@ -1902,7 +1902,7 @@
 }
 
 
-.responsivemenu a:not([href]):not([class]), 
+.responsivemenu a:not([href]):not([class]),
 .responsivemenu a:not([href]):not([class]):hover{
  color: #ddd;
 }

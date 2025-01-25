@@ -15,6 +15,10 @@ import Footer from "../components/footer/Footer";
 const HomePage = () => {
     return (
         <Fragment>
+          <div style={{
+                //marginRight: window.innerWidth < 768 ? '-10rem' : '0',
+                //paddingRight: window.innerWidth < 768 ? '-2rem' : '-2rem',
+          }}>
           <Navbar hclass={'wpo-header-style-3'} topbarNone={'topbar-none'} />
           <Hero3 />
           <About3 />
@@ -27,6 +31,7 @@ const HomePage = () => {
           <BlogSection2 />
           <Footer/>
           <Scrollbar />
+          </div>
         </Fragment>
     )
 };

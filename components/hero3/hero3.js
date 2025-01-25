@@ -52,14 +52,21 @@ const Hero3 = () => {
                             variants={containerVariants}
                             initial="hidden"
                             animate="visible"
+                            style={{
+                                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                                padding: '20px',
+                                borderRadius: '10px',
+                                boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)'
+                            }}
                         >
                             <motion.span variants={itemVariants} className="d-flex flex-column">
-                                <span className="d-md-inline d-block">Максимизация ценности ресурсов</span>
-                                <span className="d-md-inline d-block">через устойчивое развитие</span>
+                                <span className="d-md-inline d-block" style={{ color: '#D9916A'}}>Максимизация ценности ресурсов</span>
+                                <span className="d-md-inline d-block" style={{ color: '#D9916A'}}>через устойчивое развитие</span>
                             </motion.span>
                             <motion.h2
                                 className="title"
                                 variants={itemVariants}
+                                style={{ color: 'white'}}
                             >
                                 VARRO OPERATING GROUP
                             </motion.h2>
@@ -81,6 +88,8 @@ const Hero3 = () => {
             animate="visible"
             style={{
                 backgroundImage: `url(/images/img-5.JPG)`,
+                border: 'none',
+                shadow: 'none'
             }}
           />
       </section>
