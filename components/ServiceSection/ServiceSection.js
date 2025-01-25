@@ -67,7 +67,7 @@ const ServiceSection = (props) => {
 
     return (
       <section className="Arkitek-service-section-s3 section-padding" style={{ marginTop: "5rem", marginBottom: "5rem"}}>
-          <div className="shape-1">
+          {/*<div className="shape-1">
               <svg width="596" height="590" viewBox="0 0 596 590" fill="none">
                   <path d="M148 590L596 0H0L148 590Z" />
               </svg>
@@ -76,7 +76,7 @@ const ServiceSection = (props) => {
               <svg width="328" height="510" viewBox="0 0 328 510" fill="none">
                   <path d="M62 0L328 226V510H62L0 472L62 0Z" />
               </svg>
-          </div>
+          </div>*/}
           <div className="container-fluid">
               <div className="service-wrap">
                   <div className="service-title-left">
