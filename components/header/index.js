@@ -1,14 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import MobileMenu from '../MobileMenu/MobileMenu'
 import { connect } from "react-redux";
 import { removeFromCart } from "../../store/actions/action";
-
+import { useTranslation } from 'next-i18next';
+import LanguageSelector from '../LanguageSelector';
 
 const Header = (props) => {
     const ClickHandler = () => {
         window.scrollTo(10, 0);
     }
+    
+    const { t } = useTranslation('common');
 
     return (
         <header id="header" className={`w-full ${props.topbarClass}`}>
@@ -34,25 +37,28 @@ const Header = (props) => {
                                         <li>
                                             <Link onClick={ClickHandler} 
                                                   className="text-gray-700 hover:text-gray-900 font-arial" 
-                                                  href="/">Главная</Link>
+                                                  href="/">{t('nav.home')}</Link>
                                         </li>
                                         <li>
                                             <Link onClick={ClickHandler} 
                                                   className="text-gray-700 hover:text-gray-900 font-arial" 
-                                                  href="/service-2">Проекты</Link>
+                                                  href="/service-2">{t('nav.projects')}</Link>
                                         </li>
                                         <li>
                                             <Link onClick={ClickHandler} 
                                                   className="text-gray-700 hover:text-gray-900 font-arial" 
-                                                  href="/blog-left-sidebar">Блог</Link>
+                                                  href="/blog-left-sidebar">{t('nav.blog')}</Link>
                                         </li>
                                         <li>
                                             <Link onClick={ClickHandler} 
                                                   className="text-gray-700 hover:text-gray-900 font-arial" 
-                                                  href="/contact">Контакты</Link>
+                                                  href="/contact">{t('nav.contacts')}</Link>
                                         </li>
                                     </ul>
                                 </div>
+                            </div>
+                            <div className="hidden lg:block">
+                                <LanguageSelector />
                             </div>
                         </div>
                     </div>

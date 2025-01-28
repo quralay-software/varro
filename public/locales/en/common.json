@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contacts": "Contacts"
+  },
+  "hero": {
+    "title": "Architectural Solutions",
+    "subtitle": "Creating Unique Spaces"
+  }
+}

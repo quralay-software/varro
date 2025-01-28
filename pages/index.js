@@ -11,14 +11,11 @@ import Testimonial3 from "../components/Testimonial3/Testimonial3";
 import CtaSection from "../components/CtaSection/CtaSection";
 import BlogSection2 from "../components/BlogSection2/BlogSection2";
 import Footer from "../components/footer/Footer";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const HomePage = () => {
     return (
         <Fragment>
-          <div style={{
-                //marginRight: window.innerWidth < 768 ? '-10rem' : '0',
-                //paddingRight: window.innerWidth < 768 ? '-2rem' : '-2rem',
-          }}>
           <Navbar hclass={'wpo-header-style-3'} topbarNone={'topbar-none'} />
           <Hero3 />
           <About3 />
@@ -31,9 +28,16 @@ const HomePage = () => {
           <BlogSection2 />
           <Footer/>
           <Scrollbar />
-          </div>
         </Fragment>
     )
 };
-export default HomePage;
 
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ['common'])),
+        },
+    }
+}
+
+export default HomePage;

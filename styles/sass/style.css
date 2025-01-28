@@ -303,45 +303,6 @@ img {
   text-transform: uppercase;
 }
 
-/*
-
-.wpo-section-title h2 {
-  margin: 0;
-  position: relative;
-  text-transform: capitalize;
-  font-family: "titillium";
-  margin-top: 12px;
-  font-weight: 400;
-  font-size: 50px;
-  line-height: 75px;
-  color: #262626;
-}
-*/
-/*
-.wpo-section-title h2:before {
-  position: absolute;
-  left: 50%;
-  top: 25px;
-  width: 50%;
-  height: 100%;
-  content: "";
-  border-bottom: 2px dashed #779a65c2;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-.wpo-section-title h2::after {
-  position: absolute;
-  left: 50%;
-  top: 35px;
-  width: 40%;
-  height: 100%;
-  content: "";
-  border-bottom: 2px dashed #779a65c2;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}*/
-
 @media (max-width: 767px) {
   .wpo-section-title h2 {
     font-size: 32px;
