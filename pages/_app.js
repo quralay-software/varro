@@ -1,5 +1,6 @@
 import "react-toastify/dist/ReactToastify.min.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/globals.css'
 import '../styles/animate.css'
 import '../styles/flaticon.css'
 import "../styles/font-awesome.min.css";

@@ -45,7 +45,7 @@ const Hero3 = () => {
                   <div className="container">
                   <div className="row align-items-center">
                     <div
-                        className="col-12 borde border-red-500"
+                        className="col-12 col-lg-6 col-md-10 col-12"
                     >
                         <motion.div
                             className="wpo-static-hero-inner mt-24"
@@ -63,6 +63,7 @@ const Hero3 = () => {
                                 <span className="d-md-inline d-block" style={{ color: '#D9916A'}}>Максимизация ценности ресурсов</span>
                                 <span className="d-md-inline d-block" style={{ color: '#D9916A'}}>через устойчивое развитие</span>
                             </motion.span>
+                            <p className='text-red-600 uppercase'>No seen yet!!</p>
                             <motion.h2
                                 className="title"
                                 variants={itemVariants}
@@ -70,6 +71,7 @@ const Hero3 = () => {
                             >
                                 VARRO OPERATING GROUP
                             </motion.h2>
+                            <h1 className='text-red-600 underline font-bold'>No seen yet!!</h1>
                             <motion.div variants={itemVariants}>
                                 <Link href="/about" className="theme-btn">
                                     Узнать больше

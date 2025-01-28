@@ -1,0 +1,7 @@
+.customText {
+  @apply text-red-600 uppercase;
+}
+
+.customHeading {
+  @apply text-red-600 underline font-bold;
+}
