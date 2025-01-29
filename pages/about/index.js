@@ -8,6 +8,7 @@ import FunFact from '../../components/FunFact';
 import ProjectSectionS2 from '../../components/ProjectSectionS2/ProjectSectionS2';
 import CtaSection2 from '../../components/CtaSection2/CtaSection2';
 import BlogSection2 from '../../components/BlogSection2/BlogSection2';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const AboutPage = () => {
     return (
@@ -24,4 +25,13 @@ const AboutPage = () => {
         </Fragment>
     )
 };
+
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ['common'])),
+        },
+    }
+}
+
 export default AboutPage;

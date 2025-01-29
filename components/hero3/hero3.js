@@ -63,7 +63,6 @@ const Hero3 = () => {
                                 <span className="d-md-inline d-block" style={{ color: '#D9916A'}}>Максимизация ценности ресурсов</span>
                                 <span className="d-md-inline d-block" style={{ color: '#D9916A'}}>через устойчивое развитие</span>
                             </motion.span>
-                            <p className='text-red-600 uppercase'>No seen yet!!</p>
                             <motion.h2
                                 className="title"
                                 variants={itemVariants}
@@ -71,7 +70,6 @@ const Hero3 = () => {
                             >
                                 VARRO OPERATING GROUP
                             </motion.h2>
-                            <h1 className='text-red-600 underline font-bold'>No seen yet!!</h1>
                             <motion.div variants={itemVariants}>
                                 <Link href="/about" className="theme-btn">
                                     Узнать больше

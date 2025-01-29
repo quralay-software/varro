@@ -1,8 +1,14 @@
 {
   "nav": {
     "home": "Home",
-    "projects": "Projects",
-    "blog": "Blog",
+    "company": "Company",
+    "about": "About Us",
+    "activities": "Activities",
+    "services": "Services",
+    "strategic": "Strategic Goals",
+    "goals": "Our Goals",
+    "principles": "Our Principles",
+    "bgpz": "BGPZ",
     "contacts": "Contacts"
   },
   "hero": {

@@ -1,31 +1,33 @@
 import React, { useState } from 'react';
 import Link from "next/link";
-
-const menus = [
-    {
-        id: 1,
-        title: 'Главная',
-        link: '/'
-    },
-    {
-        id: 2,
-        title: 'Услуги',
-        link: '/service-2'
-    },
-    {
-        id: 3,
-        title: 'Блог',
-        link: '/blog-left-sidebar'
-    },
-    {
-        id: 4,
-        title: 'Контакты',
-        link: '/contact'
-    }
-]
+import { useTranslation } from 'next-i18next';
 
 const MobileMenu = () => {
     const [menuActive, setMenuState] = useState(false);
+    const { t } = useTranslation('common');
+
+    const menus = [
+        {
+            id: 1,
+            title: t('nav.home'),
+            link: '/'
+        },
+        {
+            id: 2,
+            title: t('nav.services'),
+            link: '/service-2'
+        },
+        {
+            id: 3,
+            title: t('nav.company'),
+            link: '/about'
+        },
+        {
+            id: 4,
+            title: t('nav.contacts'),
+            link: '/contact'
+        }
+    ];
 
     const ClickHandler = () => {
         window.scrollTo(10, 0);
