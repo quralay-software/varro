@@ -15,16 +15,11 @@ const BgpzPage = () => {
     return (
         <Fragment>
             <Navbar hclass={'wpo-header-style-2'} />
-            <PageTitle 
-                pageTitle={'Боранкольский ГПЗ'} 
-                pagesub={'Высокие технологии переработки газа'} 
-            />
             <BgpzHero />
             <BgpzHistory />
             <BgpzTechnology />
             <BgpzEnvironment />
             <BgpzFuture />
-            <BgpzContacts />
             <Footer />
             <Scrollbar />
         </Fragment>
