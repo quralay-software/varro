@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 import { contactData } from '../../data/contact';
@@ -11,18 +10,13 @@ const ContactHero = () => {
     const data = contactData[currentLang].hero;
 
     return (
-        <section className="relative h-[60vh] min-h-[500px] w-full overflow-hidden">
-            {/* Background Image */}
-            <div className="absolute inset-0">
-                <Image
-                    src={data.image.src}
-                    alt={data.image.alt}
-                    fill
-                    className="object-cover"
-                    priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
-            </div>
+        <section className="relative h-[60vh] min-h-[500px] w-full overflow-hidden bg-gray-900">
+            {/* Mesh Gradient Background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-primary/20 to-secondary/20" />
+            
+            {/* Decorative Elements */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
 
             {/* Content */}
             <div className="relative h-full container mx-auto px-4">
@@ -50,9 +44,6 @@ const ContactHero = () => {
                     </motion.div>
                 </div>
             </div>
-
-            {/* Decorative Elements */}
-            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-gray-50 to-transparent" />
         </section>
     );
 };

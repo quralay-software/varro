@@ -87,30 +87,30 @@ const Contactpage = () => {
             <div className="container mx-auto px-4">
                 {/* Contact Info Cards */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20"
+                  initial={{opacity: 0, y: 20}}
+                  whileInView={{opacity: 1, y: 0}}
+                  viewport={{once: true}}
+                  transition={{duration: 0.6}}
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20"
                 >
                     {Object.entries(data.info).map(([key, value]) => (
-                        <ContactInfo
-                            key={key}
-                            icon={icons[key]}
-                            title={value.title}
-                            content={value.content}
-                        />
+                      <ContactInfo
+                        key={key}
+                        icon={icons[key]}
+                        title={value.title}
+                        content={value.content}
+                      />
                     ))}
                 </motion.div>
 
                 {/* Contact Form Section */}
                 <div className="max-w-4xl mx-auto">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="text-center mb-12"
+                      initial={{opacity: 0, y: 20}}
+                      whileInView={{opacity: 1, y: 0}}
+                      viewport={{once: true}}
+                      transition={{duration: 0.6}}
+                      className="text-center mb-12"
                     >
                         <h2 className="text-3xl md:text-4xl font-bold font-sans mb-4">
                             {data.title}
@@ -121,34 +121,29 @@ const Contactpage = () => {
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="bg-white p-8 rounded-xl shadow-sm border border-gray-100"
+                      initial={{opacity: 0, y: 20}}
+                      whileInView={{opacity: 1, y: 0}}
+                      viewport={{once: true}}
+                      transition={{duration: 0.6, delay: 0.2}}
+                      className="bg-white p-8 rounded-xl shadow-sm border border-gray-100"
                     >
-                        <ContactForm />
+                        <ContactForm/>
                     </motion.div>
                 </div>
 
                 {/* Map Section */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
-                    className="mt-20 aspect-video w-full rounded-xl overflow-hidden shadow-lg"
-                >
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2947.6392252755287!2d51.15974231547753!3d43.64149397912139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41b4a77b4b784b67%3A0x477f7e3d3f2137d!2sZodiac%20Business%20Center!5e0!3m2!1sen!2skz!4v1644845367895!5m2!1sen!2skz"
-                        width="100%"
-                        height="100%"
-                        style={{ border: 0 }}
-                        allowFullScreen=""
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                    />
-                </motion.div>
+                <div className="w-full h-[650px] mt-24 relative">
+                    <div className="absolute inset-0">
+                        <iframe
+                          className="w-full h-full border-0"
+                          src="https://maps.google.com/maps?q=43.641494,51.159742&z=17&output=embed"
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                          title="Google Maps - Zodiac Business Center"
+                          aria-label="Location map"
+                        />
+                    </div>
+                </div>
             </div>
         </section>
     );

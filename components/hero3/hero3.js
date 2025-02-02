@@ -1,8 +1,14 @@
 import React from "react";
 import Link from 'next/link';
 import { motion } from "framer-motion";
+import { useTranslation } from 'next-i18next';
+import { hero3Data } from '../../data/hero3';
 
 const Hero3 = () => {
+    const { i18n } = useTranslation();
+    const currentLang = i18n.language || 'ru';
+    const data = hero3Data[currentLang];
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -60,19 +66,22 @@ const Hero3 = () => {
                             }}
                         >
                             <motion.span variants={itemVariants} className="d-flex flex-column">
-                                <span className="d-md-inline d-block" style={{ color: '#D9916A'}}>Максимизация ценности ресурсов</span>
-                                <span className="d-md-inline d-block" style={{ color: '#D9916A'}}>через устойчивое развитие</span>
+                                {data.subtitle.split(' через ').map((part, index) => (
+                                    <span key={index} className="d-md-inline d-block" style={{ color: '#D9916A'}}>
+                                        {part}
+                                    </span>
+                                ))}
                             </motion.span>
                             <motion.h2
                                 className="title"
                                 variants={itemVariants}
                                 style={{ color: 'white'}}
                             >
-                                VARRO OPERATING GROUP
+                                {data.title}
                             </motion.h2>
                             <motion.div variants={itemVariants}>
                                 <Link href="/about" className="theme-btn">
-                                    Узнать больше
+                                    {data.button}
                                 </Link>
                             </motion.div>
                         </motion.div>
@@ -87,7 +96,7 @@ const Hero3 = () => {
             initial="hidden"
             animate="visible"
             style={{
-                backgroundImage: `url(/images/img-5.JPG)`,
+                backgroundImage: `url(${data.image.src})`,
                 border: 'none',
                 shadow: 'none'
             }}

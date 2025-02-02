@@ -5,8 +5,14 @@ import abimg from '/public/images/img-3.JPG'
 import icon from '/public/images/call.svg';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'next-i18next';
+import { about3Data } from '../../data/about3';
 
 const About3 = (props) => {
+    const { i18n } = useTranslation();
+    const currentLang = i18n.language || 'ru';
+    const data = about3Data[currentLang];
+
     const ClickHandler = () => {
         window.scrollTo(10, 0);
     }
@@ -66,27 +72,27 @@ const About3 = (props) => {
                         viewport={{ once: true, amount: 0.3 }}
                       >
                           <motion.div className="wpo-section-title" variants={fadeInUp}>
-                              <motion.span variants={fadeInUp}>О нас</motion.span>
+                              <motion.span variants={fadeInUp}>{data.sectionTitle}</motion.span>
                               <motion.h2
                                 variants={fadeInUp}
                                 style={{ fontFamily: 'Arial' }}
+                                className='md:text-5xl font-bold text-gray-800 mb-4 mt-4 text-2xl py-8'
                               >
-                                  Максимизация ценности ресурсов через устойчивое развитие
+                                  {data.title}
                               </motion.h2>
                               <motion.p variants={fadeInUp}>
-                                  Компания Varro Operating Group специализируется на добыче и переработке нефти и газа, обеспечивая ответственное управление окружающей средой.
-                                  Мы стремимся к инновациям, оптимизации производственных процессов и устойчивому развитию, чтобы максимизировать ценность наших ресурсов.
+                                  {data.description}
                               </motion.p>
                           </motion.div>
                           <motion.div className="left-btn" variants={fadeInUp}>
-                              <Link onClick={ClickHandler} href="/about" className="theme-btn">Узнать больше</Link>
+                              <Link onClick={ClickHandler} href="/about" className="theme-btn">{data.learnMoreButton}</Link>
                               <Link onClick={ClickHandler} className="call" href="/contact">
                                   <div className="icon">
                                       <Image src={icon} alt="" />
                                   </div>
                                   <div className="text">
-                                      <h5>Позвоните нам:</h5>
-                                      <span>+7 7292 201 909</span>
+                                      <span>{data.contact.text}</span>
+                                      <h4>{data.contact.phone}</h4>
                                   </div>
                               </Link>
                           </motion.div>
@@ -111,8 +117,8 @@ const About3 = (props) => {
                             viewport={{ once: true, amount: 0.3 }}
                           >
                               <div className="info">
-                                  <h3><CountUp end={25} enableScrollSpy />+</h3>
-                                  <p>Лет опыта в нефтегазовой отрасли</p>
+                                  <h3><CountUp end={data.experience.value} enableScrollSpy />+</h3>
+                                  <p>{data.experience.text}</p>
                               </div>
                           </motion.div>
                       </div>
