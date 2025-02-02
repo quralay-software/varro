@@ -58,9 +58,13 @@ const MobileDropdown = ({ title, items, isOpen, onToggle }) => {
 };
 
 const MobileMenu = ({ isOpen, onClose }) => {
-    const { t } = useTranslation('common');
+    const { t, i18n } = useTranslation('common');
     const router = useRouter();
     const [openDropdown, setOpenDropdown] = useState(null);
+
+    const changeLanguage = (locale) => {
+        router.push(router.pathname, router.asPath, { locale });
+    };
 
     const navItems = {
         company: [
@@ -178,6 +182,39 @@ const MobileMenu = ({ isOpen, onClose }) => {
                                 >
                                     {t('nav.contacts')}
                                 </Link>
+                            </motion.div>
+
+                            {/* Language Selector */}
+                            <motion.div
+                                variants={itemVariants}
+                                className="mt-auto border-t border-gray-200"
+                            >
+                                <div className="flex justify-center items-center py-6 space-x-6">
+                                    <button
+                                        onClick={() => changeLanguage('ru')}
+                                        className={`px-4 py-2 text-base border-none bg-white font-medium transition-colors duration-200 ${
+                                            i18n.language === 'ru' ? 'text-primary' : 'text-gray-700 hover:text-gray-900'
+                                        }`}
+                                    >
+                                        RU
+                                    </button>
+                                    <button
+                                        onClick={() => changeLanguage('kk')}
+                                        className={`px-4 py-2 text-base font-medium  border-none bg-white transition-colors duration-200 ${
+                                            i18n.language === 'kk' ? 'text-primary' : 'text-gray-700 hover:text-gray-900'
+                                        }`}
+                                    >
+                                        ҚАЗ
+                                    </button>
+                                    <button
+                                        onClick={() => changeLanguage('en')}
+                                        className={`px-4 py-2 text-base font-medium border-none bg-white transition-colors duration-200 ${
+                                            i18n.language === 'en' ? 'text-primary' : 'text-gray-700 hover:text-gray-900'
+                                        }`}
+                                    >
+                                        EN
+                                    </button>
+                                </div>
                             </motion.div>
                         </motion.div>
                     </motion.div>
