@@ -88,7 +88,7 @@ const ServiceSection = (props) => {
                           {Services.map((service, Sitem) => {
                               const translatedService = data.services.find(s => s.slug === service.slug);
                               if (!translatedService) return null;
-                              
+
                               return (
                                 <div className="service-single-item" key={Sitem}>
                                     <div className="icon">

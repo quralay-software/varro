@@ -1,74 +1,190 @@
 import React, { useState } from 'react';
 import Link from "next/link";
 import { useTranslation } from 'next-i18next';
+import { ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useRouter } from 'next/router';
 
-const MobileMenu = () => {
-    const [menuActive, setMenuState] = useState(false);
-    const { t } = useTranslation('common');
-
-    const menus = [
-        {
-            id: 1,
-            title: t('nav.home'),
-            link: '/'
-        },
-        {
-            id: 2,
-            title: t('nav.services'),
-            link: '/service-2'
-        },
-        {
-            id: 3,
-            title: t('nav.company'),
-            link: '/about'
-        },
-        {
-            id: 4,
-            title: t('nav.contacts'),
-            link: '/contact'
-        }
-    ];
-
-    const ClickHandler = () => {
-        window.scrollTo(10, 0);
-    }
+const MobileDropdown = ({ title, items, isOpen, onToggle }) => {
+    const router = useRouter();
 
     return (
-        <div>
-            <div className={`mobileMenu ${menuActive ? "show" : ""}`}>
-                <div className="menu-close">
-                    <div className="clox" onClick={() => setMenuState(!menuActive)}><i className="ti-close"></i></div>
-                </div>
-
-                <ul className="responsivemenu">
-                    {menus.map((item, mn) => {
-                        return (
-                            <li key={mn}>
-                                <Link 
-                                    onClick={() => {
-                                        ClickHandler();
-                                        setMenuState(false);
-                                    }} 
-                                    className="active"
+        <div className="">
+            <button
+                onClick={onToggle}
+                className="w-full flex bg-white border-none items-center justify-between py-4 px-6 text-gray-700 hover:text-primary transition-colors duration-200"
+            >
+                <span className="text-base font-medium">{title}</span>
+                <motion.div
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.2 }}
+                >
+                    <ChevronDown className="h-5 w-5 text-gray-500" />
+                </motion.div>
+            </button>
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
+                    >
+                        {items.map((item, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ x: -20, opacity: 0 }}
+                                animate={{ x: 0, opacity: 1 }}
+                                transition={{ delay: index * 0.1 }}
+                            >
+                                <Link
                                     href={item.link}
+                                    className={`block py-3 px-8 text-sm ${
+                                        router.pathname === item.link
+                                            ? 'text-primary font-medium'
+                                            : 'text-gray-600 hover:text-gray-900'
+                                    }`}
                                 >
-                                    {item.title}
+                                    {item.text}
                                 </Link>
-                            </li>
-                        )
-                    })}
-                </ul>
-            </div>
-
-            <div className="showmenu" onClick={() => setMenuState(!menuActive)}>
-                <button type="button" className="navbar-toggler open-btn">
-                    <span className="icon-bar first-angle"></span>
-                    <span className="icon-bar middle-angle"></span>
-                    <span className="icon-bar last-angle"></span>
-                </button>
-            </div>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
-    )
+    );
+};
+
+const MobileMenu = ({ isOpen, onClose }) => {
+    const { t } = useTranslation('common');
+    const router = useRouter();
+    const [openDropdown, setOpenDropdown] = useState(null);
+
+    const navItems = {
+        company: [
+            { text: t('nav.about'), link: '/about' },
+            { text: t('nav.activities'), link: '/activities' },
+            { text: t('nav.services'), link: '/services' }
+        ],
+        strategic: [
+            { text: t('nav.goals'), link: '/goals' },
+            { text: t('nav.principles'), link: '/principles' }
+        ]
+    };
+
+    const handleDropdownToggle = (dropdownName) => {
+        setOpenDropdown(openDropdown === dropdownName ? null : dropdownName);
+    };
+
+    const menuVariants = {
+        closed: {
+            x: "100%",
+            transition: {
+                type: "spring",
+                stiffness: 300,
+                damping: 30
+            }
+        },
+        open: {
+            x: 0,
+            transition: {
+                type: "spring",
+                stiffness: 300,
+                damping: 30,
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    const itemVariants = {
+        closed: { x: 20, opacity: 0 },
+        open: { x: 0, opacity: 1 }
+    };
+
+    return (
+        <AnimatePresence>
+            {isOpen && (
+                <>
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+                        onClick={onClose}
+                    />
+                    <motion.div
+                        initial="closed"
+                        animate="open"
+                        exit="closed"
+                        variants={menuVariants}
+                        className="fixed right-0 top-0 h-full w-80 bg-white shadow-2xl z-50"
+                    >
+                        <motion.div className="flex flex-col h-full pt-20">
+                            <motion.div variants={itemVariants}>
+                                <Link
+                                    href="/"
+                                    className={`block py-4 px-6 text-base font-medium ${
+                                        router.pathname === '/'
+                                            ? 'text-primary'
+                                            : 'text-gray-700 hover:text-gray-900'
+                                    }`}
+                                >
+                                    {t('nav.home')}
+                                </Link>
+                            </motion.div>
+
+                            <motion.div variants={itemVariants}>
+                                <MobileDropdown
+                                    title={t('nav.company')}
+                                    items={navItems.company}
+                                    isOpen={openDropdown === 'company'}
+                                    onToggle={() => handleDropdownToggle('company')}
+                                />
+                            </motion.div>
+
+                            <motion.div variants={itemVariants}>
+                                <MobileDropdown
+                                    title={t('nav.strategic')}
+                                    items={navItems.strategic}
+                                    isOpen={openDropdown === 'strategic'}
+                                    onToggle={() => handleDropdownToggle('strategic')}
+                                />
+                            </motion.div>
+
+                            <motion.div variants={itemVariants}>
+                                <Link
+                                    href="/bgpz"
+                                    className={`block py-4 px-6 text-base font-medium ${
+                                        router.pathname === '/bgpz'
+                                            ? 'text-primary'
+                                            : 'text-gray-700 hover:text-gray-900'
+                                    }`}
+                                >
+                                    {t('nav.bgpz')}
+                                </Link>
+                            </motion.div>
+
+                            <motion.div variants={itemVariants}>
+                                <Link
+                                    href="/contact"
+                                    className={`block py-4 px-6 text-base font-medium ${
+                                        router.pathname === '/contact'
+                                            ? 'text-primary'
+                                            : 'text-gray-700 hover:text-gray-900'
+                                    }`}
+                                >
+                                    {t('nav.contacts')}
+                                </Link>
+                            </motion.div>
+                        </motion.div>
+                    </motion.div>
+                </>
+            )}
+        </AnimatePresence>
+    );
 }
 
 export default MobileMenu;

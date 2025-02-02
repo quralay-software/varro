@@ -6,7 +6,6 @@ import Scrollbar from '../components/scrollbar/scrollbar';
 import Hero3 from "../components/hero3/hero3";
 import About3 from "../components/about3/about3";
 import ProjectSectionS2 from "../components/ProjectSectionS2/ProjectSectionS2";
-import TeamSectionS2 from "../components/TeamSectionS2/TeamSectionS2";
 import Testimonial3 from "../components/Testimonial3/Testimonial3";
 import CtaSection from "../components/CtaSection/CtaSection";
 import Footer from "../components/footer/Footer";
@@ -21,7 +20,6 @@ const HomePage = () => {
           <FunFact />
           <ServiceSection />
           <ProjectSectionS2 />
-          <TeamSectionS2 />
           <Testimonial3 />
           <CtaSection />
           <Footer/>

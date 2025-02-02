@@ -7,8 +7,14 @@ import Link from 'next/link';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'next-i18next';
+import { projectSectionData } from '../../data/projectSection';
 
 const ProjectSectionS2 = (props) => {
+    const { i18n } = useTranslation();
+    const currentLang = i18n.language || 'ru';
+    const data = projectSectionData[currentLang];
+
     const settings = {
         dots: false,
         arrows: false,
@@ -89,7 +95,7 @@ const ProjectSectionS2 = (props) => {
                 transition={{ duration: 0.6 }}
               >
                   <div className="col-lg-6 col-12" style={{ fontFamily: 'Arial' }}>
-                      <SectionTitle subTitle={'НАШИ ПРОЕКТЫ'} Title={'Последние проекты'} />
+                      <SectionTitle subTitle={data.subTitle} Title={data.title} />
                   </div>
               </motion.div>
               <motion.div
@@ -101,33 +107,38 @@ const ProjectSectionS2 = (props) => {
               >
                   <div className="project-slider owl-carousel">
                       <Slider {...settings}>
-                          {Projects.slice(0, 4).map((project, prj) => (
-                            <motion.div
-                              className="project-item"
-                              key={prj}
-                              variants={itemVariants}
-                            >
+                          {Projects.slice(0, 4).map((project, prj) => {
+                              const translatedProject = data.projects.find(p => p.slug === project.slug) || project;
+                              return (
                                 <motion.div
-                                  className="image"
-                                  whileHover={{ scale: 1.05 }}
-                                  transition={{ duration: 0.3 }}
+                                  className="project-item"
+                                  key={prj}
+                                  variants={itemVariants}
                                 >
-                                    <Image src={project.pImg} alt="" />
+                                    <motion.div
+                                      className="image"
+                                      whileHover={{ scale: 1.05 }}
+                                      transition={{ duration: 0.3 }}
+                                    >
+                                        <Image src={project.pImg} alt="" />
+                                    </motion.div>
+                                    <motion.div
+                                      className="text"
+                                      style={{ fontFamily: 'Arial' }}
+                                    >
+                                        <h2>
+                                            <Link
+                                              style={{ fontFamily: 'Arial' }}
+                                              onClick={ClickHandler}
+                                              href="/activities"
+                                            >
+                                                {translatedProject.title}
+                                            </Link>
+                                        </h2>
+                                    </motion.div>
                                 </motion.div>
-                                <motion.div
-                                  className="text"
-                                  style={{ fontFamily: 'Arial' }}
-                                >
-                                    <h2>
-                                        <Link
-                                          style={{ fontFamily: 'Arial' }}
-                                          onClick={ClickHandler} href={'/project/[slug]'} as={`/project/${project.slug}`}>
-                                            {project.pTitle}
-                                        </Link>
-                                    </h2>
-                                </motion.div>
-                            </motion.div>
-                          ))}
+                              );
+                          })}
                       </Slider>
                   </div>
               </motion.div>
