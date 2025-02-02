@@ -9,7 +9,6 @@ import ProjectSectionS2 from "../components/ProjectSectionS2/ProjectSectionS2";
 import TeamSectionS2 from "../components/TeamSectionS2/TeamSectionS2";
 import Testimonial3 from "../components/Testimonial3/Testimonial3";
 import CtaSection from "../components/CtaSection/CtaSection";
-import BlogSection2 from "../components/BlogSection2/BlogSection2";
 import Footer from "../components/footer/Footer";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -25,7 +24,6 @@ const HomePage = () => {
           <TeamSectionS2 />
           <Testimonial3 />
           <CtaSection />
-          <BlogSection2 />
           <Footer/>
           <Scrollbar />
         </Fragment>

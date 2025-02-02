@@ -15,15 +15,13 @@ const ServicesPage = () => {
     return (
         <Fragment>
             <Navbar hclass={'wpo-header-style-2'} />
-            <PageTitle 
-                pageTitle={'Услуги компании'} 
-                pagesub={'Комплексные решения'} 
-            />
             <ServicesHero />
             <ServicesGrid />
             <ServicesBenefits />
             <ServicesProcess />
+{/*
             <ServicesCases />
+*/}
             <ServicesContact />
             <Footer />
             <Scrollbar />

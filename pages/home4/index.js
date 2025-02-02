@@ -24,7 +24,6 @@ const HomePage4 = () => {
             <Pricing />
             <Testimonial3 />
             <CtaSection2 />
-            <BlogSection2 />
             <Footer />
             <Scrollbar />
         </Fragment>

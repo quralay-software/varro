@@ -3,30 +3,13 @@ import CountUp from 'react-countup';
 import shape from '/public/images/fun-fact.png';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'next-i18next';
+import { funFactContentData } from '../../data/funFactContent';
 
 const FunFact = (props) => {
-    const funFact = [
-        {
-            title: '49',
-            subTitle: 'площадь месторождения (км²)',
-            Symbol: '',
-        },
-        {
-            title: '3.6',
-            subTitle: 'проектная мощность завода (млрд м³/год)',
-            Symbol: '',
-        },
-        {
-            title: '25',
-            subTitle: 'лет контракта на добычу',
-            Symbol: '+',
-        },
-        {
-            title: '2007',
-            subTitle: 'год завершения | этапа строительства',
-            Symbol: '',
-        },
-    ];
+    const { i18n } = useTranslation();
+    const currentLang = i18n.language || 'ru';
+    const { facts } = funFactContentData[currentLang];
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -70,7 +53,7 @@ const FunFact = (props) => {
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.3 }}
                       >
-                          {funFact.map((funfact, fitem) => (
+                          {facts.map((funfact, fitem) => (
                             <motion.div
                               className="grid"
                               key={fitem}

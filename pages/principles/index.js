@@ -14,15 +14,11 @@ const PrinciplesPage = () => {
     return (
         <Fragment>
             <Navbar hclass={'wpo-header-style-2'} />
-            <PageTitle 
-                pageTitle={'Наши принципы'} 
-                pagesub={'Этика и ценности'} 
-            />
             <PrinciplesHero />
             <CorePrinciples />
-            <PrinciplesInAction />
+            {/*<PrinciplesInAction />
             <PrinciplesStats />
-            <PrinciplesCTA />
+            <PrinciplesCTA />*/}
             <Footer />
             <Scrollbar />
         </Fragment>

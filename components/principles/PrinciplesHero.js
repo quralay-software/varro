@@ -1,11 +1,45 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'next-i18next';
+import { principlesHeroData } from '../../data/principlesHero';
+import { Leaf, Lightbulb, Handshake } from 'lucide-react';
+
+const Badge = ({ icon: Icon, label, value, description, position, delay }) => {
+    return (
+        <motion.div
+            initial={{ opacity: 0, x: position === 'left' ? -100 : 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay }}
+            className="bg-white/10 backdrop-blur-sm p-4 md:p-6 lg:p-8 rounded-lg transform hover:scale-105 transition-transform duration-300"
+        >
+            <div className="text-white text-center">
+                <Icon className="w-8 h-8 md:w-10 md:h-10 mx-auto mb-3 text-primary" strokeWidth={1.5} />
+                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 md:mb-2">
+                    {value}
+                </div>
+                <div className="text-sm md:text-base lg:text-lg xl:text-xl font-semibold">
+                    {label}
+                </div>
+            </div>
+        </motion.div>
+    );
+};
 
 const PrinciplesHero = () => {
+    const { i18n } = useTranslation();
+    const currentLang = i18n.language || 'ru';
+    const data = principlesHeroData[currentLang];
+
     const scrollToPrinciples = () => {
         const principlesSection = document.getElementById('core-principles');
         principlesSection?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    const icons = {
+        '🌱': Leaf,
+        '💡': Lightbulb,
+        '🤝': Handshake
     };
 
     return (
@@ -13,8 +47,8 @@ const PrinciplesHero = () => {
             {/* Background Image */}
             <div className="absolute inset-0">
                 <Image
-                    src="https://picsum.photos/1920/1080?random=20"
-                    alt="Industrial Landscape"
+                    src={data.image.src}
+                    alt={data.image.alt}
                     fill
                     className="object-cover"
                     priority
@@ -31,81 +65,63 @@ const PrinciplesHero = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <span className="text-primary font-semibold mb-4 block">
-                            Varro Operating Group
+                            {data.company}
                         </span>
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                            Наши ключевые принципы
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-arial font-sans font-bold text-white mb-4 md:mb-6">
+                            {data.title}
                         </h1>
-                        <h2 className="text-2xl text-primary mb-4">
-                            Этика, устойчивость и инновации
+                        <h2 className="text-xl md:text-2xl text-primary mb-3 md:mb-4 font-sans">
+                            {data.subtitle}
                         </h2>
-                        <p className="text-lg text-gray-200 mb-8">
-                            Мы придерживаемся высоких стандартов корпоративной ответственности, 
-                            обеспечиваем безопасность сотрудников и заботимся об окружающей среде. 
-                            Наши принципы — основа устойчивого развития компании.
+                        <p className="text-base md:text-lg text-gray-200 mb-6 md:mb-8 max-w-2xl">
+                            {data.description}
                         </p>
                         <button
                             onClick={scrollToPrinciples}
-                            className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg 
+                            className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-none border-none
                                      transition-all duration-300 transform hover:scale-105"
                         >
-                            Подробнее о наших принципах
+                            {data.button}
                         </button>
                     </motion.div>
                 </div>
             </div>
 
-            {/* Animated Scroll Indicator */}
-            <motion.div
-                className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-            >
-                <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-                    <div className="w-1 h-3 bg-white rounded-full mt-2" />
-                </div>
-            </motion.div>
+            {/* Mobile Badges */}
+            <div className="absolute md:hidden bottom-4 left-4 right-4 grid grid-cols-3 gap-2 bg-black/20 p-2 rounded-lg">
+                {data.badges.map((badge) => (
+                    <div key={badge.id} className="bg-white/10 backdrop-blur-sm p-3 rounded-lg">
+                        <div className="text-white text-center">
+                            <div className="text-2xl font-bold mb-1">{badge.value}</div>
+                            <div className="text-xs font-semibold">{badge.label}</div>
+                        </div>
+                    </div>
+                ))}
+            </div>
 
-            {/* Decorative Elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl" />
+            {/* Desktop Badges */}
+            {data.badges.map((badge, index) => {
+                const Icon = icons[badge.icon];
+                const positions = ['right', 'left', 'right'];
+                const topPositions = ['20%', '45%', '70%'];
+                const rightPositions = ['10%', '15%', '20%'];
 
-            {/* Floating Badges */}
-            <motion.div
-                initial={{ opacity: 0, x: -100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="absolute top-1/4 right-[10%] bg-white/10 backdrop-blur-sm p-4 rounded-lg"
-            >
-                <div className="text-white text-center">
-                    <div className="text-2xl mb-1">🌱</div>
-                    <div className="font-semibold">Экология</div>
-                </div>
-            </motion.div>
-
-            <motion.div
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
-                className="absolute top-1/2 right-[15%] bg-white/10 backdrop-blur-sm p-4 rounded-lg"
-            >
-                <div className="text-white text-center">
-                    <div className="text-2xl mb-1">💡</div>
-                    <div className="font-semibold">Инновации</div>
-                </div>
-            </motion.div>
-
-            <motion.div
-                initial={{ opacity: 0, x: -100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.9 }}
-                className="absolute bottom-1/4 right-[20%] bg-white/10 backdrop-blur-sm p-4 rounded-lg"
-            >
-                <div className="text-white text-center">
-                    <div className="text-2xl mb-1">🤝</div>
-                    <div className="font-semibold">Партнерство</div>
-                </div>
-            </motion.div>
+                return (
+                    <div
+                        key={badge.id}
+                        className={`hidden md:block absolute top-[${topPositions[index]}] right-[${rightPositions[index]}]`}
+                    >
+                        <Badge
+                            icon={Icon}
+                            label={badge.label}
+                            value={badge.value}
+                            description={badge.description}
+                            position={positions[index]}
+                            delay={0.5 + index * 0.2}
+                        />
+                    </div>
+                );
+            })}
         </section>
     );
 };

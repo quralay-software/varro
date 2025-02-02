@@ -15,16 +15,12 @@ const GoalsPage = () => {
     return (
         <Fragment>
             <Navbar hclass={'wpo-header-style-2'} />
-            <PageTitle 
-                pageTitle={'Стратегические цели'} 
-                pagesub={'Наше видение будущего'} 
-            />
             <GoalsHero />
             <StrategicDirections />
             <GoalsRoadmap />
             <SustainableDevelopment />
-            <GoalsPartners />
-            <GoalsCTA />
+            {/*<GoalsPartners />
+            <GoalsCTA />*/}
             <Footer />
             <Scrollbar />
         </Fragment>

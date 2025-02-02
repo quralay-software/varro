@@ -1,20 +1,27 @@
-import React, {Fragment} from 'react';
-import Navbar from '../../components/Navbar/Navbar';
-import PageTitle from '../../components/pagetitle/PageTitle'
-import Contactpage from '../../components/Contactpage/Contactpage'
-import Scrollbar from '../../components/scrollbar/scrollbar'
+import React from 'react';
+import Contactpage from '../../components/Contactpage/Contactpage';
+import ContactHero from '../../components/Contactpage/ContactHero';
 import Footer from '../../components/footer/Footer';
+import Navbar from "../../components/Navbar/Navbar";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-const ContactPage =() => {
-    return(
-        <Fragment>
-            <Navbar hclass={'wpo-header-style-2'}/>
-            <PageTitle pageTitle={'Свяжитесь с нами'} pagesub={'Contact'}/>
-            <Contactpage/>
-            <Footer/>
-            <Scrollbar/>
-        </Fragment>
-    )
+const ContactPage = () => {
+    return (
+        <>
+            <Navbar hclass={'wpo-header-style-2'} />
+            <ContactHero />
+            <Contactpage />
+            <Footer />
+        </>
+    );
 };
-export default ContactPage;
 
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ['common'])),
+        },
+    };
+}
+
+export default ContactPage;

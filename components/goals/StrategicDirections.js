@@ -1,107 +1,72 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'next-i18next';
+import { useInView } from 'react-intersection-observer';
+import { Settings2, Leaf, Factory, Lightbulb, Users } from 'lucide-react';
+import { strategicDirectionsData } from '../../data/strategicDirections';
 
-const directions = [
-    {
-        id: 1,
-        icon: '⚙️',
-        title: 'Оптимизация производственных процессов',
-        description: 'Повышение эффективности и автоматизация производства для достижения максимальных результатов.',
-        details: [
-            'Внедрение передовых технологий в добыче и переработке',
-            'Снижение операционных затрат за счет автоматизации',
-            'Увеличение коэффициента нефтеотдачи'
-        ],
-        color: 'from-blue-500/20 to-blue-600/20'
-    },
-    {
-        id: 2,
-        icon: '🌱',
-        title: 'Экологическая устойчивость',
-        description: 'Минимизация воздействия на окружающую среду и внедрение зеленых технологий.',
-        details: [
-            'Снижение выбросов парниковых газов',
-            'Уменьшение потребления воды и внедрение технологий очистки',
-            'Реализация программ по рекультивации земель'
-        ],
-        color: 'from-green-500/20 to-green-600/20'
-    },
-    {
-        id: 3,
-        icon: '🏗️',
-        title: 'Развитие инфраструктуры и логистики',
-        description: 'Модернизация существующей инфраструктуры и оптимизация логистических процессов.',
-        details: [
-            'Модернизация Боранкольского газоперерабатывающего завода',
-            'Улучшение транспортных цепочек поставок',
-            'Создание новых хранилищ и распределительных центров'
-        ],
-        color: 'from-yellow-500/20 to-yellow-600/20'
-    },
-    {
-        id: 4,
-        icon: '💡',
-        title: 'Инвестиции в технологии и инновации',
-        description: 'Внедрение передовых технологических решений для повышения эффективности производства.',
-        details: [
-            'Внедрение цифровых решений и IoT',
-            'Использование искусственного интеллекта для прогнозирования производства',
-            'Применение автоматизированных систем мониторинга'
-        ],
-        color: 'from-purple-500/20 to-purple-600/20'
-    },
-    {
-        id: 5,
-        icon: '👥',
-        title: 'Социальная ответственность и развитие персонала',
-        description: 'Создание благоприятных условий для сотрудников и поддержка местных сообществ.',
-        details: [
-            'Программы обучения и повышения квалификации сотрудников',
-            'Обеспечение безопасных условий труда',
-            'Развитие социальной инфраструктуры в регионах присутствия'
-        ],
-        color: 'from-red-500/20 to-red-600/20'
-    }
-];
+const iconComponents = {
+    1: Settings2,
+    2: Leaf,
+    3: Factory,
+    4: Lightbulb,
+    5: Users
+};
 
-const DirectionCard = ({ direction, isActive, onClick }) => {
+const DirectionCard = ({ direction, isActive, onClick, isInView }) => {
+    const IconComponent = iconComponents[direction.id];
+
     return (
         <motion.div
             layout
             onClick={onClick}
-            className={`bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer
+            className={`bg-white overflow-hidden cursor-pointer transition-all duration-500
                        ${isActive ? 'col-span-2 row-span-2' : 'col-span-1'}`}
-            whileHover={{ y: -5 }}
+            whileHover={isInView ? { y: -5, scale: 1.02 } : {}}
+            transition={{ duration: 0.3 }}
         >
-            <div className="p-6 h-full">
+            <div className="p-8 h-full relative">
                 <div className={`absolute inset-0 bg-gradient-to-br ${direction.color} opacity-10`} />
-                <div className="relative z-10">
-                    <div className="text-4xl mb-4">{direction.icon}</div>
-                    <h3 className="text-xl font-bold mb-3">{direction.title}</h3>
-                    <p className="text-gray-600 mb-4">{direction.description}</p>
-                    
+                <div className="relative p-8 z-10">
                     <motion.div
+                        className="text-primary mb-6"
                         initial={false}
-                        animate={{ height: isActive ? 'auto' : 0 }}
-                        className="overflow-hidden"
+                        animate={isActive ? { scale: 1.2 } : { scale: 1 }}
+                        transition={{ duration: 0.3 }}
                     >
-                        {isActive && (
-                            <ul className="space-y-3">
-                                {direction.details.map((detail, index) => (
-                                    <motion.li
-                                        key={index}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: index * 0.1 }}
-                                        className="flex items-start"
-                                    >
-                                        <span className="text-primary mr-2">•</span>
-                                        <span className="text-gray-600">{detail}</span>
-                                    </motion.li>
-                                ))}
-                            </ul>
-                        )}
+                        <IconComponent size={isActive ? 48 : 36} strokeWidth={1.5} />
                     </motion.div>
+
+                    <h3 className="text-2xl font-bold mb-4 text-gray-800">{direction.title}</h3>
+                    <p className="text-lg text-gray-600 leading-relaxed mb-6">{direction.description}</p>
+
+                    <AnimatePresence mode="wait">
+                        {isActive && (
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                <ul className="space-y-4">
+                                    {direction.details.map((detail, index) => (
+                                        <motion.li
+                                            key={index}
+                                            initial={{ opacity: 0, x: -20 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            transition={{ delay: index * 0.1 }}
+                                            className="flex items-start text-lg text-gray-600"
+                                        >
+                                            <div className="text-primary mr-3 mt-1.5">
+                                                <div className="h-2 w-2 bg-primary rounded-full" />
+                                            </div>
+                                            <span className="leading-relaxed">{detail}</span>
+                                        </motion.li>
+                                    ))}
+                                </ul>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </div>
             </div>
         </motion.div>
@@ -110,36 +75,81 @@ const DirectionCard = ({ direction, isActive, onClick }) => {
 
 const StrategicDirections = () => {
     const [activeDirection, setActiveDirection] = useState(null);
+    const { i18n } = useTranslation();
+    const currentLang = i18n.language || 'ru';
+    const content = strategicDirectionsData[currentLang];
+
+    const [ref, inView] = useInView({
+        threshold: 0.1,
+        triggerOnce: false
+    });
+
+    // Reset active direction when section is out of view
+    React.useEffect(() => {
+        if (!inView) {
+            setActiveDirection(null);
+        }
+    }, [inView]);
 
     return (
-        <section id="strategic-directions" className="section-padding">
-            <div className="container mx-auto">
+        <section id="strategic-directions" className="py-20 bg-gray-50 relative overflow-hidden">
+            {/* Background Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10" />
+            
+            {/* Decorative Elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl" />
+
+            <div className="container mx-auto px-4 relative" ref={ref}>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-12"
+                    className="text-center mb-16"
                 >
-                    <span className="text-primary">Стратегия развития</span>
-                    <h2 className="text-4xl font-bold mt-2">Ключевые направления</h2>
-                    <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-                        Наша стратегия основана на пяти ключевых направлениях, которые обеспечивают 
-                        устойчивое развитие компании и создают ценность для всех заинтересованных сторон.
+                    <span className="text-primary text-xl font-medium block mb-4">
+                        {content.sectionTitle}
+                    </span>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                        {content.mainTitle}
+                    </h2>
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        {content.description}
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {directions.map((direction) => (
-                        <DirectionCard
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    initial="hidden"
+                    animate={inView ? "visible" : "hidden"}
+                    variants={{
+                        visible: {
+                            transition: {
+                                staggerChildren: 0.1
+                            }
+                        }
+                    }}
+                >
+                    {content.directions.map((direction, index) => (
+                        <motion.div
                             key={direction.id}
-                            direction={direction}
-                            isActive={activeDirection === direction.id}
-                            onClick={() => setActiveDirection(
-                                activeDirection === direction.id ? null : direction.id
-                            )}
-                        />
+                            variants={{
+                                hidden: { opacity: 0, y: 20 },
+                                visible: { opacity: 1, y: 0 }
+                            }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <DirectionCard
+                                direction={direction}
+                                isActive={activeDirection === direction.id}
+                                onClick={() => setActiveDirection(
+                                    activeDirection === direction.id ? null : direction.id
+                                )}
+                                isInView={inView}
+                            />
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );
