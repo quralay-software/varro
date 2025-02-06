@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
@@ -27,38 +26,11 @@ const About4Hero = () => {
                         <h1 className="text-5xl font-bold font-sans mb-6">
                             {data.title}
                         </h1>
-                        <h2 className="text-3xl font-bold text-gray-700 mb-6">
-                            {data.subtitle}
-                        </h2>
+
                         <p className="text-xl text-gray-600 mb-8 max-w-2xl">
                             {data.description}
                         </p>
-                        <div className="grid grid-cols-3 gap-8">
-                            <div>
-                                <div className="text-3xl font-bold text-primary mb-2">
-                                    {data.stats.experience.value}
-                                </div>
-                                <div className="text-lg text-gray-600">
-                                    {data.stats.experience.label}
-                                </div>
-                            </div>
-                            <div>
-                                <div className="text-3xl font-bold text-primary mb-2">
-                                    {data.stats.production.value}
-                                </div>
-                                <div className="text-lg text-gray-600">
-                                    {data.stats.production.unit}
-                                </div>
-                            </div>
-                            <div>
-                                <div className="text-3xl font-bold text-primary mb-2">
-                                    {data.stats.employees.value}
-                                </div>
-                                <div className="text-lg text-gray-600">
-                                    {data.stats.employees.label}
-                                </div>
-                            </div>
-                        </div>
+
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}

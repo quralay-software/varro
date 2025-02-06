@@ -15,7 +15,7 @@ export const bgpzHistoryData = {
                 ]
             },
             {
-                year: '2024',
+                year: '2024 -2026',
                 title: 'II этап модернизации',
                 description: 'Начало масштабной программы по повышению эффективности производства.',
                 achievements: [
@@ -24,16 +24,6 @@ export const bgpzHistoryData = {
                     'Оптимизация энергопотребления'
                 ]
             },
-            {
-                year: '2025',
-                title: 'Технологическое развитие',
-                description: 'Внедрение инновационных технологий стабилизации конденсата.',
-                achievements: [
-                    'Новые системы стабилизации конденсата',
-                    'Повышение качества продукции',
-                    'Расширение производственных возможностей'
-                ]
-            }
         ],
         future_vision: {
             title: 'Видение будущего',
@@ -61,7 +51,7 @@ export const bgpzHistoryData = {
                 ]
             },
             {
-                year: '2024',
+                year: '2024 - 2026',
                 title: 'II кезең жаңғырту',
                 description: 'Өндіріс тиімділігін арттыру бойынша ауқымды бағдарламаның басталуы.',
                 achievements: [
@@ -70,16 +60,6 @@ export const bgpzHistoryData = {
                     'Энергия тұтынуды оңтайландыру'
                 ]
             },
-            {
-                year: '2025',
-                title: 'Технологиялық даму',
-                description: 'Конденсатты тұрақтандырудың инновациялық технологияларын енгізу.',
-                achievements: [
-                    'Конденсатты тұрақтандырудың жаңа жүйелері',
-                    'Өнім сапасын арттыру',
-                    'Өндірістік мүмкіндіктерді кеңейту'
-                ]
-            }
         ],
         future_vision: {
             title: 'Болашаққа көзқарас',
@@ -107,7 +87,7 @@ export const bgpzHistoryData = {
                 ]
             },
             {
-                year: '2024',
+                year: '2024 - 2026',
                 title: 'Phase II Modernization',
                 description: 'Start of a large-scale program to improve production efficiency.',
                 achievements: [
@@ -116,16 +96,6 @@ export const bgpzHistoryData = {
                     'Energy consumption optimization'
                 ]
             },
-            {
-                year: '2025',
-                title: 'Technological Development',
-                description: 'Implementation of innovative condensate stabilization technologies.',
-                achievements: [
-                    'New condensate stabilization systems',
-                    'Product quality improvement',
-                    'Expansion of production capabilities'
-                ]
-            }
         ],
         future_vision: {
             title: 'Vision for the Future',

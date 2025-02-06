@@ -127,18 +127,6 @@ const BgpzEnvironment = () => {
                         <MetricCard key={index} metric={metric} />
                     ))}
                 </div>
-
-                <div className="bg-white rounded-none p-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {data.initiatives.map((initiative, index) => (
-                            <InitiativeCard
-                                key={index}
-                                initiative={initiative}
-                                index={index}
-                            />
-                        ))}
-                    </div>
-                </div>
             </div>
         </section>
     );

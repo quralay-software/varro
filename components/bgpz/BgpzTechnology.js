@@ -20,16 +20,16 @@ const TechnologyCard = ({ tech }) => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-none overflow-hidden"
+            className="bg-gray-50 rounded-none overflow-hidden border border-gray-200"
         >
             <div className="p-8 h-full relative">
-                <div className={`absolute inset-0 bg-gradient-to-br ${tech.color}`} />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-blue-900/20" />
                 <div className="relative z-10">
-                    <div className="text-primary mb-6">
+                    <div className="text-gray-800 mb-6">
                         <IconComponent size={48} strokeWidth={1.5} />
                     </div>
-                    <h3 className="text-2xl font-bold font-sans mb-4">{tech.title}</h3>
-                    <p className="text-gray-600 text-lg mb-6">{tech.description}</p>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-4">{tech.title}</h3>
+                    <p className="text-gray-700 text-lg mb-6">{tech.description}</p>
 
                     <ul className="space-y-4 mb-8">
                         {tech.details.map((detail, idx) => (
@@ -40,8 +40,8 @@ const TechnologyCard = ({ tech }) => {
                                 transition={{ delay: idx * 0.1 }}
                                 className="flex items-start"
                             >
-                                <ChevronRight className="text-primary mr-3 h-5 w-5 mt-1 flex-shrink-0" />
-                                <span className="text-gray-600 text-lg">{detail}</span>
+                                <ChevronRight className="text-blue-900 mr-3 h-5 w-5 mt-1 flex-shrink-0" />
+                                <span className="text-gray-700 text-lg">{detail}</span>
                             </motion.li>
                         ))}
                     </ul>
@@ -52,7 +52,7 @@ const TechnologyCard = ({ tech }) => {
                                 <div className="text-2xl font-bold text-gray-800 mb-1">
                                     {stat.value}
                                 </div>
-                                <div className="text-gray-600 text-lg">
+                                <div className="text-gray-700 text-lg">
                                     {stat.label}
                                 </div>
                             </div>
@@ -70,7 +70,7 @@ const BgpzTechnology = () => {
     const data = bgpzTechnologyData[currentLang];
 
     return (
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-white">
             <div className="container mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -78,13 +78,13 @@ const BgpzTechnology = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <span className="text-primary text-xl mb-4 block">
+                    <span className="text-blue-900 text-xl mb-4 block">
                         {data.section_title}
                     </span>
-                    <h2 className="text-5xl font-bold font-sans mb-6">
+                    <h2 className="text-gray-800 text-5xl font-bold mb-6">
                         {data.main_title}
                     </h2>
-                    <p className="text-gray-600 text-xl max-w-3xl mx-auto">
+                    <p className="text-gray-700 text-xl max-w-3xl mx-auto">
                         {data.description}
                     </p>
                 </motion.div>

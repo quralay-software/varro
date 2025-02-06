@@ -6,6 +6,14 @@ export const hero3Data = {
         image: {
             src: '/images/img-5.JPG',
             alt: 'Varro Operating Group'
+        },
+        stats: {
+            years: '10+',
+            yearsLabel: 'Лет',
+            projects: '50+',
+            projectsLabel: 'Проектов',
+            clients: '30+',
+            clientsLabel: 'Клиентов'
         }
     },
     kk: {
@@ -15,6 +23,14 @@ export const hero3Data = {
         image: {
             src: '/images/img-5.JPG',
             alt: 'Varro Operating Group'
+        },
+        stats: {
+            years: '10+',
+            yearsLabel: 'Жыл',
+            projects: '50+',
+            projectsLabel: 'Жоба',
+            clients: '30+',
+            clientsLabel: 'Клиент'
         }
     },
     en: {
@@ -24,6 +40,14 @@ export const hero3Data = {
         image: {
             src: '/images/img-5.JPG',
             alt: 'Varro Operating Group'
+        },
+        stats: {
+            years: '10+',
+            yearsLabel: 'Years',
+            projects: '50+',
+            projectsLabel: 'Projects',
+            clients: '30+',
+            clientsLabel: 'Clients'
         }
     }
 };

@@ -19,7 +19,7 @@ export const contactData = {
                 },
                 email: {
                     title: 'Напишите нам',
-                    content: ['ReceptDep@btmg.kz']
+                    content: ['Varro@btmg.kz']
                 },
                 phone: {
                     title: 'Позвоните нам',
@@ -56,11 +56,11 @@ export const contactData = {
                 },
                 email: {
                     title: 'Бізге жазыңыз',
-                    content: ['info@varro.kz', 'support@varro.kz']
+                    content: ['Varro@btmg.kz']
                 },
                 phone: {
                     title: 'Бізге қоңырау шалыңыз',
-                    content: ['+7 7292 201 909', '+7 7292 201 910']
+                    content: ['+7 7292 201 909']
                 }
             },
             form: {
@@ -93,11 +93,11 @@ export const contactData = {
                 },
                 email: {
                     title: 'Email Us',
-                    content: ['info@varro.kz', 'support@varro.kz']
+                    content: ['Varro@btmg.kz']
                 },
                 phone: {
                     title: 'Call Us',
-                    content: ['+7 7292 201 909', '+7 7292 201 910']
+                    content: ['+7 7292 201 909']
                 }
             },
             form: {

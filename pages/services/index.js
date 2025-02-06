@@ -19,9 +19,6 @@ const ServicesPage = () => {
             <ServicesGrid />
             <ServicesBenefits />
             <ServicesProcess />
-{/*
-            <ServicesCases />
-*/}
             <ServicesContact />
             <Footer />
             <Scrollbar />

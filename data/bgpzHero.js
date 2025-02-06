@@ -12,15 +12,15 @@ export const bgpzHeroData = {
         stats: {
             capacity: {
                 value: '3.6',
-                unit: 'млрд м³/год'
+                label: 'млрд м3/год проектная мощность завода'
             },
             equipment: {
                 value: '95%',
-                label: 'готовность МО'
+                label: 'Монтаж оборудования'
             },
             construction: {
                 value: '73%',
-                label: 'готовность СМР'
+                label: 'Строительно-монтажные работы'
             }
         }
     },
@@ -37,7 +37,7 @@ export const bgpzHeroData = {
         stats: {
             capacity: {
                 value: '3.6',
-                unit: 'млрд м³/жыл'
+                label: 'млрд м³/жыл зауыттың жобалық қуаты'
             },
             equipment: {
                 value: '95%',
@@ -62,7 +62,7 @@ export const bgpzHeroData = {
         stats: {
             capacity: {
                 value: '3.6',
-                unit: 'billion m³/year'
+                label: 'billion m³/year plant capacity'
             },
             equipment: {
                 value: '95%',

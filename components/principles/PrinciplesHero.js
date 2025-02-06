@@ -11,14 +11,14 @@ const Badge = ({ icon: Icon, label, value, description, position, delay }) => {
             initial={{ opacity: 0, x: position === 'left' ? -100 : 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay }}
-            className="bg-white/10 backdrop-blur-sm p-4 md:p-6 lg:p-8 rounded-lg transform hover:scale-105 transition-transform duration-300"
+            className="bg-white/10 backdrop-blur-sm p-3 md:p-5 lg:p-6 rounded-lg transform hover:scale-105 transition-transform duration-300"
         >
             <div className="text-white text-center">
-                <Icon className="w-8 h-8 md:w-10 md:h-10 mx-auto mb-3 text-primary" strokeWidth={1.5} />
-                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 md:mb-2">
+                <Icon className="w-6 h-6 md:w-8 md:h-8 mx-auto mb-2 text-primary" strokeWidth={1.5} />
+                <div className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1">
                     {value}
                 </div>
-                <div className="text-sm md:text-base lg:text-lg xl:text-xl font-semibold">
+                <div className="text-xs md:text-sm lg:text-base font-semibold">
                     {label}
                 </div>
             </div>
@@ -88,12 +88,12 @@ const PrinciplesHero = () => {
             </div>
 
             {/* Mobile Badges */}
-            <div className="absolute md:hidden bottom-4 left-4 right-4 grid grid-cols-3 gap-2 bg-black/20 p-2 rounded-lg">
+            <div className="absolute md:hidden bottom-4 left-4 right-4 grid grid-cols-3 gap-6 bg-black/20 p-4 rounded-lg">
                 {data.badges.map((badge) => (
                     <div key={badge.id} className="bg-white/10 backdrop-blur-sm p-3 rounded-lg">
                         <div className="text-white text-center">
-                            <div className="text-2xl font-bold mb-1">{badge.value}</div>
-                            <div className="text-xs font-semibold">{badge.label}</div>
+                            <div className="text-xl font-bold mb-1">{badge.value}</div>
+                            <div className="text-[10px] font-semibold">{badge.label}</div>
                         </div>
                     </div>
                 ))}
@@ -104,12 +104,17 @@ const PrinciplesHero = () => {
                 const Icon = icons[badge.icon];
                 const positions = ['right', 'left', 'right'];
                 const topPositions = ['20%', '45%', '70%'];
-                const rightPositions = ['10%', '15%', '20%'];
+                const rightPositions = ['15%', '20%', '25%']; // Pushed more to the left
 
                 return (
                     <div
                         key={badge.id}
-                        className={`hidden md:block absolute top-[${topPositions[index]}] right-[${rightPositions[index]}]`}
+                        style={{
+                            position: 'absolute',
+                            top: topPositions[index],
+                            right: rightPositions[index]
+                        }}
+                        className="hidden md:block"
                     >
                         <Badge
                             icon={Icon}

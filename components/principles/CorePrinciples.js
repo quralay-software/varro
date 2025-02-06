@@ -3,38 +3,40 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 import { corePrinciplesData } from '../../data/corePrinciples';
 import {
-    Leaf, Lightbulb, TrendingUp, Shield, Handshake, Home,
-    ChevronDown, ChevronUp
+    Leaf,
+    TrendingUp,
+    Lightbulb,
+    Settings,
+    Cpu
 } from 'lucide-react';
 
 const icons = {
     leaf: Leaf,
-    lightbulb: Lightbulb,
     'trending-up': TrendingUp,
-    shield: Shield,
-    handshake: Handshake,
-    home: Home
+    lightbulb: Lightbulb,
+    settings: Settings,
+    cpu: Cpu
 };
 
 const colorVariants = {
-    green: 'from-emerald-500/20 to-emerald-600/20 hover:from-emerald-500/30 hover:to-emerald-600/30',
-    blue: 'from-blue-500/20 to-blue-600/20 hover:from-blue-500/30 hover:to-blue-600/30',
-    purple: 'from-purple-500/20 to-purple-600/20 hover:from-purple-500/30 hover:to-purple-600/30',
-    yellow: 'from-amber-500/20 to-amber-600/20 hover:from-amber-500/30 hover:to-amber-600/30',
-    red: 'from-rose-500/20 to-rose-600/20 hover:from-rose-500/30 hover:to-rose-600/30',
-    orange: 'from-orange-500/20 to-orange-600/20 hover:from-orange-500/30 hover:to-orange-600/30'
+    darkBlue: 'from-blue-900/10 to-blue-900/20 hover:from-blue-900/20 hover:to-blue-900/30'
 };
 
 const PrincipleCard = ({ principle, isActive, onClick }) => {
     const Icon = icons[principle.icon];
     const colorClass = colorVariants[principle.color];
 
+    // Split the description into bullet points when active
+    const bulletPoints = isActive
+        ? principle.description.split('. ').filter(point => point.trim().length > 0)
+        : [];
+
     return (
         <motion.div
             layout
             onClick={onClick}
-            className={`bg-white rounded-xl overflow-hidden cursor-pointer transition-shadow duration-300
-                       hover:shadow-lg border border-gray-100 relative
+            className={`bg-gray-50 rounded-xl overflow-hidden cursor-pointer transition-shadow duration-300
+                       hover:shadow-lg border border-gray-200 relative
                        ${isActive ? 'md:col-span-2 md:row-span-2' : ''}`}
             whileHover={{ y: -5 }}
             initial={false}
@@ -45,17 +47,21 @@ const PrincipleCard = ({ principle, isActive, onClick }) => {
                 <div className="relative z-10">
                     <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center gap-4">
-                            <div className={`p-3 rounded-xl bg-white/80 backdrop-blur-sm
-                                          shadow-sm border border-gray-100`}>
-                                <Icon className="w-6 h-6 text-gray-700" strokeWidth={1.5} />
+                            <div className={`p-3 rounded-xl bg-white/90 backdrop-blur-sm
+                                          shadow-sm border border-gray-200`}>
+                                <Icon className="w-6 h-6 text-gray-800" strokeWidth={1.5} />
                             </div>
-                            <h3 className="text-xl font-bold font-sans">{principle.title}</h3>
+                            <h3 className="text-xl font-bold text-gray-800">
+                                {principle.title}
+                            </h3>
                         </div>
                     </div>
 
-                    <p className="text-gray-600 mb-4 leading-relaxed">
-                        {principle.description}
-                    </p>
+                    {!isActive && (
+                        <p className="text-gray-700 text-base leading-relaxed">
+                            {principle.description}
+                        </p>
+                    )}
 
                     <motion.div
                         initial={false}
@@ -65,9 +71,9 @@ const PrincipleCard = ({ principle, isActive, onClick }) => {
                         }}
                         className="overflow-hidden"
                     >
-                        {isActive && (
-                            <ul className="space-y-4 pt-4 border-t">
-                                {principle.details.map((detail, index) => (
+                        {isActive && bulletPoints.length > 0 && (
+                            <ul className="space-y-4 mt-4">
+                                {bulletPoints.map((point, index) => (
                                     <motion.li
                                         key={index}
                                         initial={{ opacity: 0, x: -20 }}
@@ -75,9 +81,9 @@ const PrincipleCard = ({ principle, isActive, onClick }) => {
                                         transition={{ delay: index * 0.1 }}
                                         className="flex items-start gap-3"
                                     >
-                                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
+                                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
                                         <span className="text-gray-600 leading-relaxed">
-                                            {detail}
+                                            {point.trim()}
                                         </span>
                                     </motion.li>
                                 ))}

@@ -8,73 +8,36 @@ export const corePrinciplesData = {
                 id: 1,
                 icon: 'leaf',
                 title: 'Экологическая ответственность',
-                description: 'Забота об окружающей среде и устойчивое развитие.',
-                details: [
-                    'Минимизация выбросов, оптимизация водопользования',
-                    'Рекультивация земель и сокращение углеродного следа',
-                    'Внедрение экологически чистых технологий'
-                ],
-                color: 'green'
+                description: 'Реализуем меры по минимизации выбросов, сокращению использования воды и смягчению воздействия на окружающую среду',
+                color: 'darkBlue'
             },
             {
                 id: 2,
-                icon: 'lightbulb',
-                title: 'Инновации и технологическое развитие',
-                description: 'Постоянное совершенствование и внедрение новых технологий.',
-                details: [
-                    'Внедрение передовых технологий добычи и переработки',
-                    'Автоматизация процессов и цифровизация управления',
-                    'Развитие инновационной инфраструктуры'
-                ],
-                color: 'blue'
+                icon: 'trending-up',
+                title: 'Устойчивое развитие',
+                description: 'Интегрируем в нашу бизнес-стратегию стремимся внести позитивный вклад как в отрасль, так и в сообщества, в которых мы работаем',
+                color: 'darkBlue'
             },
             {
                 id: 3,
-                icon: 'trending-up',
-                title: 'Устойчивое развитие',
-                description: 'Баланс экономических и социальных аспектов.',
-                details: [
-                    'Баланс между экономической эффективностью и социальными обязательствами',
-                    'Внедрение долгосрочных стратегий роста и инвестиций',
-                    'Развитие человеческого капитала'
-                ],
-                color: 'purple'
+                icon: 'lightbulb',
+                title: 'Инновации',
+                description: 'Постоянное совершенствование и операционное совершенство. Повышение коэффициента нефтеотдачи текущих запасов. Увеличение ресурсной базы',
+                color: 'darkBlue'
             },
             {
                 id: 4,
-                icon: 'shield',
-                title: 'Охрана труда и безопасность',
-                description: 'Приоритет безопасности и здоровья сотрудников.',
-                details: [
-                    'Соблюдение строгих стандартов HSE',
-                    'Регулярное обучение сотрудников и аудит рабочих процессов',
-                    'Модернизация систем безопасности'
-                ],
-                color: 'yellow'
+                icon: 'settings',
+                title: 'Оптимизация производственных процессов',
+                description: 'Стремимся повысить нефтеотдачу ресурсов и оставаться в авангарде технологических достижений в нефтегазовом секторе',
+                color: 'darkBlue'
             },
             {
                 id: 5,
-                icon: 'handshake',
-                title: 'Прозрачность и этика',
-                description: 'Честное ведение бизнеса и корпоративное управление.',
-                details: [
-                    'Соблюдение международных норм корпоративного управления',
-                    'Честность в ведении бизнеса и антикоррупционная политика',
-                    'Прозрачная отчетность и коммуникация'
-                ],
-                color: 'red'
-            },
-            {
-                id: 6,
-                icon: 'home',
-                title: 'Взаимодействие с сообществом',
-                description: 'Поддержка и развитие местных сообществ.',
-                details: [
-                    'Поддержка местных жителей и инфраструктуры',
-                    'Инвестирование в образование и благотворительные проекты',
-                    'Создание рабочих мест и развитие региона'
-                ],
-                color: 'orange'
+                icon: 'cpu',
+                title: 'Передовые технологии',
+                description: 'Последовательно выявляем и разрабатываем высокопотенциальные запасы нефти и газа, способствуя росту нашей добычи и повышению акционерной стоимости. Внедрили эффективное разделение, очистку и распределение природного газа и его побочных продуктов',
+                color: 'darkBlue'
             }
         ]
     },
@@ -87,73 +50,36 @@ export const corePrinciplesData = {
                 id: 1,
                 icon: 'leaf',
                 title: 'Экологиялық жауапкершілік',
-                description: 'Қоршаған ортаны қорғау және тұрақты даму.',
-                details: [
-                    'Шығарындыларды азайту, су пайдалануды оңтайландыру',
-                    'Жерді қалпына келтіру және көміртегі ізін азайту',
-                    'Экологиялық таза технологияларды енгізу'
-                ],
-                color: 'green'
+                description: 'Шығарындыларды азайту, су пайдалануды қысқарту және қоршаған ортаға әсерді жұмсарту бойынша шараларды жүзеге асырамыз',
+                color: 'darkBlue'
             },
             {
                 id: 2,
-                icon: 'lightbulb',
-                title: 'Инновациялар және технологиялық даму',
-                description: 'Үздіксіз жетілдіру және жаңа технологияларды енгізу.',
-                details: [
-                    'Өндіру және өңдеудің озық технологияларын енгізу',
-                    'Процестерді автоматтандыру және басқаруды цифрландыру',
-                    'Инновациялық инфрақұрылымды дамыту'
-                ],
-                color: 'blue'
+                icon: 'trending-up',
+                title: 'Тұрақты даму',
+                description: 'Біздің бизнес-стратегиямызға интеграциялаймыз және салаға да, біз жұмыс істейтін қоғамдастықтарға да оң үлес қосуға тырысамыз',
+                color: 'darkBlue'
             },
             {
                 id: 3,
-                icon: 'trending-up',
-                title: 'Тұрақты даму',
-                description: 'Экономикалық және әлеуметтік аспектілердің тепе-теңдігі.',
-                details: [
-                    'Экономикалық тиімділік пен әлеуметтік міндеттемелер арасындағы тепе-теңдік',
-                    'Ұзақ мерзімді өсу және инвестиция стратегияларын енгізу',
-                    'Адами капиталды дамыту'
-                ],
-                color: 'purple'
+                icon: 'lightbulb',
+                title: 'Инновациялар',
+                description: 'Үздіксіз жетілдіру және операциялық үздіктік. Ағымдағы қорлардың мұнай беру коэффициентін арттыру. Ресурстық базаны ұлғайту',
+                color: 'darkBlue'
             },
             {
                 id: 4,
-                icon: 'shield',
-                title: 'Еңбекті қорғау және қауіпсіздік',
-                description: 'Қызметкерлердің қауіпсіздігі мен денсаулығының басымдығы.',
-                details: [
-                    'HSE қатаң стандарттарын сақтау',
-                    'Қызметкерлерді тұрақты оқыту және жұмыс процестерін аудиттеу',
-                    'Қауіпсіздік жүйелерін жаңғырту'
-                ],
-                color: 'yellow'
+                icon: 'settings',
+                title: 'Өндірістік процестерді оңтайландыру',
+                description: 'Ресурстардың мұнай беруін арттыруға және мұнай-газ секторындағы технологиялық жетістіктердің алдыңғы қатарында қалуға тырысамыз',
+                color: 'darkBlue'
             },
             {
                 id: 5,
-                icon: 'handshake',
-                title: 'Ашықтық және этика',
-                description: 'Адал бизнес және корпоративтік басқару.',
-                details: [
-                    'Корпоративтік басқарудың халықаралық нормаларын сақтау',
-                    'Бизнесті адал жүргізу және сыбайлас жемқорлыққа қарсы саясат',
-                    'Ашық есептілік және коммуникация'
-                ],
-                color: 'red'
-            },
-            {
-                id: 6,
-                icon: 'home',
-                title: 'Қоғаммен өзара әрекеттесу',
-                description: 'Жергілікті қоғамдастықтарды қолдау және дамыту.',
-                details: [
-                    'Жергілікті тұрғындар мен инфрақұрылымды қолдау',
-                    'Білім беру және қайырымдылық жобаларына инвестиция салу',
-                    'Жұмыс орындарын құру және аймақты дамыту'
-                ],
-                color: 'orange'
+                icon: 'cpu',
+                title: 'Озық технологиялар',
+                description: 'Біздің өндірісіміздің өсуіне және акционерлік құнның артуына ықпал ете отырып, мұнай мен газдың жоғары әлеуетті қорларын дәйекті түрде анықтап, игереміз. Табиғи газды және оның жанама өнімдерін тиімді бөлу, тазарту және тарату енгізілді',
+                color: 'darkBlue'
             }
         ]
     },
@@ -166,73 +92,36 @@ export const corePrinciplesData = {
                 id: 1,
                 icon: 'leaf',
                 title: 'Environmental Responsibility',
-                description: 'Environmental care and sustainable development.',
-                details: [
-                    'Minimizing emissions, optimizing water usage',
-                    'Land reclamation and carbon footprint reduction',
-                    'Implementation of environmentally friendly technologies'
-                ],
-                color: 'green'
+                description: 'We implement measures to minimize emissions, reduce water usage, and mitigate environmental impact',
+                color: 'darkBlue'
             },
             {
                 id: 2,
-                icon: 'lightbulb',
-                title: 'Innovation and Technological Development',
-                description: 'Continuous improvement and implementation of new technologies.',
-                details: [
-                    'Implementation of advanced extraction and processing technologies',
-                    'Process automation and management digitalization',
-                    'Development of innovative infrastructure'
-                ],
-                color: 'blue'
+                icon: 'trending-up',
+                title: 'Sustainable Development',
+                description: 'We integrate into our business strategy and strive to make a positive contribution to both the industry and the communities in which we operate',
+                color: 'darkBlue'
             },
             {
                 id: 3,
-                icon: 'trending-up',
-                title: 'Sustainable Development',
-                description: 'Balance of economic and social aspects.',
-                details: [
-                    'Balance between economic efficiency and social obligations',
-                    'Implementation of long-term growth and investment strategies',
-                    'Human capital development'
-                ],
-                color: 'purple'
+                icon: 'lightbulb',
+                title: 'Innovation',
+                description: 'Continuous improvement and operational excellence. Increasing the recovery factor of current reserves. Resource base expansion',
+                color: 'darkBlue'
             },
             {
                 id: 4,
-                icon: 'shield',
-                title: 'Occupational Safety and Health',
-                description: 'Priority of employee safety and health.',
-                details: [
-                    'Compliance with strict HSE standards',
-                    'Regular employee training and work process audits',
-                    'Modernization of safety systems'
-                ],
-                color: 'yellow'
+                icon: 'settings',
+                title: 'Production Process Optimization',
+                description: 'We strive to increase resource recovery and stay at the forefront of technological achievements in the oil and gas sector',
+                color: 'darkBlue'
             },
             {
                 id: 5,
-                icon: 'handshake',
-                title: 'Transparency and Ethics',
-                description: 'Honest business conduct and corporate governance.',
-                details: [
-                    'Compliance with international corporate governance standards',
-                    'Business integrity and anti-corruption policy',
-                    'Transparent reporting and communication'
-                ],
-                color: 'red'
-            },
-            {
-                id: 6,
-                icon: 'home',
-                title: 'Community Engagement',
-                description: 'Support and development of local communities.',
-                details: [
-                    'Support for local residents and infrastructure',
-                    'Investment in education and charitable projects',
-                    'Job creation and regional development'
-                ],
-                color: 'orange'
+                icon: 'cpu',
+                title: 'Advanced Technologies',
+                description: 'We consistently identify and develop high-potential oil and gas reserves, contributing to our production growth and increasing shareholder value. We have implemented efficient separation, purification, and distribution of natural gas and its by-products',
+                color: 'darkBlue'
             }
         ]
     }

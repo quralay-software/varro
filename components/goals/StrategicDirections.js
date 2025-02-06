@@ -21,13 +21,13 @@ const DirectionCard = ({ direction, isActive, onClick, isInView }) => {
             layout
             onClick={onClick}
             className={`bg-white overflow-hidden cursor-pointer transition-all duration-500
-                       ${isActive ? 'col-span-2 row-span-2' : 'col-span-1'}`}
+                       ${isActive ? 'col-span-2 row-span-2' : 'col-span-1 h-[400px]'}`}
             whileHover={isInView ? { y: -5, scale: 1.02 } : {}}
             transition={{ duration: 0.3 }}
         >
-            <div className="p-8 h-full relative">
+            <div className={`p-8 h-full relative flex flex-col ${isActive ? 'p-16' : 'justify-between'}`}>
                 <div className={`absolute inset-0 bg-gradient-to-br ${direction.color} opacity-10`} />
-                <div className="relative p-8 z-10">
+                <div className="relative z-10 flex flex-col h-full">
                     <motion.div
                         className="text-primary mb-6"
                         initial={false}
@@ -37,8 +37,10 @@ const DirectionCard = ({ direction, isActive, onClick, isInView }) => {
                         <IconComponent size={isActive ? 48 : 36} strokeWidth={1.5} />
                     </motion.div>
 
-                    <h3 className="text-2xl font-bold mb-4 text-gray-800">{direction.title}</h3>
-                    <p className="text-lg text-gray-600 leading-relaxed mb-6">{direction.description}</p>
+                    <div className={`${isActive ? '' : 'flex-grow'}`}>
+                        <h3 className="text-2xl font-bold mb-4 text-gray-800">{direction.title}</h3>
+                        <p className="text-lg text-gray-600 leading-relaxed mb-6 line-clamp-3">{direction.description}</p>
+                    </div>
 
                     <AnimatePresence mode="wait">
                         {isActive && (
@@ -47,6 +49,7 @@ const DirectionCard = ({ direction, isActive, onClick, isInView }) => {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.3 }}
+                                className="mt-auto"
                             >
                                 <ul className="space-y-4">
                                     {direction.details.map((detail, index) => (
@@ -95,7 +98,7 @@ const StrategicDirections = () => {
         <section id="strategic-directions" className="py-20 bg-gray-50 relative overflow-hidden">
             {/* Background Gradient */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10" />
-            
+
             {/* Decorative Elements */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl" />

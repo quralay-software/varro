@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import MobileMenu from '../MobileMenu/MobileMenu'
@@ -12,9 +12,9 @@ const NavDropdown = ({ title, items, isOpen, onToggle }) => {
     const [isHovered, setIsHovered] = useState(false);
     const router = useRouter();
     const isActiveDropdown = items.some(item => item.link === router.pathname);
-    
+
     return (
-        <div 
+        <div
             className="relative"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -47,7 +47,7 @@ const NavDropdown = ({ title, items, isOpen, onToggle }) => {
                         transition={{ duration: 0.2 }}
                         className="absolute left-0 mt-1 w-56 bg-white rounded-lg shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none z-50 overflow-hidden"
                     >
-                        <motion.div 
+                        <motion.div
                             className="py-1"
                             initial="hidden"
                             animate="visible"
@@ -73,8 +73,8 @@ const NavDropdown = ({ title, items, isOpen, onToggle }) => {
                                         <Link
                                             href={item.link}
                                             className={`block px-4 py-2 text-base hover:bg-gray-50 transition-colors duration-200
-                                                ${isActive 
-                                                    ? 'text-primary font-medium bg-gray-50' 
+                                                ${isActive
+                                                    ? 'text-primary font-medium bg-gray-50'
                                                     : 'text-gray-700 hover:text-gray-900'
                                                 }`}
                                         >
@@ -94,19 +94,24 @@ const NavDropdown = ({ title, items, isOpen, onToggle }) => {
 const Header = (props) => {
     const [openDropdown, setOpenDropdown] = useState(null);
     const router = useRouter();
-    
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 0);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     const ClickHandler = () => {
         window.scrollTo(10, 0);
     }
-    
+
     const { t } = useTranslation('common');
 
     const navItems = {
-        company: [
-            { text: t('nav.about'), link: '/about' },
-            { text: t('nav.activities'), link: '/activities' },
-            { text: t('nav.services'), link: '/services' }
-        ],
         strategic: [
             { text: t('nav.goals'), link: '/goals' },
             { text: t('nav.principles'), link: '/principles' }
@@ -118,23 +123,41 @@ const Header = (props) => {
     };
 
     return (
-        <header id="header" className={`w-full ${props.topbarClass}`}>
-            <div className={`wpo-site-header ${props.hclass}`}>
-                <nav className="px-4 py-3">
-                    <div className="container mx-auto">
+        <motion.header
+            id="header"
+            className={`w-full fixed top-0 left-0 right-0 z-50 ${props.topbarClass}`}
+            initial={{ y: 0 }}
+            animate={{
+                y: 0,
+                backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.9)' : 'rgba(255, 255, 255, 1)',
+                boxShadow: isScrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.1)' : 'none'
+            }}
+            transition={{ duration: 0.3 }}
+        >
+            <div className=''>
+                <motion.nav
+                    className="px-4 py-3 bg-white"
+                    animate={{
+                        height: isScrolled ? 'auto' : 'auto',
+                        paddingTop: isScrolled ? '0.5rem' : '0.75rem',
+                        paddingBottom: isScrolled ? '0.5rem' : '0.75rem'
+                    }}
+                    transition={{ duration: 0.3 }}
+                >
+                    <div className="container mx-auto w-full">
                         <div className="flex items-center justify-between">
                             <div className="lg:hidden">
                                 <div className="mobail-menu">
                                     <MobileMenu />
                                 </div>
                             </div>
-                            <div className="flex-shrink-0">
+                            {/* <div className="flex-shrink-0">
                                 <div className="navbar-header">
-                                    <Link 
+                                    <Link
                                         className={`text-3xl font-bold transition-colors duration-200 ${router.pathname === '/' ? 'text-primary' : 'hover:text-primary'}`}
                                         href="/"
                                     >
-                                        <motion.h1 
+                                        <motion.h1
                                             whileHover={{ scale: 1.05 }}
                                             style={{ fontFamily: 'Arial' }}
                                         >
@@ -142,13 +165,13 @@ const Header = (props) => {
                                         </motion.h1>
                                     </Link>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="hidden lg:block">
                                 <div className="flex items-center">
                                     <ul className="flex items-center space-x-8">
                                         <li>
-                                            <Link 
-                                                onClick={ClickHandler} 
+                                            <Link
+                                                onClick={ClickHandler}
                                                 className={`font-arial text-lg transition-colors duration-200 py-2 px-3
                                                     ${router.pathname === '/' ? 'text-primary font-medium' : 'text-gray-700 hover:text-gray-900'}`}
                                                 href="/"
@@ -156,13 +179,25 @@ const Header = (props) => {
                                                 {t('nav.home')}
                                             </Link>
                                         </li>
-                                        <li className="flex items-center">
-                                            <NavDropdown
-                                                title={t('nav.company')}
-                                                items={navItems.company}
-                                                isOpen={openDropdown === 'company'}
-                                                onToggle={() => handleDropdownToggle('company')}
-                                            />
+                                        <li>
+                                            <Link
+                                                onClick={ClickHandler}
+                                                className={`font-arial text-lg transition-colors duration-200 py-2 px-3
+                                                    ${router.pathname === '/about' ? 'text-primary font-medium' : 'text-gray-700 hover:text-gray-900'}`}
+                                                href="/about"
+                                            >
+                                                {t('nav.about')}
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                onClick={ClickHandler}
+                                                className={`font-arial text-lg transition-colors duration-200 py-2 px-3
+                                                    ${router.pathname === '/activities' ? 'text-primary font-medium' : 'text-gray-700 hover:text-gray-900'}`}
+                                                href="/activities"
+                                            >
+                                                {t('nav.activities')}
+                                            </Link>
                                         </li>
                                         <li className="flex items-center">
                                             <NavDropdown
@@ -173,8 +208,8 @@ const Header = (props) => {
                                             />
                                         </li>
                                         <li>
-                                            <Link 
-                                                onClick={ClickHandler} 
+                                            <Link
+                                                onClick={ClickHandler}
                                                 className={`font-arial text-lg transition-colors duration-200 py-2 px-3
                                                     ${router.pathname === '/bgpz' ? 'text-primary font-medium' : 'text-gray-700 hover:text-gray-900'}`}
                                                 href="/bgpz"
@@ -183,8 +218,8 @@ const Header = (props) => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link 
-                                                onClick={ClickHandler} 
+                                            <Link
+                                                onClick={ClickHandler}
                                                 className={`font-arial text-lg transition-colors duration-200 py-2 px-3
                                                     ${router.pathname === '/contact' ? 'text-primary font-medium' : 'text-gray-700 hover:text-gray-900'}`}
                                                 href="/contact"
@@ -200,9 +235,9 @@ const Header = (props) => {
                             </div>
                         </div>
                     </div>
-                </nav>
+                </motion.nav>
             </div>
-        </header>
+        </motion.header>
     );
 };
 

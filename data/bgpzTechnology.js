@@ -20,7 +20,7 @@ export const bgpzTechnologyData = {
                     },
                     capacity: {
                         value: '3.6',
-                        label: 'млрд м³/год'
+                        label: 'млрд м3/год проектная мощность завода'
                     }
                 },
                 color: 'from-blue-500/20 to-blue-600/20'
@@ -30,8 +30,8 @@ export const bgpzTechnologyData = {
                 title: 'Газофракционирующая установка',
                 description: 'Комплексная система разделения углеводородных фракций.',
                 details: [
-                    '95% готовность по оборудованию (МО)',
-                    '73% строительных работ (СМР)',
+                    'Монтаж оборудования',
+                    'Строительно-монтажные работы',
                     'Автоматизированное управление процессами'
                 ],
                 stats: {
@@ -110,8 +110,8 @@ export const bgpzTechnologyData = {
                         label: 'тиімділік'
                     },
                     capacity: {
-                        value: '3.6',
-                        label: 'млрд м³/жыл'
+                        value: '3.6 млрд м³/жыл',
+                        label: 'проектная мощность завода'
                     }
                 },
                 color: 'from-blue-500/20 to-blue-600/20'
@@ -121,8 +121,8 @@ export const bgpzTechnologyData = {
                 title: 'Газ фракциялау қондырғысы',
                 description: 'Көмірсутек фракцияларын бөлудің кешенді жүйесі.',
                 details: [
-                    '95% жабдық дайындығы (МЖ)',
-                    '73% құрылыс жұмыстары (ҚМЖ)',
+                    'Жабдық дайындығы (МЖ)',
+                    'Құрылыс жұмыстары (ҚМЖ)',
                     'Процестерді автоматтандырылған басқару'
                 ],
                 stats: {
@@ -202,7 +202,7 @@ export const bgpzTechnologyData = {
                     },
                     capacity: {
                         value: '3.6',
-                        label: 'billion m³/year'
+                        label: 'billion m³/year project capacity'
                     }
                 },
                 color: 'from-blue-500/20 to-blue-600/20'
@@ -212,8 +212,8 @@ export const bgpzTechnologyData = {
                 title: 'Gas Fractionation Unit',
                 description: 'Comprehensive hydrocarbon fraction separation system.',
                 details: [
-                    '95% equipment readiness',
-                    '73% construction works',
+                    'Equipment readiness',
+                    'Construction works',
                     'Automated process control'
                 ],
                 stats: {

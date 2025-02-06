@@ -75,20 +75,7 @@ export const bgpzEnvironmentData = {
         main_title: 'Экологиялық жауапкершілік',
         description: 'Біз қоршаған ортаға әсерді азайтуға тырысамыз және озық экологиялық тәжірибелерді енгіземіз',
         metrics: [
-            {
-                title: 'CO₂ шығарындыларын азайту',
-                current: 75,
-                target: 100,
-                reduction: true,
-                color: 'bg-green-500',
-                icon: 'Leaf',
-                description: 'Жаңа өңдеу технологияларын енгізу CO₂ шығарындыларын айтарлықтай азайтуға мүмкіндік берді.',
-                stats: {
-                    current: '-25%',
-                    target: '-40%',
-                    timeline: '2025'
-                }
-            },
+
             {
                 title: 'Су үнемдеу',
                 current: 80,

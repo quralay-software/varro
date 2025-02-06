@@ -71,7 +71,7 @@ const ServiceSection = (props) => {
     }
 
     return (
-      <section className="Arkitek-service-section-s3 section-padding" style={{ marginTop: "5rem", marginBottom: "5rem"}}>
+      <section className="Arkitek-service-section-s3 section-padding">
           <div className="container-fluid">
               <div className="service-wrap">
                   <div className="service-title-left">

@@ -18,7 +18,7 @@ const ActivitiesOverview = () => {
                         transition={{ duration: 0.8 }}
                         className="space-y-6"
                     >
-                        <div className="wpo-section-title text-start">
+                        <div className="text-start space-y-8 flex flex-col">
                             <span className="text-primary">{content.sectionTitle}</span>
                             <h2 className="text-4xl font-bold mb-4">
                                 {content.companyName}

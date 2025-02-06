@@ -14,7 +14,7 @@ export const servicesContactData = {
             },
             email: {
                 title: 'Email',
-                value: 'ReceptDep@btmg.kz'
+                value: 'Varro@btmg.kz'
             }
         },
         form: {
@@ -69,7 +69,7 @@ export const servicesContactData = {
             },
             email: {
                 title: 'Email',
-                value: 'ReceptDep@btmg.kz'
+                value: 'Varro@btmg.kz'
             }
         },
         form: {
@@ -124,7 +124,7 @@ export const servicesContactData = {
             },
             email: {
                 title: 'Email',
-                value: 'ReceptDep@btmg.kz'
+                value: 'Varro@btmg.kz'
             }
         },
         form: {

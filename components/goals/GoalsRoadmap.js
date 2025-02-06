@@ -49,7 +49,29 @@ const GoalsRoadmap = () => {
 
                 <div ref={containerRef} className="relative">
                     {/* Timeline Line */}
-                    <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 transform sm:-translate-x-1/2 w-0.5 bg-gradient-to-b from-primary/30 via-primary to-primary/30" />
+                    <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 transform sm:-translate-x-1/2">
+                        {/* Main vertical line */}
+                        <div className="absolute inset-0 w-[1px] bg-primary/50" />
+
+                        {/* Timeline dots with connecting lines */}
+                        {content.milestones.map((_, index) => (
+                            <div key={index} className="absolute -left-[3px]" style={{ top: `${(index * 100) / (content.milestones.length - 1)}%` }}>
+                                {/* Outer ring */}
+                                <div className="relative w-[7px] h-[7px] rounded-full border border-primary bg-white" />
+                                {/* Inner dot */}
+                                <div className="absolute top-[2px] left-[2px] w-[3px] h-[3px] bg-primary rounded-full" />
+                                {/* Connecting line */}
+                                {index < content.milestones.length - 1 && (
+                                    <div className="absolute top-[3px] left-[3px] w-[1px] bg-primary/50"
+                                         style={{
+                                             height: `${100 / (content.milestones.length - 1)}%`,
+                                             transform: 'translateX(-50%)'
+                                         }}
+                                    />
+                                )}
+                            </div>
+                        ))}
+                    </div>
 
                     {/* Timeline Content */}
                     {content.milestones.map((milestone, index) => {
@@ -115,9 +137,7 @@ const GoalsRoadmap = () => {
                                         }
                                     }}
                                 >
-                                    <div className="w-8 h-8 sm:w-6 sm:h-6 bg-primary rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-                                    <div className="w-14 h-14 sm:w-12 sm:h-12 bg-primary/20 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-ping" />
-                                </motion.div>
+                                             </motion.div>
 
                                 {/* Empty Space for Layout - Only visible on desktop */}
                                 <div className="hidden sm:block sm:w-1/2 sm:px-8" />

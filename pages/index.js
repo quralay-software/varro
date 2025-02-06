@@ -16,12 +16,12 @@ const HomePage = () => {
         <Fragment>
           <Navbar hclass={'wpo-header-style-3'} topbarNone={'topbar-none'} />
           <Hero3 />
-          <About3 />
-          <FunFact />
+          {/* <About3 /> */}
+          {/* <FunFact /> */}
           <ServiceSection />
-          <ProjectSectionS2 />
-          <Testimonial3 />
-          <CtaSection />
+          {/* <ProjectSectionS2 /> */}
+          {/* <Testimonial3 /> */}
+          {/* <CtaSection /> */}
           <Footer/>
           <Scrollbar />
         </Fragment>

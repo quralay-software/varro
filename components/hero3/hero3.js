@@ -1,5 +1,4 @@
 import React from "react";
-import Link from 'next/link';
 import { motion } from "framer-motion";
 import { useTranslation } from 'next-i18next';
 import { hero3Data } from '../../data/hero3';
@@ -79,35 +78,26 @@ const Hero3 = () => {
                         >
                             {data.title}
                         </motion.h2>
-                        <motion.div variants={itemVariants}>
-                            <Link 
-                                href="/about" 
-                                className="inline-block bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-none border-none
-                                          transition-all duration-300 transform hover:scale-105"
-                            >
-                                {data.button}
-                            </Link>
-                        </motion.div>
                     </motion.div>
                 </div>
                 {/* Mobile Stats */}
                 <div className="absolute bottom-4 left-4 right-4 grid grid-cols-3 gap-2 bg-black/20 p-2 rounded-lg">
                     <div className="bg-white/10 backdrop-blur-sm p-3 rounded-lg">
                         <div className="text-white text-center">
-                            <div className="text-2xl font-bold mb-1">10+</div>
-                            <div className="text-xs font-semibold">Years Experience</div>
+                            <div className="text-2xl font-bold mb-1">{data.stats.years}</div>
+                            <div className="text-xs font-semibold">{data.stats.yearsLabel}</div>
                         </div>
                     </div>
                     <div className="bg-white/10 backdrop-blur-sm p-3 rounded-lg">
                         <div className="text-white text-center">
-                            <div className="text-2xl font-bold mb-1">50+</div>
-                            <div className="text-xs font-semibold">Projects</div>
+                            <div className="text-2xl font-bold mb-1">{data.stats.projects}</div>
+                            <div className="text-xs font-semibold">{data.stats.projectsLabel}</div>
                         </div>
                     </div>
                     <div className="bg-white/10 backdrop-blur-sm p-3 rounded-lg">
                         <div className="text-white text-center">
-                            <div className="text-2xl font-bold mb-1">30+</div>
-                            <div className="text-xs font-semibold">Clients</div>
+                            <div className="text-2xl font-bold mb-1">{data.stats.clients}</div>
+                            <div className="text-xs font-semibold">{data.stats.clientsLabel}</div>
                         </div>
                     </div>
                 </div>
@@ -146,11 +136,6 @@ const Hero3 = () => {
                                         >
                                             {data.title}
                                         </motion.h2>
-                                        <motion.div variants={itemVariants}>
-                                            <Link href="/about" className="theme-btn">
-                                                {data.button}
-                                            </Link>
-                                        </motion.div>
                                     </motion.div>
                                 </div>
                             </div>

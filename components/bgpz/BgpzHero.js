@@ -57,41 +57,41 @@ const BgpzHero = () => {
                 </div>
             </div>
 
-            {/* Key Statistics - Responsive Layout */}
-            <div className="absolute md:hidden bottom-4 left-4 right-4 grid grid-cols-3 gap-2 bg-black/20 p-2 rounded-lg">
-                <div className="bg-white/10 backdrop-blur-sm p-3 rounded-lg">
+            {/* Mobile and Tablet Statistics */}
+            <div className="absolute lg:hidden bottom-4 left-4 right-4 grid grid-cols-3 gap-2 bg-black/20 p-2 rounded-lg">
+                <div className="bg-white/10 backdrop-blur-sm p-3 rounded-lg w-full h-24 md:h-32 flex items-center justify-center">
                     <div className="text-white text-center">
-                        <div className="text-2xl font-bold mb-1">{data.stats.capacity.value}</div>
-                        <div className="text-xs font-semibold">{data.stats.capacity.unit}</div>
+                        <div className="text-2xl md:text-3xl font-bold mb-1">{data.stats.capacity.value}</div>
+                        <div className="text-[10px] md:text-xs font-medium">{data.stats.capacity.label}</div>
                     </div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm p-3 rounded-lg">
+                <div className="bg-white/10 backdrop-blur-sm p-3 rounded-lg w-full h-24 md:h-32 flex items-center justify-center">
                     <div className="text-white text-center">
-                        <div className="text-2xl font-bold mb-1">{data.stats.equipment.value}</div>
-                        <div className="text-xs font-semibold">{data.stats.equipment.label}</div>
+                        <div className="text-2xl md:text-3xl font-bold mb-1">{data.stats.equipment.value}</div>
+                        <div className="text-[10px] md:text-xs font-medium">{data.stats.equipment.label}</div>
                     </div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm p-3 rounded-lg">
+                <div className="bg-white/10 backdrop-blur-sm p-3 rounded-lg w-full h-24 md:h-32 flex items-center justify-center">
                     <div className="text-white text-center">
-                        <div className="text-2xl font-bold mb-1">{data.stats.construction.value}</div>
-                        <div className="text-xs font-semibold">{data.stats.construction.label}</div>
+                        <div className="text-2xl md:text-3xl font-bold mb-1">{data.stats.construction.value}</div>
+                        <div className="text-[10px] md:text-xs font-medium">{data.stats.construction.label}</div>
                     </div>
                 </div>
             </div>
 
-            {/* Desktop Statistics */}
+            {/* Desktop Statistics (lg and up) */}
             <motion.div
                 initial={{ opacity: 0, x: -100 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="hidden md:block absolute top-[20%] right-[10%] bg-white/10 backdrop-blur-sm p-4 md:p-6 lg:p-8 rounded-lg transform hover:scale-105 transition-transform duration-300"
+                className="hidden lg:block absolute top-[20%] right-[10%] bg-white/10 backdrop-blur-sm p-4 md:p-6 lg:p-8 rounded-lg transform hover:scale-105 transition-transform duration-300 w-[300px] h-[200px] flex items-center justify-center"
             >
                 <div className="text-white text-center">
-                    <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 md:mb-2">
+                    <div className="text-5xl font-bold mb-2">
                         {data.stats.capacity.value}
                     </div>
-                    <div className="text-sm md:text-base lg:text-lg xl:text-xl font-semibold">
-                        {data.stats.capacity.unit}
+                    <div className="text-base font-medium max-w-[200px] mx-auto">
+                        {data.stats.capacity.label}
                     </div>
                 </div>
             </motion.div>
@@ -100,29 +100,29 @@ const BgpzHero = () => {
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.7 }}
-                className="hidden md:block absolute top-[45%] right-[15%] bg-white/10 backdrop-blur-sm p-4 md:p-6 lg:p-8 rounded-lg transform hover:scale-105 transition-transform duration-300"
+                className="hidden lg:block absolute top-[40%] right-[20%] bg-white/10 backdrop-blur-sm p-4 md:p-6 lg:p-8 rounded-lg transform hover:scale-105 transition-transform duration-300 w-[300px] h-[200px] flex items-center justify-center"
             >
                 <div className="text-white text-center">
-                    <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 md:mb-2">
+                    <div className="text-5xl font-bold mb-2">
                         {data.stats.equipment.value}
                     </div>
-                    <div className="text-sm md:text-base lg:text-lg xl:text-xl font-semibold">
+                    <div className="text-base font-medium max-w-[200px] mx-auto">
                         {data.stats.equipment.label}
                     </div>
                 </div>
             </motion.div>
 
             <motion.div
-                initial={{ opacity: 0, x: -100 }}
+                initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.9 }}
-                className="hidden md:block absolute top-[70%] right-[20%] bg-white/10 backdrop-blur-sm p-4 md:p-6 lg:p-8 rounded-lg transform hover:scale-105 transition-transform duration-300"
+                className="hidden lg:block absolute top-[60%] right-[30%] bg-white/10 backdrop-blur-sm p-4 md:p-6 lg:p-8 rounded-lg transform hover:scale-105 transition-transform duration-300 w-[300px] h-[200px] flex items-center justify-center"
             >
                 <div className="text-white text-center">
-                    <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 md:mb-2">
+                    <div className="text-5xl font-bold mb-2">
                         {data.stats.construction.value}
                     </div>
-                    <div className="text-sm md:text-base lg:text-lg xl:text-xl font-semibold">
+                    <div className="text-base font-medium max-w-[200px] mx-auto">
                         {data.stats.construction.label}
                     </div>
                 </div>

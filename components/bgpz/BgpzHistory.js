@@ -111,8 +111,7 @@ const BgpzHistory = () => {
 
     const timelineEvents = [
         { Icon: Factory },
-        { Icon: Zap },
-        { Icon: Lightbulb }
+        { Icon: Zap }
     ];
 
     return (
