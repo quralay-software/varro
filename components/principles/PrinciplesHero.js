@@ -5,20 +5,19 @@ import { useTranslation } from 'next-i18next';
 import { principlesHeroData } from '../../data/principlesHero';
 import { Leaf, Lightbulb, Handshake } from 'lucide-react';
 
-const Badge = ({ icon: Icon, label, value, description, position, delay }) => {
+const Badge = ({ label, value, position, delay }) => {
     return (
         <motion.div
             initial={{ opacity: 0, x: position === 'left' ? -100 : 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay }}
-            className="bg-white/10 backdrop-blur-sm p-3 md:p-5 lg:p-6 rounded-lg transform hover:scale-105 transition-transform duration-300"
+            className="bg-white/10 backdrop-blur-sm p-4 md:p-6 lg:p-8 rounded-lg transform hover:scale-105 transition-transform duration-300"
         >
             <div className="text-white text-center">
-                <Icon className="w-6 h-6 md:w-8 md:h-8 mx-auto mb-2 text-primary" strokeWidth={1.5} />
-                <div className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1">
+                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 md:mb-2">
                     {value}
                 </div>
-                <div className="text-xs md:text-sm lg:text-base font-semibold">
+                <div className="text-sm md:text-base lg:text-lg xl:text-xl font-semibold">
                     {label}
                 </div>
             </div>
@@ -88,7 +87,7 @@ const PrinciplesHero = () => {
             </div>
 
             {/* Mobile Badges */}
-            <div className="absolute md:hidden bottom-4 left-4 right-4 grid grid-cols-3 gap-6 bg-black/20 p-4 rounded-lg">
+            <div className="absolute md:hidden bottom-4 left-4 right-4 grid grid-cols-3 gap-2 bg-black/20 p-2 rounded-lg">
                 {data.badges.map((badge) => (
                     <div key={badge.id} className="bg-white/10 backdrop-blur-sm p-3 rounded-lg">
                         <div className="text-white text-center">
@@ -100,33 +99,53 @@ const PrinciplesHero = () => {
             </div>
 
             {/* Desktop Badges */}
-            {data.badges.map((badge, index) => {
-                const Icon = icons[badge.icon];
-                const positions = ['right', 'left', 'right'];
-                const topPositions = ['20%', '45%', '70%'];
-                const rightPositions = ['15%', '20%', '25%'];
-
-                return (
-                    <div
-                        key={badge.id}
-                        style={{
-                            position: 'absolute',
-                            top: topPositions[index],
-                            right: rightPositions[index]
-                        }}
-                        className="hidden md:block"
-                    >
-                        <Badge
-                            icon={Icon}
-                            label={badge.label}
-                            value={badge.value}
-                            description={badge.description}
-                            position={positions[index]}
-                            delay={0.5 + index * 0.2}
-                        />
+            <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="hidden md:block absolute top-[20%] right-[10%] bg-white/10 backdrop-blur-sm p-4 md:p-6 lg:p-8 rounded-lg transform hover:scale-105 transition-transform duration-300"
+            >
+                <div className="text-white text-center">
+                    <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-1 md:mb-2">
+                        {data.badges[0].value}
                     </div>
-                );
-            })}
+                    <div className="text-xs md:text-sm lg:text-base xl:text-lg font-semibold">
+                        {data.badges[0].label}
+                    </div>
+                </div>
+            </motion.div>
+
+            <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+                className="hidden md:block absolute top-[45%] right-[15%] bg-white/10 backdrop-blur-sm p-4 md:p-6 lg:p-8 rounded-lg transform hover:scale-105 transition-transform duration-300"
+            >
+                <div className="text-white text-center">
+                    <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-1 md:mb-2">
+                        {data.badges[1].value}
+                    </div>
+                    <div className="text-xs md:text-sm lg:text-base xl:text-lg font-semibold">
+                        {data.badges[1].label}
+                    </div>
+                </div>
+            </motion.div>
+
+            <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+                className="hidden md:block absolute top-[70%] right-[20%] bg-white/10 backdrop-blur-sm p-4 md:p-6 lg:p-8 rounded-lg transform hover:scale-105 transition-transform duration-300"
+            >
+                <div className="text-white text-center">
+                    <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-1 md:mb-2">
+                        {data.badges[2].value}
+                    </div>
+                    <div className="text-xs md:text-sm lg:text-base xl:text-lg font-semibold">
+                        {data.badges[2].label}
+                    </div>
+                </div>
+            </motion.div>
         </section>
     );
 };

@@ -18,9 +18,6 @@ const GoalsPage = () => {
             <GoalsHero />
             <StrategicDirections />
             <GoalsRoadmap />
-            <SustainableDevelopment />
-            {/*<GoalsPartners />
-            <GoalsCTA />*/}
             <Footer />
             <Scrollbar />
         </Fragment>

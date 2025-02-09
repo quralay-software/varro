@@ -19,8 +19,7 @@ const ActivitiesOverview = () => {
                         className="space-y-6"
                     >
                         <div className="text-start space-y-8 flex flex-col">
-                            <span className="text-primary">{content.sectionTitle}</span>
-                            <h2 className="text-4xl font-bold mb-4">
+                            <h2 className="text-5xl text-primary font-bold mb-4">
                                 {content.companyName}
                             </h2>
                             <p className="text-gray-700 leading-relaxed">

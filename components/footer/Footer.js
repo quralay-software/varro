@@ -16,16 +16,16 @@ const Footer = (props) => {
                               <div className="logo widget-title" style={{ marginBottom: '20px'}}>
                                   <Image src={Logo} alt="Varro Operating Group" width={80} height={80}/>
                               </div>
-                              <p>{t('footer.company_description')}</p>
+                              <p className="text-base sm:text-lg">{t('footer.company_description')}</p>
                           </div>
                       </div>
                       <div className="col col-lg-6 col-md-6 col-sm-12 col-12">
                           <div className="widget link-widget">
                               <div className="widget-title">
-                                  <h3 style={{ fontFamily: 'Arial', fontSize: '1.5rem' }}>{t('footer.contacts')}</h3>
+                                  <h3 className="text-xl sm:text-2xl font-sans">{t('footer.contacts')}</h3>
                               </div>
                               <div className="contact-ft">
-                                  <ul>
+                                  <ul className="text-base sm:text-lg space-y-3">
                                       <li><i className="fi flaticon-email"></i>{t('footer.email')}</li>
                                       <li><i className="fi flaticon-phone-call"></i>{t('footer.phone')}</li>
                                       <li><i className="fi flaticon-placeholder"></i>{t('footer.address')}</li>
@@ -40,7 +40,7 @@ const Footer = (props) => {
               <div className="container">
                   <div className="row">
                       <div className="col col-xs-12">
-                          <p className="copyright">
+                          <p className="copyright text-sm sm:text-base">
                               {t('footer.rights', { year: new Date().getFullYear() })}
                           </p>
                       </div>

@@ -4,7 +4,6 @@ import Navbar from '../../components/Navbar/Navbar';
 import BgpzHero from '../../components/bgpz/BgpzHero';
 import BgpzHistory from '../../components/bgpz/BgpzHistory';
 import BgpzTechnology from '../../components/bgpz/BgpzTechnology';
-import BgpzEnvironment from '../../components/bgpz/BgpzEnvironment';
 import Footer from '../../components/footer/Footer';
 import Scrollbar from '../../components/scrollbar/scrollbar';
 
@@ -15,7 +14,6 @@ const BgpzPage = () => {
             <BgpzHero />
             <BgpzHistory />
             <BgpzTechnology />
-            <BgpzEnvironment />
             <Footer />
             <Scrollbar />
         </Fragment>

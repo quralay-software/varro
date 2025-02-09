@@ -61,20 +61,20 @@ const GoalsHero = () => {
             <div className="absolute md:hidden bottom-4 left-4 right-4 grid grid-cols-3 gap-2 bg-black/20 p-2 rounded-lg">
                 <div className="bg-white/10 backdrop-blur-sm p-3 rounded-lg">
                     <div className="text-white text-center">
-                        <div className="text-2xl font-bold mb-1">{data.stats.efficiency.value}</div>
-                        <div className="text-xs font-semibold">{data.stats.efficiency.label}</div>
+                        <div className="text-xl font-bold mb-1">{data.stats.efficiency.value}</div>
+                        <div className="text-[10px] font-semibold">{data.stats.efficiency.label}</div>
                     </div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm p-3 rounded-lg">
                     <div className="text-white text-center">
-                        <div className="text-2xl font-bold mb-1">{data.stats.innovation.value}</div>
-                        <div className="text-xs font-semibold">{data.stats.innovation.label}</div>
+                        <div className="text-xl font-bold mb-1">{data.stats.innovation.value}</div>
+                        <div className="text-[10px] font-semibold">{data.stats.innovation.label}</div>
                     </div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm p-3 rounded-lg">
                     <div className="text-white text-center">
-                        <div className="text-2xl font-bold mb-1">{data.stats.sustainability.value}</div>
-                        <div className="text-xs font-semibold">{data.stats.sustainability.label}</div>
+                        <div className="text-xl font-bold mb-1">{data.stats.sustainability.value}</div>
+                        <div className="text-[10px] font-semibold">{data.stats.sustainability.label}</div>
                     </div>
                 </div>
             </div>
@@ -87,10 +87,10 @@ const GoalsHero = () => {
                 className="hidden md:block absolute top-[20%] right-[10%] bg-white/10 backdrop-blur-sm p-4 md:p-6 lg:p-8 rounded-lg transform hover:scale-105 transition-transform duration-300"
             >
                 <div className="text-white text-center">
-                    <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 md:mb-2">
+                    <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-1 md:mb-2">
                         {data.stats.efficiency.value}
                     </div>
-                    <div className="text-sm md:text-base lg:text-lg xl:text-xl font-semibold">
+                    <div className="text-xs md:text-sm lg:text-base xl:text-lg font-semibold">
                         {data.stats.efficiency.label}
                     </div>
                 </div>
@@ -103,10 +103,10 @@ const GoalsHero = () => {
                 className="hidden md:block absolute top-[45%] right-[15%] bg-white/10 backdrop-blur-sm p-4 md:p-6 lg:p-8 rounded-lg transform hover:scale-105 transition-transform duration-300"
             >
                 <div className="text-white text-center">
-                    <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 md:mb-2">
+                    <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-1 md:mb-2">
                         {data.stats.innovation.value}
                     </div>
-                    <div className="text-sm md:text-base lg:text-lg xl:text-xl font-semibold">
+                    <div className="text-xs md:text-sm lg:text-base xl:text-lg font-semibold">
                         {data.stats.innovation.label}
                     </div>
                 </div>
@@ -119,10 +119,10 @@ const GoalsHero = () => {
                 className="hidden md:block absolute top-[70%] right-[20%] bg-white/10 backdrop-blur-sm p-4 md:p-6 lg:p-8 rounded-lg transform hover:scale-105 transition-transform duration-300"
             >
                 <div className="text-white text-center">
-                    <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 md:mb-2">
+                    <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-1 md:mb-2">
                         {data.stats.sustainability.value}
                     </div>
-                    <div className="text-sm md:text-base lg:text-lg xl:text-xl font-semibold">
+                    <div className="text-xs md:text-sm lg:text-base xl:text-lg font-semibold">
                         {data.stats.sustainability.label}
                     </div>
                 </div>

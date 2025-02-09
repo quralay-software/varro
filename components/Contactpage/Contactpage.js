@@ -84,14 +84,13 @@ const Contactpage = () => {
 
     return (
         <section className="py-20 bg-gray-50">
-            <div className="container mx-auto px-4">
-                {/* Contact Info Cards */}
+            <div className="mx-auto px-4">
                 <motion.div
                   initial={{opacity: 0, y: 20}}
                   whileInView={{opacity: 1, y: 0}}
                   viewport={{once: true}}
                   transition={{duration: 0.6}}
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20"
+                  className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20"
                 >
                     {Object.entries(data.info).map(([key, value]) => (
                       <ContactInfo
@@ -102,36 +101,6 @@ const Contactpage = () => {
                       />
                     ))}
                 </motion.div>
-
-                {/* Contact Form Section */}
-                <div className="max-w-4xl mx-auto">
-                    <motion.div
-                      initial={{opacity: 0, y: 20}}
-                      whileInView={{opacity: 1, y: 0}}
-                      viewport={{once: true}}
-                      transition={{duration: 0.6}}
-                      className="text-center mb-12"
-                    >
-                        <h2 className="text-3xl md:text-4xl font-bold font-sans mb-4">
-                            {data.title}
-                        </h2>
-                        <p className="text-xl text-gray-600">
-                            {data.description}
-                        </p>
-                    </motion.div>
-
-                    <motion.div
-                      initial={{opacity: 0, y: 20}}
-                      whileInView={{opacity: 1, y: 0}}
-                      viewport={{once: true}}
-                      transition={{duration: 0.6, delay: 0.2}}
-                      className="bg-white p-8 rounded-xl shadow-sm border border-gray-100"
-                    >
-                        <ContactForm/>
-                    </motion.div>
-                </div>
-
-                {/* Map Section */}
                 <div className="w-full h-[650px] mt-24 relative">
                     <div className="absolute inset-0">
                         <iframe

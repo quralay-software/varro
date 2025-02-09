@@ -116,15 +116,15 @@ const Hero3 = () => {
                                         initial="hidden"
                                         animate="visible"
                                     >
-                                        <motion.span variants={itemVariants} className="d-flex flex-column text-sky-800">
+                                        <motion.span variants={itemVariants} className="d-flex flex-column text-sky-950">
                                             {data.subtitle.split(' через ').map((part, index) => (
-                                                <span key={index} className="d-md-inline d-block">
+                                                <span key={index} className="d-md-inline d-block" style={{ color: '#082f49'}}>
                                                     {part}
                                                 </span>
                                             ))}
                                         </motion.span>
                                         <motion.h2
-                                            className="title text-primary"
+                                            className="title text-primary font-bold"
                                             variants={itemVariants}
                                         >
                                             {data.title}

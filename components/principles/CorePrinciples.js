@@ -19,14 +19,13 @@ const icons = {
 };
 
 const colorVariants = {
-    darkBlue: 'from-blue-900/10 to-blue-900/20 hover:from-blue-900/20 hover:to-blue-900/30'
+    darkBlue: 'from-gray-50 to-primary/15 bg-gradient-to-br',
 };
 
 const PrincipleCard = ({ principle, isActive, onClick }) => {
     const Icon = icons[principle.icon];
     const colorClass = colorVariants[principle.color];
 
-    // Split the description into bullet points when active
     const bulletPoints = isActive
         ? principle.description.split('. ').filter(point => point.trim().length > 0)
         : [];

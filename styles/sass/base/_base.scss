@@ -310,3 +310,36 @@ ul.smothscroll a:hover {
         line-height: 25px;
     }
 }
+.house-info {
+    --h: 80px;
+    --g: 16px;
+    --r: 18px;
+}
+
+.image-mask {
+    width: 100%;
+    height: calc(100% + var(--h)/2);
+    object-fit: cover;
+    border-radius: var(--r);
+    --_g: /var(--r) var(--r) radial-gradient(100% 100% at 100% 0, #0000 99.5%, #000 100%) no-repeat;
+    -webkit-mask:
+            calc(50% + var(--g)/2 + var(--r)/2) 100% var(--_g),
+            0 calc(100% - var(--h)) var(--_g),
+            radial-gradient(100% 100% at 0 100%, #0000 99.5%, #000 100%) no-repeat calc(50% - var(--r)/2) calc(100% - var(--h) + var(--g) + var(--r))/ calc(var(--g) + var(--r)) calc(var(--g) + var(--r)),
+            conic-gradient(from 180deg at calc(50% + var(--g)/2) calc(100% - var(--h)), #0000 25%, #000 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.content-mask {
+    margin-top: calc(var(--h)/-2);
+    border-radius: var(--r);
+    --_g: /var(--r) var(--r) radial-gradient(100% 100% at 0 100%, #0000 99.5%, #000 100%) no-repeat;
+    -webkit-mask:
+            calc(50% - var(--g)/2 - var(--r)/2) 0 var(--_g),
+            100% var(--h) var(--_g),
+            radial-gradient(100% 100% at 100% 0, #0000 99.5%, #000 100%) no-repeat calc(50% + var(--r)/2) calc(var(--h) - var(--g) - var(--r))/ calc(var(--g) + var(--r)) calc(var(--g) + var(--r)),
+            conic-gradient(at calc(50% - var(--g)/2) var(--h), #0000 25%, #000 0);
+    -webkit-mask-composite: xor, xor, source-over;
+    mask-composite: exclude;
+}

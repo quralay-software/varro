@@ -67,11 +67,6 @@ const MobileMenu = ({ isOpen, onClose }) => {
     };
 
     const navItems = {
-        company: [
-            { text: t('nav.about'), link: '/about' },
-            { text: t('nav.activities'), link: '/activities' },
-            { text: t('nav.services'), link: '/services' }
-        ],
         strategic: [
             { text: t('nav.goals'), link: '/goals' },
             { text: t('nav.principles'), link: '/principles' }
@@ -141,12 +136,29 @@ const MobileMenu = ({ isOpen, onClose }) => {
                             </motion.div>
 
                             <motion.div variants={itemVariants}>
-                                <MobileDropdown
-                                    title={t('nav.company')}
-                                    items={navItems.company}
-                                    isOpen={openDropdown === 'company'}
-                                    onToggle={() => handleDropdownToggle('company')}
-                                />
+                                <Link
+                                    href="/about"
+                                    className={`block py-4 px-6 text-base font-medium ${
+                                        router.pathname === '/about'
+                                            ? 'text-primary'
+                                            : 'text-gray-700 hover:text-gray-900'
+                                    }`}
+                                >
+                                    {t('nav.about')}
+                                </Link>
+                            </motion.div>
+
+                            <motion.div variants={itemVariants}>
+                                <Link
+                                    href="/activities"
+                                    className={`block py-4 px-6 text-base font-medium ${
+                                        router.pathname === '/activities'
+                                            ? 'text-primary'
+                                            : 'text-gray-700 hover:text-gray-900'
+                                    }`}
+                                >
+                                    {t('nav.activities')}
+                                </Link>
                             </motion.div>
 
                             <motion.div variants={itemVariants}>
