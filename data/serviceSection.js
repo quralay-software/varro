@@ -7,14 +7,32 @@ export const serviceSectionData = {
             {
                 id: '1',
                 title: 'Добыча нефти и газа',
-                description: 'Мы специализируемся на добыче нефти и газа, обеспечивая высокое качество и эффективность.',
+                description: 'Комплексный подход к разведке и добыче углеводородов с использованием современных технологий.',
                 slug: 'oil-and-gas-extraction'
             },
             {
                 id: '2',
-                title: 'Переработка газа',
-                description: 'Управление Боранкольским газоперерабатывающим заводом (БГПЗ).',
+                title: 'Переработка и хранение газа',
+                description: 'Эффективное управление газоперерабатывающими мощностями и инфраструктурой хранения.',
                 slug: 'gas-processing'
+            },
+            {
+                id: '3',
+                title: 'Продажа и логистика',
+                description: 'Оптимизированные решения по поставке нефтегазовых продуктов на внутренний и международный рынки.',
+                slug: 'hydrocarbon-sales'
+            },
+            {
+                id: '4',
+                title: 'Управление безопасностью и охраной окружающей среды',
+                description: 'Комплексный подход к обеспечению безопасности и защите окружающей среды.',
+                slug: 'environmental-safety'
+            },
+            {
+                id: '5',
+                title: 'Техническое обслуживание и модернизация',
+                description: 'Профессиональное обслуживание и модернизация нефтегазовой инфраструктуры.',
+                slug: 'technical-maintenance'
             }
         ]
     },
@@ -26,33 +44,69 @@ export const serviceSectionData = {
             {
                 id: '1',
                 title: 'Мұнай және газ өндіру',
-                description: 'Біз мұнай мен газ өндіруге маманданамыз, жоғары сапа мен тиімділікті қамтамасыз етеміз.',
+                description: 'Заманауи технологияларды қолдана отырып, көмірсутектерді барлау және өндіруге кешенді көзқарас.',
                 slug: 'oil-and-gas-extraction'
             },
             {
                 id: '2',
-                title: 'Газды өңдеу',
-                description: 'Боранкөл газ өңдеу зауытын (БГӨЗ) басқару.',
+                title: 'Газды өңдеу және сақтау',
+                description: 'Газ өңдеу қуаттары мен сақтау инфрақұрылымын тиімді басқару.',
                 slug: 'gas-processing'
+            },
+            {
+                id: '3',
+                title: 'Сату және логистика',
+                description: 'Мұнай-газ өнімдерін ішкі және халықаралық нарықтарға жеткізу бойынша оңтайландырылған шешімдер.',
+                slug: 'hydrocarbon-sales'
+            },
+            {
+                id: '4',
+                title: 'Қауіпсіздік және қоршаған ортаны қорғауды басқару',
+                description: 'Қауіпсіздікті қамтамасыз ету және қоршаған ортаны қорғауға кешенді көзқарас.',
+                slug: 'environmental-safety'
+            },
+            {
+                id: '5',
+                title: 'Техникалық қызмет көрсету және жаңғырту',
+                description: 'Мұнай-газ инфрақұрылымына кәсіби қызмет көрсету және жаңғырту.',
+                slug: 'technical-maintenance'
             }
         ]
     },
     en: {
         title: 'What We Offer',
         description: 'Varro Operating Group provides a wide range of services in oil and gas production and processing. We strive for innovation, sustainable development, and minimizing environmental impact.',
-        viewAllButton: 'All Services....',
+        viewAllButton: 'ALL SERVICES....',
         services: [
             {
                 id: '1',
-                title: 'Oil and Gas Extraction',
-                description: 'We specialize in oil and gas extraction, ensuring high quality and efficiency.',
+                title: 'Oil and Gas Production',
+                description: 'Comprehensive approach to hydrocarbon exploration and production using modern technologies.',
                 slug: 'oil-and-gas-extraction'
             },
             {
                 id: '2',
-                title: 'Gas Processing',
-                description: 'Management of Borankol Gas Processing Plant (BGPP).',
+                title: 'Gas Processing and Storage',
+                description: 'Efficient management of gas processing facilities and storage infrastructure.',
                 slug: 'gas-processing'
+            },
+            {
+                id: '3',
+                title: 'Sales and Logistics',
+                description: 'Optimized solutions for supplying oil and gas products to domestic and international markets.',
+                slug: 'hydrocarbon-sales'
+            },
+            {
+                id: '4',
+                title: 'Safety and Environmental Management',
+                description: 'Comprehensive approach to ensuring safety and environmental protection.',
+                slug: 'environmental-safety'
+            },
+            {
+                id: '5',
+                title: 'Technical Maintenance and Modernization',
+                description: 'Professional maintenance and modernization of oil and gas infrastructure.',
+                slug: 'technical-maintenance'
             }
         ]
     }

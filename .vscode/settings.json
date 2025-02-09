@@ -5,5 +5,7 @@
     "editor.formatOnPaste": true,
     "editor.formatOnType": true,
     "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "windsurf.marketplace.gallery.serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
+    "windsurf.marketplace.gallery.itemUrl": "https://marketplace.visualstudio.com/items"
 }

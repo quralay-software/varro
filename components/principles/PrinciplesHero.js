@@ -104,7 +104,7 @@ const PrinciplesHero = () => {
                 const Icon = icons[badge.icon];
                 const positions = ['right', 'left', 'right'];
                 const topPositions = ['20%', '45%', '70%'];
-                const rightPositions = ['15%', '20%', '25%']; // Pushed more to the left
+                const rightPositions = ['15%', '20%', '25%'];
 
                 return (
                     <div

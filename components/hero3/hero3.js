@@ -106,33 +106,26 @@ const Hero3 = () => {
             {/* Desktop Version (Original) */}
             <div className="hidden md:block">
                 <div className="hero-container">
-                    <div className="hero-inner">
+                    <div className="hero-inner mt-[-4rem]">
                         <div className="container">
                             <div className="row align-items-center">
                                 <div className="col-12 col-lg-6 col-md-10 col-12">
                                     <motion.div
-                                        className="wpo-static-hero-inner mt-24"
+                                        className="wpo-static-hero-inner"
                                         variants={containerVariants}
                                         initial="hidden"
                                         animate="visible"
-                                        style={{
-                                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                                            padding: '20px',
-                                            borderRadius: '10px',
-                                            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)'
-                                        }}
                                     >
-                                        <motion.span variants={itemVariants} className="d-flex flex-column">
+                                        <motion.span variants={itemVariants} className="d-flex flex-column text-sky-800">
                                             {data.subtitle.split(' через ').map((part, index) => (
-                                                <span key={index} className="d-md-inline d-block" style={{ color: '#D9916A'}}>
+                                                <span key={index} className="d-md-inline d-block">
                                                     {part}
                                                 </span>
                                             ))}
                                         </motion.span>
                                         <motion.h2
-                                            className="title"
+                                            className="title text-primary"
                                             variants={itemVariants}
-                                            style={{ color: 'white'}}
                                         >
                                             {data.title}
                                         </motion.h2>
@@ -143,7 +136,7 @@ const Hero3 = () => {
                     </div>
                 </div>
                 <motion.div
-                    className="slider-img-4 border-none shadow-none"
+                    className="slider-img-4 border-none shadow-none mt-[-4rem]"
                     variants={imageVariants}
                     initial="hidden"
                     animate="visible"

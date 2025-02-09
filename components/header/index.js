@@ -145,29 +145,14 @@ const Header = (props) => {
                     transition={{ duration: 0.3 }}
                 >
                     <div className="container mx-auto w-full">
-                        <div className="flex items-center justify-between">
-                            <div className="lg:hidden">
+                        <div className="flex items-center justify-end">
+                            <div className="lg:hidden mr-auto">
                                 <div className="mobail-menu">
                                     <MobileMenu />
                                 </div>
                             </div>
-                            {/* <div className="flex-shrink-0">
-                                <div className="navbar-header">
-                                    <Link
-                                        className={`text-3xl font-bold transition-colors duration-200 ${router.pathname === '/' ? 'text-primary' : 'hover:text-primary'}`}
-                                        href="/"
-                                    >
-                                        <motion.h1
-                                            whileHover={{ scale: 1.05 }}
-                                            style={{ fontFamily: 'Arial' }}
-                                        >
-                                            Varro
-                                        </motion.h1>
-                                    </Link>
-                                </div>
-                            </div> */}
-                            <div className="hidden lg:block">
-                                <div className="flex items-center">
+                            <div className="hidden lg:flex w-full justify-end">
+                                <div className="flex items-center justify-end">
                                     <ul className="flex items-center space-x-8">
                                         <li>
                                             <Link
