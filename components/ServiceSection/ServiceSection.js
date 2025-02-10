@@ -100,13 +100,7 @@ const ServiceSection = () => {
                             <p className="text-white mb-5">
                                 {data.description}
                             </p>
-                            <Link
-                                href="/services"
-                                onClick={ClickHandler}
-                                className="inline-block text-[#D9916A] uppercase font-bold text-base mt-6 hover:opacity-80 transition-opacity"
-                            >
-                                {data.viewAllButton}
-                            </Link>
+                            
                         </div>
                     </div>
 

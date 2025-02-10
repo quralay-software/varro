@@ -47,7 +47,7 @@ const Hero3 = () => {
         <section className="static-hero-s2">
             {/* Mobile Version */}
             <div className="block md:hidden relative h-[80vh] min-h-[600px] overflow-hidden">
-                <div 
+                <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
                         backgroundImage: `url(${data.image.src})`
@@ -62,45 +62,16 @@ const Hero3 = () => {
                         animate="visible"
                         className="flex flex-col justify-center h-full"
                     >
-                        <motion.div variants={itemVariants} className="mb-4">
-                            {data.subtitle.split(' через ').map((part, index) => (
-                                <span 
-                                    key={index} 
-                                    className="text-primary font-semibold block"
-                                >
-                                    {part}
-                                </span>
-                            ))}
-                        </motion.div>
+
                         <motion.h2
                             variants={itemVariants}
-                            className="text-3xl font-arial font-sans font-bold text-white mb-6"
+                            className="text-3xl font-arial font-sans font-bold text-white mb-6 "
                         >
                             {data.title}
                         </motion.h2>
                     </motion.div>
                 </div>
-                {/* Mobile Stats */}
-                <div className="absolute bottom-4 left-4 right-4 grid grid-cols-3 gap-2 bg-black/20 p-2 rounded-lg">
-                    <div className="bg-white/10 backdrop-blur-sm p-3 rounded-lg">
-                        <div className="text-white text-center">
-                            <div className="text-2xl font-bold mb-1">{data.stats.years}</div>
-                            <div className="text-xs font-semibold">{data.stats.yearsLabel}</div>
-                        </div>
-                    </div>
-                    <div className="bg-white/10 backdrop-blur-sm p-3 rounded-lg">
-                        <div className="text-white text-center">
-                            <div className="text-2xl font-bold mb-1">{data.stats.projects}</div>
-                            <div className="text-xs font-semibold">{data.stats.projectsLabel}</div>
-                        </div>
-                    </div>
-                    <div className="bg-white/10 backdrop-blur-sm p-3 rounded-lg">
-                        <div className="text-white text-center">
-                            <div className="text-2xl font-bold mb-1">{data.stats.clients}</div>
-                            <div className="text-xs font-semibold">{data.stats.clientsLabel}</div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
 
             {/* Desktop Version (Original) */}
@@ -116,13 +87,7 @@ const Hero3 = () => {
                                         initial="hidden"
                                         animate="visible"
                                     >
-                                        <motion.span variants={itemVariants} className="d-flex flex-column text-sky-950">
-                                            {data.subtitle.split(' через ').map((part, index) => (
-                                                <span key={index} className="d-md-inline d-block" style={{ color: '#082f49'}}>
-                                                    {part}
-                                                </span>
-                                            ))}
-                                        </motion.span>
+
                                         <motion.h2
                                             className="title text-primary font-bold"
                                             variants={itemVariants}
