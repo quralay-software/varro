@@ -100,7 +100,7 @@ const ServiceSection = () => {
                             <p className="text-white mb-5">
                                 {data.description}
                             </p>
-                            
+
                         </div>
                     </div>
 
