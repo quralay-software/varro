@@ -98,7 +98,7 @@ const Hero3 = () => {
           </div>
         </div>
         <motion.div
-          className="slider-img-4 border-none shadow-none mt-[-4rem]"
+          className="slider-img-4 border-none shadow-none mt-[-5rem]"
           variants={imageVariants}
           initial="hidden"
           animate="visible"

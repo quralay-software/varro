@@ -1,121 +1,112 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useTranslation } from 'next-i18next';
-import { contactData } from '../../data/contact';
-import { MapPin, Mail, Phone } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { useTranslation } from "next-i18next";
+import { contactData } from "../../data/contact";
+import { MapPin, Mail, Phone } from "lucide-react";
 
-const ContactForm = () => {
-    const { i18n } = useTranslation();
-    const currentLang = i18n.language || 'ru';
-    const formData = contactData[currentLang].contact.form;
-
-    return (
-        <form className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <input
-                    type="text"
-                    placeholder={formData.name}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-200"
-                    required
-                />
-                <input
-                    type="email"
-                    placeholder={formData.email}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-200"
-                    required
-                />
-            </div>
-            <input
-                type="text"
-                placeholder={formData.subject}
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-200"
-                required
-            />
-            <textarea
-                placeholder={formData.message}
-                rows="6"
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-200 resize-none"
-                required
-            ></textarea>
-            <button
-                type="submit"
-                className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
-            >
-                {formData.button}
-            </button>
-        </form>
-    );
-};
-
-const ContactInfo = ({ icon: Icon, title, content }) => (
-    <motion.div
-        className="bg-white p-6 rounded-xl shadow-sm border border-gray-100"
-        whileHover={{ y: -5 }}
-        transition={{ duration: 0.3 }}
-    >
-        <div className="flex items-start gap-4">
-            <div className="p-3 rounded-lg bg-primary/10">
-                <Icon className="w-6 h-6 text-primary" strokeWidth={1.5} />
-            </div>
-            <div>
-                <h3 className="text-lg font-bold font-sans mb-2">{title}</h3>
-                {Array.isArray(content) ? (
-                    content.map((item, index) => (
-                        <p key={index} className="text-gray-600">{item}</p>
-                    ))
-                ) : (
-                    <p className="text-gray-600">{content}</p>
-                )}
-            </div>
-        </div>
-    </motion.div>
+const ContactInfo = ({ icon: Icon, content }) => (
+  <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 relative overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-primary/25 opacity-40" />
+    <div className="relative z-10 flex items-center gap-4">
+      <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10">
+        <Icon className="w-6 h-6 text-primary" strokeWidth={1.5} />
+      </div>
+      <div className="flex-1 flex items-center">
+        {Array.isArray(content) ? (
+          content.map((item, index) => (
+            <p key={index} className="m-0 text-gray-600 leading-none">
+              {isEmail(item) ? (
+                <a
+                  href={`mailto:${item}`}
+                  className="text-primary hover:underline"
+                >
+                  {item}
+                </a>
+              ) : isPhone(item) ? (
+                <a
+                  href={`tel:${item}`}
+                  className="text-primary hover:underline"
+                >
+                  {item}
+                </a>
+              ) : (
+                item
+              )}
+            </p>
+          ))
+        ) : (
+          <p className="m-0 text-gray-600 leading-none">
+            {isEmail(content) ? (
+              <a
+                href={`mailto:${content}`}
+                className="text-primary hover:underline"
+              >
+                {content}
+              </a>
+            ) : isPhone(content) ? (
+              <a
+                href={`tel:${content}`}
+                className="text-primary hover:underline"
+              >
+                {content}
+              </a>
+            ) : (
+              content
+            )}
+          </p>
+        )}
+      </div>
+    </div>
+  </div>
 );
 
+const isEmail = (text) => /\S+@\S+\.\S+/.test(text);
+const isPhone = (text) => /^\+?\d[\d\s()-]{7,}$/.test(text);
+
 const Contactpage = () => {
-    const { i18n } = useTranslation();
-    const currentLang = i18n.language || 'ru';
-    const data = contactData[currentLang].contact;
+  const { i18n } = useTranslation();
+  const currentLang = i18n.language || "ru";
+  const data = contactData[currentLang].contact;
 
-    const icons = {
-        address: MapPin,
-        email: Mail,
-        phone: Phone
-    };
+  const icons = {
+    address: MapPin,
+    email: Mail,
+    phone: Phone,
+  };
 
-    return (
-        <section className="py-20 bg-gray-50">
-            <div className="mx-auto px-4">
-                <motion.div
-                  initial={{opacity: 0, y: 20}}
-                  whileInView={{opacity: 1, y: 0}}
-                  viewport={{once: true}}
-                  transition={{duration: 0.6}}
-                  className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20"
-                >
-                    {Object.entries(data.info).map(([key, value]) => (
-                      <ContactInfo
-                        key={key}
-                        icon={icons[key]}
-                        title={value.title}
-                        content={value.content}
-                      />
-                    ))}
-                </motion.div>
-                <div className="w-full h-[650px] mt-24 relative">
-                    <div className="absolute inset-0">
-                        <iframe
-                          className="w-full h-full border-0"
-                          src="https://maps.google.com/maps?q=43.641494,51.159742&z=17&output=embed"
-                          loading="lazy"
-                          referrerPolicy="no-referrer-when-downgrade"
-                          title="Google Maps - Zodiac Business Center"
-                          aria-label="Location map"
-                        />
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+  return (
+    <section className="py-20">
+      <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="w-full lg:w-1/2 flex flex-col gap-6"
+        >
+          {Object.entries(data.info).map(([key, value]) => (
+            <ContactInfo
+              key={key}
+              icon={icons[key]}
+              title={value.title}
+              content={value.content}
+            />
+          ))}
+        </motion.div>
+
+        <div className="w-full lg:w-1/2 h-[500px] relative">
+          <iframe
+            className="w-full h-full border-0 rounded-xl shadow-md"
+            src="https://maps.google.com/maps?q=43.641494,51.159742&z=17&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Google Maps - Zodiac Business Center"
+            aria-label="Location map"
+          />
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Contactpage;

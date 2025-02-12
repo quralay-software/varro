@@ -3,36 +3,43 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { activitiesMainContent } from '../../data/activitiesMainContent';
-import { Droplets, Factory, Ship } from 'lucide-react';
-
-const iconComponents = {
-    Droplets: Droplets,
-    Factory: Factory,
-    Ship: Ship
-};
 
 const ActivityCard = ({ activity, isActive, onClick }) => {
-    const IconComponent = iconComponents[activity.icon];
-    
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className={`p-6 cursor-pointer transition-all duration-300 ${
-                isActive ? 'bg-primary text-white shadow-lg' : 'bg-white hover:bg-gray-50'
-            }`}
-            onClick={onClick}
-        >
-            <div className="text-4xl mb-4">
-                <IconComponent size={40} className={isActive ? 'text-white' : 'text-primary'} />
-            </div>
-            <h3 className="text-2xl font-bold mb-3">{activity.title}</h3>
-            <p className={`text-base leading-relaxed ${isActive ? 'text-gray-100' : 'text-gray-600'}`}>
-                {activity.content.main}
-            </p>
-        </motion.div>
-    );
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className={`p-6 cursor-pointer transition-all duration-300 ${
+        isActive
+          ? "bg-primary text-white shadow-lg"
+          : "bg-white hover:bg-gray-50"
+      }`}
+      onClick={onClick}
+    >
+      <h3
+        className={`text-2xl font-bold mb-3 relative text-center transition-colors duration-300 ${
+          isActive ? "text-white" : "text-black"
+        }`}
+      >
+        {activity.title}
+        <span
+          className={`block h-1 mt-2 transition-all duration-300 ${
+            isActive ? "bg-white" : "bg-primary"
+          }`}
+        ></span>
+      </h3>
+      <p
+        className={`text-base leading-relaxed transition-colors duration-300 ${
+          isActive ? "text-gray-100" : "text-gray-600"
+        }`}
+      >
+        {activity.content.main}
+      </p>
+    </motion.div>
+  );
 };
+
+
 
 const ActivitiesMain = () => {
     const router = useRouter();

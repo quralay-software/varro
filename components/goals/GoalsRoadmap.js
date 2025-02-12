@@ -78,7 +78,7 @@ const GoalsRoadmap = () => {
                                 initial={{ opacity: 0, x: isEven ? -50 : 50 }}
                                 animate={inView ? { opacity: 1, x: 0 } : {}}
                                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                                className={`flex items-start mb-6 lg:mb-8 
+                                className={`flex items-start mb-6 lg:mb-8
                                     flex-col pl-12 lg:pl-0 ${marginClass}
                                     ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
                             >

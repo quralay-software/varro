@@ -22,9 +22,7 @@ const TimelineEvent = ({ event, index, data }) => {
 
             <div className="ml-12 sm:ml-24 bg-white rounded-lg sm:rounded-none p-4 sm:p-6 md:p-8 w-full border max-w-2xl shadow-sm hover:shadow-md transition-shadow duration-300">
                 <div className="flex items-start sm:items-center mb-4 sm:mb-6">
-                    <div className="text-primary mr-4 sm:mr-6">
-                        <Icon size={32} className="sm:w-12 sm:h-12" strokeWidth={1.5} />
-                    </div>
+                    
                     <div>
                         <div className="text-primary font-bold text-lg sm:text-xl md:text-2xl mb-1">
                             {timelineData.year}

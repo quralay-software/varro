@@ -174,16 +174,6 @@ const Header = (props) => {
                                                 {t('nav.about')}
                                             </Link>
                                         </li>
-                                        <li>
-                                            <Link
-                                                onClick={ClickHandler}
-                                                className={`font-arial text-lg transition-colors duration-200 py-2 px-3
-                                                    ${router.pathname === '/activities' ? 'text-primary font-medium' : 'text-gray-700 hover:text-gray-900'}`}
-                                                href="/activities"
-                                            >
-                                                {t('nav.activities')}
-                                            </Link>
-                                        </li>
                                         <li className="flex items-center">
                                             <NavDropdown
                                                 title={t('nav.strategic')}

@@ -339,7 +339,7 @@
 
 			.wpo-static-hero-inner {
 				position: relative;
-				margin-left: -120px;
+				margin-left: -60px;
 
 				@media (max-width:1649px) {
 					margin-left: -60px;
@@ -376,10 +376,10 @@
 					margin-top: 18px;
 					font-family: $heading-font;
 					font-weight: 400;
-					font-size: 70px;
+					font-size: 50px;
 					line-height: 90px;
 					color: $dark-gray;
-					margin-bottom: 25px;
+					margin-bottom: 150px;
 
 					@media (max-width:1199px) {
 						margin-top: 0px;
@@ -1217,9 +1217,8 @@
 	.slider-img-4 {
 		right: 0;
 		margin: 0 auto;
-		top: 20px;
-		width: 80%;
-		height: 980px;
+		width: 75%;
+		height: 100vh;
 		align-items: center;
 		background-position: 50%;
 		background-size: cover;
@@ -1280,7 +1279,7 @@
 	}
 	.hero-inner {
 		align-items: center;
-		
+
 		.wpo-static-hero-inner {
 			top: 0;
 			.title {
@@ -1303,9 +1302,9 @@
 					margin-bottom: 30px;
 				}
 			}
-			
+
 		}
-		
+
 	}
 	.hero-container .hero-inner .wpo-static-hero-inner{
 		@include media-query(767px) {

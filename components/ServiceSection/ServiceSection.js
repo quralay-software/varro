@@ -68,7 +68,7 @@ const ServiceSection = () => {
 
   const goToSlide = (index) => {
     if (!isTransitioning) {
-      setCurrentSlide(index + 2);
+      setCurrentSlide(index + 0);
     }
   };
 
@@ -150,14 +150,8 @@ const ServiceSection = () => {
                           />
                         </div>
                         <div>
-                          <h2 className="mb-4">
-                            <Link
-                              href="/services"
-                              onClick={ClickHandler}
-                              className="text-white hover:text-[#D9916A] transition-colors"
-                            >
-                              {service.title}
-                            </Link>
+                          <h2 className="mb-4 text-white ">
+                            {service.title}
                           </h2>
                           <p className="text-white/80">{service.description}</p>
                         </div>

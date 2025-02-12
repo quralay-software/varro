@@ -46,13 +46,6 @@ const GoalsHero = () => {
                         <p className="text-base md:text-lg text-gray-200 mb-6 md:mb-8 max-w-2xl">
                             {data.description}
                         </p>
-                        <button
-                            onClick={scrollToStrategies}
-                            className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-none border-none
-                                     transition-all duration-300 transform hover:scale-105"
-                        >
-                            {data.button}
-                        </button>
                     </motion.div>
                 </div>
             </div>
