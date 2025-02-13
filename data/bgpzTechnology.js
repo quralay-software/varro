@@ -188,7 +188,7 @@ export const bgpzTechnologyData = {
         technologies: [
             {
                 icon: 'Filter',
-                title: 'Natural Gas Separation and Purification',
+                title: 'Natural Gas Separation -and Purification',
                 description: 'High-efficiency gas separation and purification systems.',
                 details: [
                     'Production of liquefied hydrocarbon fractions',
@@ -209,7 +209,7 @@ export const bgpzTechnologyData = {
             },
             {
                 icon: 'Factory',
-                title: 'Gas Fractionation Unit',
+                title: 'Gas Fractionation-Unit',
                 description: 'Comprehensive hydrocarbon fraction separation system.',
                 details: [
                     'Equipment readiness',
@@ -230,7 +230,7 @@ export const bgpzTechnologyData = {
             },
             {
                 icon: 'Flask',
-                title: 'Condensate Stabilization',
+                title: 'Condensate-Stabilization',
                 description: 'Modern product quality improvement system.',
                 details: [
                     'Modern quality improvement system',
@@ -251,7 +251,7 @@ export const bgpzTechnologyData = {
             },
             {
                 icon: 'Truck',
-                title: 'Storage and Transportation',
+                title: 'Storage and -Transportation',
                 description: 'Comprehensive logistics infrastructure.',
                 details: [
                     'Own supply infrastructure',

@@ -33,6 +33,7 @@ const DirectionCard = ({ direction }) => {
 };
 
 
+
 const StrategicDirections = () => {
   const [activeDirection, setActiveDirection] = useState(null);
   const { i18n } = useTranslation();

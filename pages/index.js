@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
-import ServiceSection from "../components/ServiceSection/ServiceSection";
 import Scrollbar from "../components/scrollbar/scrollbar";
 import Hero3 from "../components/hero3/hero3";
 import Footer from "../components/footer/Footer";
@@ -14,7 +13,6 @@ const HomePage = () => {
     <div className={`${play.className}`}>
       <Navbar hclass={"wpo-header-style-3"} topbarNone={"topbar-none"} />
       <Hero3 />
-      <ServiceSection />
       <Footer />
       <Scrollbar />
     </div>

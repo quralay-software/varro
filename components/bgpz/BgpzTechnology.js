@@ -17,9 +17,15 @@ const TechnologyCard = ({ tech }) => {
         <div className="relative z-10 flex flex-col justify-between h-full">
           <div>
             <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4 text-center relative">
-              {tech.title}
+              {tech.title.split("-").map((part, index) => (
+                <React.Fragment key={index}>
+                  {part}
+                  {index !== tech.title.split("-").length - 1 && <br />}
+                </React.Fragment>
+              ))}
               <span className="block h-1 mt-2 bg-primary w-full"></span>
             </h3>
+
             <p className="text-gray-700 text-base sm:text-lg mb-4 sm:mb-6 text-center">
               {tech.description}
             </p>
