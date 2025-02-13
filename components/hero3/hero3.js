@@ -174,6 +174,17 @@ const Hero3 = () => {
                     (s) => s.slug === service.slug
                   );
                   if (!serviceDataItem) return null;
+                  const renderTitle = (title) => {
+                    if (title.includes("-")) {
+                      return title.split("-").map((part, idx, arr) => (
+                        <React.Fragment key={idx}>
+                          {part.trim()}
+                          {idx < arr.length - 1 && <br />}
+                        </React.Fragment>
+                      ));
+                    }
+                    return title;
+                  };
                   return (
                     <div
                       key={index}
@@ -181,18 +192,12 @@ const Hero3 = () => {
                       style={{ marginRight: "16px" }}
                     >
                       <div className="p-4 text-center bg-[#1E2E3E] h-full max-h-[14rem] min-h-[14rem]">
-                        <div className="mb-4">
-                          <Image
-                            src={serviceDataItem.sImg}
-                            alt={service.title}
-                            className="mx-auto"
-                          />
-                        </div>
                         <div>
-                          <h2 className="mb-2 text-white sm:text-lg text-sm">
-                            {service.title}
+                          <h2 className="mb-2 text-white sm:text-lg text-base">
+                            {renderTitle(service.title)}
+                            <span className="block h-1 mt-2 bg-white w-full"></span>
                           </h2>
-                          <p className="text-white/80 text-sm">
+                          <p className="text-white/80 sm:text-lg text-base">
                             {service.description}
                           </p>
                         </div>
