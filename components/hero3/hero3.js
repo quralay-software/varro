@@ -5,8 +5,9 @@ import { useTranslation } from "next-i18next";
 import Services from "../../api/Services";
 import { hero3Data } from "../../data/hero3";
 import { serviceSectionData } from "../../data/serviceSection";
+import Footer from "../Footer/Footer";
 
-const hero3 = () => {
+const Hero3 = () => {
   const { i18n } = useTranslation();
   const currentLang = i18n.language || "ru";
   const heroData = hero3Data[currentLang];
@@ -79,8 +80,8 @@ const hero3 = () => {
   };
 
   return (
-    <section className="hero-with-services h-screen overflow-hidden">
-      <div className="hero-section relative h-1/2">
+    <section className="hero-with-services h-screen overflow-hidden flex flex-col">
+      <div className="relative h-[35%] sm:h-[60%]">
         {/* Mobile */}
         <div className="block md:hidden h-full relative overflow-hidden">
           <div className="absolute inset-0">
@@ -107,7 +108,7 @@ const hero3 = () => {
           </div>
         </div>
 
-        {/* Desktop*/}
+        {/* Desktop */}
         <div className="hidden md:block h-full relative overflow-hidden">
           <motion.div
             className="absolute inset-0"
@@ -141,17 +142,15 @@ const hero3 = () => {
           </div>
         </div>
       </div>
-
       {/* services */}
-      <div className="services-section relative h-1/2 bg-[#1E2E3E] px-6 md:px-12 lg:px-24 py-4 overflow-hidden">
+      <div className="relative h-[60%] sm:h-[40%] bg-[white] px-6 md:px-12 lg:px-24 py-4 overflow-hidden">
         <div className="container mx-auto h-full flex flex-col lg:flex-row items-center">
-          {/* text */}
           <div className="w-full lg:w-[414px]">
             <div className="text-left lg:pr-8">
-              <h2 className="text-white text-3xl md:text-4xl font-normal leading-tight mb-2">
+              <h2 className="text-black text-3xl md:text-4xl font-normal leading-tight mb-2">
                 {serviceData.title}
               </h2>
-              <p className="text-white text-sm md:text-base">
+              <p className="text-black text-sm md:text-base">
                 {serviceData.description}
               </p>
             </div>
@@ -159,9 +158,6 @@ const hero3 = () => {
 
           {/* slider */}
           <div className="w-full lg:w-[calc(100%-414px)] lg:ml-[70px] relative flex-1">
-            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#1E2E3E] to-transparent z-10 hidden lg:block" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#1E2E3E] to-transparent z-10 hidden lg:block" />
-
             <div className="overflow-x-auto lg:overflow-hidden h-full">
               <div
                 onTouchStart={() => setIsAutoPlaying(false)}
@@ -184,7 +180,7 @@ const hero3 = () => {
                       className="lg:w-80 w-64 flex-shrink-0"
                       style={{ marginRight: "16px" }}
                     >
-                      <div className="p-4 text-center bg-gradient-to-b from-[#4B5865] via-[#1E2E3E] to-[#1b2a38] h-full min-h-[250px] md:min-h-[230px]">
+                      <div className="p-4 text-center bg-[#1E2E3E] h-full max-h-[14rem] min-h-[14rem]">
                         <div className="mb-4">
                           <Image
                             src={serviceDataItem.sImg}
@@ -226,8 +222,12 @@ const hero3 = () => {
           </div>
         </div>
       </div>
+
+      <div>
+        <Footer />
+      </div>
     </section>
   );
 };
 
-export default hero3;
+export default Hero3;
