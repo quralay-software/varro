@@ -5,7 +5,7 @@ import { useTranslation } from "next-i18next";
 import Services from "../../api/Services";
 import { hero3Data } from "../../data/hero3";
 import { serviceSectionData } from "../../data/serviceSection";
-import Footer from "../Footer/Footer";
+import Footer from "../footer/Footer";
 
 const Hero3 = () => {
   const { i18n } = useTranslation();
