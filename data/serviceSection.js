@@ -6,7 +6,7 @@ export const serviceSectionData = {
         services: [
             {
                 id: '1',
-                title: 'Добыча нефти и- газа',
+                title: 'Добыча нефти -и газа',
                 description: 'Комплексный подход к разведке и добыче углеводородов с использованием современных технологий.',
                 slug: 'oil-and-gas-extraction'
             },

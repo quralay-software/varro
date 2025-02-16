@@ -188,10 +188,10 @@ const Hero3 = () => {
                   return (
                     <div
                       key={index}
-                      className="lg:w-80 w-64 flex-shrink-1"
+                      className="lg:w-80 w-64 [flex-shrink:0] lg:[flex-shrink:1]"
                       style={{ marginRight: "16px" }}
                     >
-                      <div className="p-4 text-center bg-gradient-to-br from-gray-50 to-primary/25 h-full max-h-[14rem] min-h-[15rem] border border-gray-200">
+                      <div className="p-4 text-center bg-gradient-to-br from-gray-50 to-primary/25 h-full max-h-[14rem] sm:min-h-[15rem] border border-gray-200">
                         <div>
                           <h2 className="mb-2 text-black sm:text-lg text-base">
                             {renderTitle(service.title)}
