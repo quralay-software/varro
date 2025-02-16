@@ -1,125 +1,222 @@
-import React from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { useTranslation } from 'next-i18next';
-import { about4HeroData } from '../../data/about4Hero';
-import { about4ContentData } from '../../data/about4Content';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { useTranslation } from "next-i18next";
+import Footer from "../footer/Footer";
+import { activitiesMainContent } from "../../data/activitiesMainContent";
+import { about4HeroData } from "../../data/about4Hero";
 
-const About4Hero = () => {
-    const { i18n } = useTranslation();
-    const currentLang = i18n.language || 'ru';
-    const data = about4HeroData[currentLang];
+const About4 = () => {
+  const { i18n } = useTranslation();
+  const currentLang = i18n.language || "ru";
+  const content = activitiesMainContent[currentLang];
+  const data = about4HeroData[currentLang];
 
-    return (
-        <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
-            <div className="container mx-auto px-4">
-                <div className="flex flex-col md:flex-row items-center justify-between">
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="w-full md:w-1/2 mb-8 md:mb-0 md:pr-8 lg:pr-12"
-                    >
-                        <span className="text-primary text-lg sm:text-xl mb-3 sm:mb-4 block">
-                            {data.company}
-                        </span>
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-sans mb-4 sm:mb-6">
-                            {data.title}
-                        </h1>
-                        <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl">
-                            {data.description}
-                        </p>
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="w-full md:w-1/2"
-                    >
-                        <div className="relative">
-                            <Image
-                                src='/images/img-7.JPG'
-                                alt={data.image.alt}
-                                width={800}
-                                height={600}
-                                className="rounded-2xl sm:rounded-3xl object-cover w-full h-[300px] sm:h-[400px] md:h-[500px]"
-                            />
-                            <div className="absolute inset-0 bg-primary/10 rounded-2xl sm:rounded-3xl"></div>
-                        </div>
-                    </motion.div>
-                </div>
+  const activities = content.activities;
+
+  const mobileSlideWidth = 256;
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const slidesPerView = isMobile ? 1 : 3;
+  const totalPages = Math.max(1, activities.length - slidesPerView + 1);
+
+  useEffect(() => {
+    let interval;
+    if (
+      !isMobile &&
+      isAutoPlaying &&
+      !isTransitioning &&
+      currentSlide < totalPages - 2
+    ) {
+      interval = setInterval(() => {
+        setCurrentSlide((prev) => Math.min(prev + 1, totalPages - 2));
+      }, 3000);
+    }
+    return () => clearInterval(interval);
+  }, [currentSlide, isAutoPlaying, isTransitioning, totalPages, isMobile]);
+
+  const goToSlide = (index) => {
+    if (!isTransitioning) {
+      setCurrentSlide(index);
+    }
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { delayChildren: 0.3, staggerChildren: 0.2 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const imageVariants = {
+    hidden: { scale: 1.1, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: { duration: 1.2, ease: "easeOut" },
+    },
+  };
+
+  const renderTitle = (title) => {
+    if (title.includes("-")) {
+      return title.split("-").map((part, idx, arr) => (
+        <React.Fragment key={idx}>
+          {part.trim()}
+          {idx < arr.length - 1 && <br />}
+        </React.Fragment>
+      ));
+    }
+    return title;
+  };
+
+  return (
+    <section className="hero-with-services h-screen overflow-hidden flex flex-col">
+      <div className="relative h-[35%] sm:h-[60%]">
+        {/* Mobile */}
+        <div className="block md:hidden h-full relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div
+              className="w-full h-full bg-cover bg-center filter brightness-75 blur-[1px]"
+              style={{
+                backgroundImage: `url(${
+                  content.backgroundImage || "/images/img-4.JPG"
+                })`,
+              }}
+            />
+            <div className="absolute inset-0 bg-black/30" />
+          </div>
+          <div className="relative z-10 h-full container mx-auto px-4 py-6 flex items-center">
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.h2
+                variants={itemVariants}
+                className="text-4xl font-bold text-white text-center"
+              >
+                {data.title}
+              </motion.h2>
+            </motion.div>
+          </div>
+        </div>
+        {/* Desktop */}
+        <div className="hidden md:block h-full relative overflow-hidden">
+          <motion.div
+            className="absolute inset-0"
+            variants={imageVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <div
+              className="w-full h-full bg-cover bg-center filter brightness-75 blur-[0.5px]"
+              style={{
+                backgroundImage: `url(${
+                  content.backgroundImage || "/images/img-4.JPG"
+                })`,
+              }}
+            />
+            <div className="absolute inset-0 bg-black/30" />
+          </motion.div>
+          <div className="relative z-10 h-full flex items-center">
+            <div className="container">
+              <motion.div
+                className="wpo-static-hero-inner"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <motion.h2
+                  className="title text-white font-bold text-6xl text-center"
+                  variants={itemVariants}
+                >
+                  {data.title}
+                </motion.h2>
+              </motion.div>
             </div>
-        </section>
-    );
-};
+          </div>
+        </div>
+      </div>
 
-const About4 = (props) => {
-    const { i18n } = useTranslation();
-    const currentLang = i18n.language || 'ru';
-    const data = about4ContentData[currentLang];
+      {/* text+slider */}
+      <div className="relative h-[90%] sm:h-[40%] bg-white px-6 md:px-12 lg:px-24 py-4 overflow-hidden">
+        <div className="container mx-auto h-full flex flex-col lg:flex-row items-center">
+          {/* text */}
+          <div className="w-full lg:w-[414px]">
+            <div className="text-left lg:pr-8">
+              <h2 className="text-black text-2xl md:text-3xl font-normal leading-tight mb-2">
+                {content.sectionTitle}
+              </h2>
+              <p className="text-black text-base md:text-base">
+                {data.description}
+              </p>
+            </div>
+          </div>
 
-    const projectImages = [
-        { src: '/images/img-2.JPG', alt: 'Project Image 2' },
-        { src: '/images/img-4.JPG', alt: 'Project Image 4' },
-        { src: '/images/img-6.JPG', alt: 'Project Image 6' },
-        { src: '/images/img-9.JPG', alt: 'Project Image 9' },
-    ];
-
-    return (
-        <>
-            <About4Hero />
-            <section className="py-12 sm:py-16 md:py-20">
-                <div className="container mx-auto px-4">
-                    <div className="flex flex-col lg:flex-row gap-8 items-stretch">
-                        <motion.div
-                            initial={{ y: -50, opacity: 0 }}
-                            whileInView={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 0.6 }}
-                            className="w-full lg:w-1/2"
-                        >
-                            <div className="max-w-4xl mx-auto">
-                                <div className="grid grid-cols-2 gap-2 sm:gap-4 mt-[-1rem] sm:mt-[-2rem]">
-                                    {projectImages.map((image, index) => (
-                                        <motion.div
-                                            key={index}
-                                            className="house-info"
-                                            style={{"--h": "40px"}}
-                                            initial={{ y: 50, opacity: 0 }}
-                                            whileInView={{ y: 0, opacity: 1 }}
-                                            transition={{ duration: 0.6, delay: index * 0.1 }}
-                                        >
-                                            <div className="relative">
-                                                <Image
-                                                    src={image.src}
-                                                    alt={image.alt}
-                                                    width={800}
-                                                    height={600}
-                                                    className={`w-full h-[150px] sm:h-[200px] md:h-[250px] object-cover ${index < 2 ? "image-mask" : "content-mask"} ${index % 2 === 0 ? "scale-x-[-1]" : ""}`}
-                                                />
-                                            </div>
-                                        </motion.div>
-                                    ))}
-                                </div>
-                            </div>
-                        </motion.div>
-                         <motion.div
-                            initial={{ y: 50, opacity: 0 }}
-                            whileInView={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 0.6 }}
-                            className="w-full lg:w-1/2"
-                        >
-                            <div className="project-text">
-                                <h2 className='text-3xl sm:text-4xl md:text-5xl text-primary my-4 sm:my-6 md:my-8 font-sans'>{data.main_title}</h2>
-                                <p className="text-base sm:text-lg mb-4">{data.description1}</p>
-                                <p className="text-base sm:text-lg">{data.description2}</p>
-                            </div>
-                        </motion.div>
+          {/* slider */}
+          <div className="w-full lg:w-[calc(100%-414px)] lg:ml-[10%] relative flex-1">
+            <div className="overflow-x-auto lg:overflow-hidden h-full">
+              <div
+                onTouchStart={() => setIsAutoPlaying(false)}
+                onMouseEnter={() => setIsAutoPlaying(false)}
+                className="flex transition-transform duration-500 ease-out h-full items-center"
+                style={{
+                  transform: `translateX(-${
+                    currentSlide * (isMobile ? mobileSlideWidth : 384)
+                  }px)`,
+                }}
+              >
+                {activities.map((direction, index) => (
+                  <div
+                    key={index}
+                    className="lg:w-96 w-64 flex-shrink-0"
+                    style={{ marginRight: "16px" }}
+                  >
+                    <div className="p-4 text-center bg-gradient-to-br from-gray-50 to-primary/25 h-full max-h-[14rem] min-h-[14rem] border border-gray-200">
+                      <div>
+                        <h2 className="mb-2 text-black sm:text-lg text-base">
+                          {renderTitle(direction.title)}
+                          <span className="block h-1 mt-2 bg-primary w-full"></span>
+                        </h2>
+                        <p className="text-black/80 sm:text-lg text-base">
+                          {renderTitle(direction.content.main)}
+                        </p>
+                      </div>
                     </div>
-                </div>
-            </section>
-        </>
-    );
-};
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <div>
+        <Footer />
+      </div>
+    </section>
+  );
+};
 
 export default About4;

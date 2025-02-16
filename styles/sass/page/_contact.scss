@@ -164,7 +164,7 @@
 				text-align: center;
 				margin: 0 auto;
 				@include rounded-border(50%);
-                
+
 				.icon{
 					.fi{
 						&:before{
@@ -186,7 +186,7 @@
 				}
 			}
 		}
-		
+
 	}
 
 .wpo-contact-form-area{
@@ -216,7 +216,7 @@
         }
     }
 }
-  
+
 
 }
 
@@ -236,4 +236,15 @@
 	h2.hidden{
 		display: none;
 	}
+}
+.map-container {
+    position: relative;
+    width: 600px;
+    height: 450px;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: -8rem;
 }

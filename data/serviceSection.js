@@ -22,18 +22,7 @@ export const serviceSectionData = {
                 description: 'Оптимизированные решения по поставке нефтегазовых продуктов на внутренний и международный рынки.',
                 slug: 'hydrocarbon-sales'
             },
-            {
-                id: '4',
-                title: 'Управление безопасностью и охраной окружающей среды',
-                description: 'Комплексный подход к обеспечению безопасности и защите окружающей среды.',
-                slug: 'environmental-safety'
-            },
-            {
-                id: '5',
-                title: 'Техническое обслуживание и модернизация',
-                description: 'Профессиональное обслуживание и модернизация нефтегазовой инфраструктуры.',
-                slug: 'technical-maintenance'
-            }
+
         ]
     },
     kk: {
@@ -50,7 +39,7 @@ export const serviceSectionData = {
             {
                 id: '2',
                 title: 'Газды өңдеу -және сақтау',
-                description: 'Газ өңдеу қуаттары мен сақтау инфрақұрылымын тиімді басқару.',
+                description: 'Газ өңдеу қуаттары -мен сақтау -инфрақұрылымын тиімді басқару.',
                 slug: 'gas-processing'
             },
             {
@@ -59,18 +48,6 @@ export const serviceSectionData = {
                 description: 'Мұнай-газ өнімдерін ішкі және халықаралық нарықтарға жеткізу бойынша оңтайландырылған шешімдер.',
                 slug: 'hydrocarbon-sales'
             },
-            {
-                id: '4',
-                title: 'Қауіпсіздік және қоршаған ортаны қорғауды басқару',
-                description: 'Қауіпсіздікті қамтамасыз ету және қоршаған ортаны қорғауға кешенді көзқарас.',
-                slug: 'environmental-safety'
-            },
-            {
-                id: '5',
-                title: 'Техникалық қызмет көрсету -және жаңғырту',
-                description: 'Мұнай-газ инфрақұрылымына кәсіби қызмет көрсету және жаңғырту.',
-                slug: 'technical-maintenance'
-            }
         ]
     },
     en: {
@@ -87,7 +64,7 @@ export const serviceSectionData = {
             {
                 id: '2',
                 title: 'Gas Processing and- Storage',
-                description: 'Efficient management of gas processing facilities and storage infrastructure.',
+                description: 'Efficient management -of gas processing -facilities and storage infrastructure.',
                 slug: 'gas-processing'
             },
             {
@@ -96,18 +73,7 @@ export const serviceSectionData = {
                 description: 'Optimized solutions for supplying oil and gas products to domestic and international markets.',
                 slug: 'hydrocarbon-sales'
             },
-            {
-                id: '4',
-                title: 'Safety and Environmental Management',
-                description: 'Comprehensive approach to ensuring safety and environmental protection.',
-                slug: 'environmental-safety'
-            },
-            {
-                id: '5',
-                title: 'Technical Maintenance and Modernization',
-                description: 'Professional maintenance and modernization of oil and gas infrastructure.',
-                slug: 'technical-maintenance'
-            }
+
         ]
     }
 };

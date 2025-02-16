@@ -162,7 +162,7 @@ const Hero3 = () => {
               <div
                 onTouchStart={() => setIsAutoPlaying(false)}
                 onMouseEnter={() => setIsAutoPlaying(false)}
-                className="flex transition-transform duration-500 ease-out h-full items-center"
+                className="flex h-full items-center"
                 style={{
                   transform: `translateX(-${
                     currentSlide * (isMobile ? mobileSlideWidth : 384)
@@ -188,17 +188,17 @@ const Hero3 = () => {
                   return (
                     <div
                       key={index}
-                      className="lg:w-80 w-64 flex-shrink-0"
+                      className="lg:w-80 w-64 flex-shrink-1"
                       style={{ marginRight: "16px" }}
                     >
-                      <div className="p-4 text-center bg-[#1E2E3E] h-full max-h-[14rem] min-h-[14rem]">
+                      <div className="p-4 text-center bg-gradient-to-br from-gray-50 to-primary/25 h-full max-h-[14rem] min-h-[15rem] border border-gray-200">
                         <div>
-                          <h2 className="mb-2 text-white sm:text-lg text-base">
+                          <h2 className="mb-2 text-black sm:text-lg text-base">
                             {renderTitle(service.title)}
-                            <span className="block h-1 mt-2 bg-white w-full"></span>
+                            <span className="block h-1 mt-2 bg-primary w-full"></span>
                           </h2>
-                          <p className="text-white/80 sm:text-lg text-base">
-                            {service.description}
+                          <p className="text-black/80 sm:text-lg text-base">
+                            {renderTitle(service.description)}
                           </p>
                         </div>
                       </div>
@@ -207,23 +207,6 @@ const Hero3 = () => {
                 })}
               </div>
             </div>
-
-            {!isMobile && (
-              <div className="flex justify-center items-center gap-2 mt-4">
-                {Array.from({ length: totalPages }).map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => goToSlide(index)}
-                    className={`h-2 lg:h-3 rounded-full transition-all border-none duration-300 ${
-                      currentSlide === index
-                        ? "w-8 lg:w-16 bg-primary"
-                        : "w-4 lg:w-8 bg-primary opacity-50"
-                    }`}
-                    aria-label={`Перейти к слайду ${index + 1}`}
-                  />
-                ))}
-              </div>
-            )}
           </div>
         </div>
       </div>

@@ -1,8 +1,19 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useTranslation } from "next-i18next";
 import { useInView } from "react-intersection-observer";
 import { strategicDirectionsData } from "../../data/strategicDirections";
+
+
+const renderTitle = (title) => {
+  const parts = title.split("-");
+  return parts.map((part, index) => (
+    <React.Fragment key={index}>
+      {part.trim()}
+      {index < parts.length - 1 && <br />}
+    </React.Fragment>
+  ));
+};
 
 const DirectionCard = ({ direction }) => {
   return (
@@ -10,20 +21,20 @@ const DirectionCard = ({ direction }) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="bg-white rounded-lg overflow-hidden border border-gray-200 sm:h-[26rem] flex"
+      className="bg-white/75 rounded-lg overflow-hidden border border-gray-200 sm:h-[22rem] flex"
     >
-      <div className="p-6 sm:p-8 md:p-10 h-full relative flex flex-col w-full">
+      <div className="p-6 sm:p-8 md:p-8 h-full relative flex flex-col w-full">
         <div
           className={`absolute inset-0 bg-gradient-to-br ${direction.color} opacity-10`}
         />
         <div className="relative z-10 flex flex-col justify-center items-center h-full text-center">
           <div className="flex flex-col items-center">
             <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4 relative">
-              {direction.title}
+              {renderTitle(direction.title)}
               <span className="block h-1 mt-2 bg-primary w-full"></span>
             </h3>
             <p className="text-gray-700 text-base sm:text-lg mb-4 sm:mb-6">
-              {direction.description}
+              {renderTitle(direction.description)}
             </p>
           </div>
         </div>
@@ -31,8 +42,6 @@ const DirectionCard = ({ direction }) => {
     </motion.div>
   );
 };
-
-
 
 const StrategicDirections = () => {
   const [activeDirection, setActiveDirection] = useState(null);
@@ -45,7 +54,6 @@ const StrategicDirections = () => {
     triggerOnce: false,
   });
 
-  // Reset active direction when section is out of view
   React.useEffect(() => {
     if (!inView) {
       setActiveDirection(null);
@@ -57,10 +65,8 @@ const StrategicDirections = () => {
       id="strategic-directions"
       className="py-20 bg-gray-50 relative overflow-hidden"
     >
-      {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10" />
 
-      {/* Decorative Elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl" />
 
@@ -71,9 +77,6 @@ const StrategicDirections = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-xl font-medium block mb-4">
-            {content.sectionTitle}
-          </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             {content.mainTitle}
           </h2>
@@ -83,7 +86,7 @@ const StrategicDirections = () => {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={{
