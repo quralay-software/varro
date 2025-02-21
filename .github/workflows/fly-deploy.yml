@@ -18,6 +18,10 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
           ssh-keyscan -t rsa ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+          # Debug: Check key file
+          ls -la ~/.ssh/deploy_key
+          # Debug: Test SSH connection with verbose output
+          ssh -v -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} 'echo "SSH connection successful"'
 
       - name: Configure Git
         run: |
@@ -32,5 +36,4 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             sudo docker compose up -d --build
-
           ENDSSH
