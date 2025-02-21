@@ -10,6 +10,14 @@ import Logo from "/public/images/varro.png";
 export default function Navbar(props) {
   const [scroll, setScroll] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScroll(document.documentElement.scrollTop);
@@ -20,7 +28,7 @@ export default function Navbar(props) {
   const bgClass = "bg-transparent";
   const transitionClass = "transition-colors duration-300";
 
-  const showBurger = scroll < 80;
+  const showElements = scroll < 100;
 
   return (
     <>
@@ -29,14 +37,28 @@ export default function Navbar(props) {
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
-            <Link href="/" className="invisible flex-shrink-0">
-              <Image
-                src={Logo}
-                alt="Varro Operating Group"
-                className="h-12 w-auto"
-                priority
-              />
-            </Link>
+            <AnimatePresence>
+              {(!isMobile || showElements) && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Link
+                    href="/"
+                    className="flex-shrink-0 relative z-[9999] sm:ml-20"
+                  >
+                    <Image
+                      src={Logo}
+                      alt="Varro Operating Group"
+                      className="h-12 w-auto drop-shadow-[0_0_2px_black]"
+                      priority
+                    />
+                  </Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             <div className="hidden lg:block flex-grow">
               <Header
@@ -46,40 +68,50 @@ export default function Navbar(props) {
               />
             </div>
 
-            {showBurger && (
-              <div className="lg:hidden">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="relative z-50 p-4 border-none rounded-full bg-white/50 hover:bg-gray-100 focus:outline-none"
+            {/* burger */}
+            <AnimatePresence>
+              {isMobile && showElements && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
                 >
-                  <AnimatePresence mode="wait">
-                    {isMobileMenuOpen ? (
-                      <motion.div
-                        key="close"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="flex items-center justify-center"
-                      >
-                        <X className="h-6 w-6 text-gray-600" />
-                      </motion.div>
-                    ) : (
-                      <motion.div
-                        key="menu"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="flex items-center justify-center"
-                      >
-                        <Menu className="h-6 w-6 text-gray-600" />
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.button>
-              </div>
-            )}
+                  <div className="lg:hidden">
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                      className="relative z-50 p-4 border-none rounded-full bg-white/50 hover:bg-gray-100 focus:outline-none"
+                    >
+                      <AnimatePresence mode="wait">
+                        {isMobileMenuOpen ? (
+                          <motion.div
+                            key="close"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="flex items-center justify-center"
+                          >
+                            <X className="h-6 w-6 text-gray-600" />
+                          </motion.div>
+                        ) : (
+                          <motion.div
+                            key="menu"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="flex items-center justify-center"
+                          >
+                            <Menu className="h-6 w-6 text-gray-600" />
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.button>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </div>

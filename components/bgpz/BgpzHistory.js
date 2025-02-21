@@ -1,155 +1,199 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Factory, Zap, Lightbulb, ChevronRight } from 'lucide-react';
-import { useTranslation } from 'next-i18next';
-import { bgpzHistoryData } from '../../data/bgpzHistory';
+import React from "react";
+import { motion } from "framer-motion";
+import { ChevronRight } from "lucide-react";
+import { useTranslation } from "next-i18next";
+import { bgpzHistoryData } from "../../data/bgpzHistory";
 
-const TimelineEvent = ({ event, index, data }) => {
-    const Icon = event.Icon;
-    const timelineData = data.timeline[index];
+const TimelineEvent = ({ item, index, isDesktop }) => {
+  const { year, title, description, achievements } = item;
 
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            className="relative flex items-center mb-8 sm:mb-12 last:mb-0"
-        >
-            <div className="absolute left-4 sm:left-8 top-0 bottom-0 w-0.5 bg-gray-200" />
-            <div className="absolute left-2 sm:left-6 w-4 sm:w-5 h-4 sm:h-5 bg-primary rounded-full border-4 border-white" />
+  const widthClass = isDesktop ? "w-[30%]" : "w-[80%] flex-shrink-0";
 
-            <div className="ml-12 sm:ml-24 bg-white rounded-lg sm:rounded-none p-4 sm:p-6 md:p-8 w-full border max-w-2xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                <div className="flex items-start sm:items-center mb-4 sm:mb-6">
-                    
-                    <div>
-                        <div className="text-primary font-bold text-lg sm:text-xl md:text-2xl mb-1">
-                            {timelineData.year}
-                        </div>
-                        <h3 className="text-xl sm:text-2xl font-bold font-sans">
-                            {timelineData.title}
-                        </h3>
-                    </div>
-                </div>
-                <p className="text-gray-600 text-base sm:text-lg mb-4 sm:mb-6">
-                    {timelineData.description}
-                </p>
-                <div className="space-y-2 sm:space-y-3">
-                    {timelineData.achievements.map((achievement, idx) => (
-                        <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.4, delay: 0.2 + idx * 0.1 }}
-                            className="flex items-center"
-                        >
-                            <ChevronRight className="text-primary mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                            <span className="text-gray-600 text-base sm:text-lg">{achievement}</span>
-                        </motion.div>
-                    ))}
-                </div>
-            </div>
-        </motion.div>
-    );
+  let heightClass = "";
+  if (isDesktop) {
+    if (index === 0) {
+      heightClass = "min-h-[370px]";
+    } else if (index === 1) {
+      heightClass = "min-h-[400px]";
+    } else {
+      heightClass = "min-h-[500px]";
+    }
+  } else {
+    heightClass = "min-h-[300px]";
+  }
+
+let marginTopClass = "";
+if (isDesktop) {
+  if (index === 0) {
+    marginTopClass = "-mt-4";
+  } else if (index === 1) {
+    marginTopClass = "mt-[-50px]";
+  } else if (index === 2) {
+    marginTopClass = "mt-[-100px]";
+  }
+}
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.2 }}
+      className={`
+        relative bg-white p-4 sm:p-6 md:p-8
+        rounded border shadow-sm hover:shadow-md
+        transition-shadow duration-300
+        mr-4 last:mr-0
+        ${widthClass}
+        ${heightClass}
+        ${marginTopClass}
+      `}
+    >
+      <div className="text-primary font-bold text-lg sm:text-xl md:text-2xl mb-1">
+        {year}
+      </div>
+      <h3 className="text-xl sm:text-2xl font-bold font-sans mb-2">{title}</h3>
+      <p className="text-gray-600 text-base sm:text-lg mb-4 sm:mb-6">
+        {description}
+      </p>
+
+      <div className="space-y-2 sm:space-y-3">
+        {achievements.map((ach, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
+            className="flex items-center"
+          >
+            <ChevronRight className="text-primary mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+            <span className="text-gray-600 text-base sm:text-lg">{ach}</span>
+          </motion.div>
+        ))}
+      </div>
+    </motion.div>
+  );
 };
 
-const FutureVision = ({ data }) => {
-    const visionData = data.future_vision;
+const VisionCard = ({ vision, isDesktop }) => {
+  const widthClass = isDesktop ? "w-[30%]" : "w-[80%] flex-shrink-0";
 
-    return (
-        <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative bg-white rounded-lg sm:rounded-none p-4 sm:p-6 md:p-8"
-        >
-            <div className="absolute right-0 top-0 w-20 sm:w-32 h-full overflow-hidden">
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute inset-0 transform -rotate-45">
-                        {[...Array(10)].map((_, i) => (
-                            <div
-                                key={i}
-                                className="absolute h-8 w-32 bg-primary"
-                                style={{
-                                    top: `${i * 4}rem`,
-                                    right: `${-i * 2}rem`,
-                                    transform: 'skew(-45deg)'
-                                }}
-                            />
-                        ))}
-                    </div>
-                </div>
-            </div>
+  let heightClass = "";
+  if (isDesktop) {
+    heightClass = "min-h-[500px]";
+  } else {
+    heightClass = "min-h-[300px]";
+  }
 
-            <div className="relative z-10">
-                <h3 className="text-2xl sm:text-3xl font-bold font-sans mb-4 sm:mb-6">
-                    {visionData.title}
-                </h3>
-                <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
-                    {visionData.description}
-                </p>
-                <div className="space-y-3 sm:space-y-4">
-                    {visionData.goals.map((goal, index) => (
-                        <div key={index} className="flex items-center">
-                            <ChevronRight className="text-primary mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6" />
-                            <span className="text-base sm:text-lg">{goal}</span>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </motion.div>
-    );
+  let marginTopClass = "";
+  if (isDesktop) {
+    marginTopClass = "mt-[-150px]";
+  }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 2 * 0.2 }}
+      className={`
+        relative bg-white p-4 sm:p-6 md:p-8
+        rounded border shadow-sm hover:shadow-md
+        transition-shadow duration-300
+        ${widthClass}
+        ${heightClass}
+        ${marginTopClass}
+      `}
+    >
+      <h3 className="text-2xl sm:text-3xl font-bold font-sans mb-4 sm:mb-6">
+        {vision.title}
+      </h3>
+      <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
+        {vision.description}
+      </p>
+      <div className="space-y-3 sm:space-y-4">
+        {vision.goals.map((goal, idx) => (
+          <div key={idx} className="flex items-center">
+            <ChevronRight className="text-primary mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6" />
+            <span className="text-base sm:text-lg">{goal}</span>
+          </div>
+        ))}
+      </div>
+    </motion.div>
+  );
 };
 
 const BgpzHistory = () => {
-    const { i18n } = useTranslation();
-    const currentLang = i18n.language || 'ru';
-    const data = bgpzHistoryData[currentLang];
+  const { i18n } = useTranslation();
+  const currentLang = i18n.language || "ru";
+  const data = bgpzHistoryData[currentLang];
 
-    const timelineEvents = [
-        { Icon: Factory },
-        { Icon: Zap }
-    ];
+  const timelineArray = data.timeline;
+  const futureVision = data.future_vision;
 
-    return (
-        <section id="bgpz-history" className="section-padding bg-gray-50 py-12 sm:py-16 md:py-20">
-            <div className="container mx-auto px-4">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-8 sm:mb-12 md:mb-16"
-                >
-                    <span className="text-primary text-lg sm:text-xl font-sans">
-                        {data.section_title}
-                    </span>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-sans mt-2 sm:mt-3 mb-4 sm:mb-6">
-                        {data.main_title}
-                    </h2>
-                    <p className="text-gray-600 text-base sm:text-lg md:text-xl mt-3 sm:mt-4 max-w-3xl mx-auto">
-                        {data.description}
-                    </p>
-                </motion.div>
+  const [isDesktop, setIsDesktop] = React.useState(false);
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
-                    <div className="relative max-w-2xl">
-                        {timelineEvents.map((event, index) => (
-                            <TimelineEvent
-                                key={index}
-                                event={event}
-                                index={index}
-                                data={data}
-                            />
-                        ))}
-                    </div>
-                    <div className="lg:mt-24">
-                        <FutureVision data={data} />
-                    </div>
-                </div>
+  React.useEffect(() => {
+    const checkWidth = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    checkWidth();
+    window.addEventListener("resize", checkWidth);
+    return () => window.removeEventListener("resize", checkWidth);
+  }, []);
+
+  return (
+    <section
+      id="bgpz-history"
+      className="bg-gray-50 py-12 sm:py-16 md:py-20 section-padding"
+    >
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-8 sm:mb-12 md:mb-16"
+        >
+          <span className="text-primary text-lg sm:text-xl font-sans">
+            {data.section_title}
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-sans mt-2 sm:mt-3 mb-4 sm:mb-6">
+            {data.main_title}
+          </h2>
+          <p className="text-gray-600 text-base sm:text-lg md:text-xl mt-3 sm:mt-4 max-w-3xl mx-auto">
+            {data.description}
+          </p>
+        </motion.div>
+
+        {/* cards cobntainer */}
+        {isDesktop ? (
+          // desc colums
+          <div className="flex items-start w-full justify-between gap-0 relative mt-40">
+            <TimelineEvent item={timelineArray[0]} index={0} isDesktop />
+            <TimelineEvent item={timelineArray[1]} index={1} isDesktop />
+            <VisionCard vision={futureVision} isDesktop />
+          </div>
+        ) : (
+          // mob horizon slider
+          <div className="relative overflow-x-auto pb-2 mt-4">
+            <div className="flex items-start gap-4">
+              <TimelineEvent
+                item={timelineArray[0]}
+                index={0}
+                isDesktop={false}
+              />
+              <TimelineEvent
+                item={timelineArray[1]}
+                index={1}
+                isDesktop={false}
+              />
+              <VisionCard vision={futureVision} isDesktop={false} />
             </div>
-        </section>
-    );
+          </div>
+        )}
+      </div>
+    </section>
+  );
 };
 
 export default BgpzHistory;

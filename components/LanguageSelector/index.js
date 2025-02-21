@@ -14,25 +14,31 @@ const LanguageSelector = () => {
       <div className="h-6 w-px bg-gray-300 mx-4"></div>
       <div className="flex items-center space-x-3">
         <button
-          onClick={() => changeLanguage('ru')}
+          onClick={() => changeLanguage("ru")}
           className={`px-3 py-1.5 font-arial transition-colors duration-200 bg-transparent border-none shadow-none ${
-            i18n.language === 'ru' ? 'text-primary' : 'text-gray-700 hover:text-primary'
+            i18n.language === "ru"
+              ? "text-primary/80"
+              : "text-white/90 hover:text-white/75"
           }`}
         >
           RU
         </button>
         <button
-          onClick={() => changeLanguage('kk')}
+          onClick={() => changeLanguage("kk")}
           className={`px-3 py-1.5 font-arial transition-colors duration-200 bg-transparent border-none shadow-none ${
-            i18n.language === 'kk' ? 'text-primary' : 'text-gray-700 hover:text-primary'
+            i18n.language === "kk"
+              ? "text-primary/80"
+              : "text-white/90 hover:text-white/75"
           }`}
         >
           ҚАЗ
         </button>
         <button
-          onClick={() => changeLanguage('en')}
+          onClick={() => changeLanguage("en")}
           className={`px-3 py-1.5 font-arial transition-colors duration-200 bg-transparent border-none shadow-none ${
-            i18n.language === 'en' ? 'text-primary' : 'text-gray-700 hover:text-primary'
+            i18n.language === "en"
+              ? "text-primary/80"
+              : "text-white/90 hover:text-white/75"
           }`}
         >
           EN

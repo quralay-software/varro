@@ -14,80 +14,90 @@ const NavDropdown = ({ title, items, isOpen, onToggle }) => {
     const isActiveDropdown = items.some(item => item.link === router.pathname);
 
     return (
-        <div
-            className="relative"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+      <div
+        className="relative"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <motion.button
+          onClick={onToggle}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className={`flex items-center font-arial bg-transparent border-none shadow-none text-lg font-medium px-3 py-2 rounded-md transition-colors duration-200
+                    ${
+                      isActiveDropdown
+                        ? "text-primary/80"
+                        : "text-white/90 hover:text-white/75"
+                    }`}
         >
-            <motion.button
-                onClick={onToggle}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`flex items-center font-arial bg-transparent border-none shadow-none text-lg font-medium px-3 py-2 rounded-md transition-colors duration-200
-                    ${isActiveDropdown ? 'text-primary' : 'text-gray-700 hover:text-gray-900'}`}
+          {title}
+          <motion.svg
+            animate={{ rotate: isOpen || isHovered ? 180 : 0 }}
+            transition={{ duration: 0.2 }}
+            className="ml-1 h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 9l-7 7-7-7"
+            />
+          </motion.svg>
+        </motion.button>
+        <AnimatePresence>
+          {(isOpen || isHovered) && (
+            <motion.div
+              initial={{ opacity: 0, y: -10, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -10, scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              className="absolute left-0 mt-1 w-56 bg-[#1E2E3E]/90 rounded-lg shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none z-50 overflow-hidden"
             >
-                {title}
-                <motion.svg
-                    animate={{ rotate: isOpen || isHovered ? 180 : 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="ml-1 h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </motion.svg>
-            </motion.button>
-            <AnimatePresence>
-                {(isOpen || isHovered) && (
+              <motion.div
+                className="py-1"
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: {
+                      staggerChildren: 0.05,
+                    },
+                  },
+                }}
+              >
+                {items.map((item, index) => {
+                  const isActive = router.pathname === item.link;
+                  return (
                     <motion.div
-                        initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                        transition={{ duration: 0.2 }}
-                        className="absolute left-0 mt-1 w-56 bg-white rounded-lg shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none z-50 overflow-hidden"
+                      key={index}
+                      variants={{
+                        hidden: { opacity: 0, x: -20 },
+                        visible: { opacity: 1, x: 0 },
+                      }}
                     >
-                        <motion.div
-                            className="py-1"
-                            initial="hidden"
-                            animate="visible"
-                            variants={{
-                                hidden: {},
-                                visible: {
-                                    transition: {
-                                        staggerChildren: 0.05
-                                    }
-                                }
-                            }}
-                        >
-                            {items.map((item, index) => {
-                                const isActive = router.pathname === item.link;
-                                return (
-                                    <motion.div
-                                        key={index}
-                                        variants={{
-                                            hidden: { opacity: 0, x: -20 },
-                                            visible: { opacity: 1, x: 0 }
-                                        }}
-                                    >
-                                        <Link
-                                            href={item.link}
-                                            className={`block px-4 py-2 text-base hover:bg-gray-50 transition-colors duration-200
-                                                ${isActive
-                                                    ? 'text-primary font-medium bg-gray-50'
-                                                    : 'text-gray-700 hover:text-gray-900'
+                      <Link
+                        href={item.link}
+                        className={`block px-4 py-2 text-base hover:bg-[#1E2E3E]/70 transition-colors duration-200
+                                                ${
+                                                  isActive
+                                                    ? "text-primary/80 font-medium bg-[#1E2E3E]/80"
+                                                    : "text-white/90 hover:text-white/75"
                                                 }`}
-                                        >
-                                            {item.text}
-                                        </Link>
-                                    </motion.div>
-                                );
-                            })}
-                        </motion.div>
+                      >
+                        {item.text}
+                      </Link>
                     </motion.div>
-                )}
-            </AnimatePresence>
-        </div>
+                  );
+                })}
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     );
 };
 
@@ -123,96 +133,117 @@ const Header = (props) => {
     };
 
     return (
-        <motion.header
-            id="header"
-            className={`w-full fixed top-0 left-0 right-0 z-50 ${props.topbarClass}`}
-            initial={{ y: 0 }}
+      <motion.header
+        id="header"
+        className={`w-full fixed top-0 left-0 right-0 z-50 ${props.topbarClass}`}
+        initial={{ y: 0 }}
+        animate={{
+          y: 0,
+          backgroundColor: isScrolled
+            ? "rgba(255, 255, 255, 0.9)"
+            : "rgba(255, 255, 255, 1)",
+          boxShadow: isScrolled ? "0 4px 6px -1px rgba(0, 0, 0, 0.1)" : "none",
+        }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="">
+          <motion.nav
+            className="px-4 py-3 bg-[#1E2E3E]"
             animate={{
-                y: 0,
-                backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.9)' : 'rgba(255, 255, 255, 1)',
-                boxShadow: isScrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.1)' : 'none'
+              height: isScrolled ? "auto" : "auto",
+              paddingTop: isScrolled ? "0.5rem" : "0.75rem",
+              paddingBottom: isScrolled ? "0.5rem" : "0.75rem",
             }}
             transition={{ duration: 0.3 }}
-        >
-            <div className=''>
-                <motion.nav
-                    className="px-4 py-3 bg-white"
-                    animate={{
-                        height: isScrolled ? 'auto' : 'auto',
-                        paddingTop: isScrolled ? '0.5rem' : '0.75rem',
-                        paddingBottom: isScrolled ? '0.5rem' : '0.75rem'
-                    }}
-                    transition={{ duration: 0.3 }}
-                >
-                    <div className="container mx-auto w-full">
-                        <div className="flex items-center justify-end">
-                            <div className="lg:hidden mr-auto">
-                                <div className="mobail-menu">
-                                    <MobileMenu />
-                                </div>
-                            </div>
-                            <div className="hidden lg:flex w-full justify-end">
-                                <div className="flex items-center justify-end">
-                                    <ul className="flex items-center space-x-8">
-                                        <li>
-                                            <Link
-                                                onClick={ClickHandler}
-                                                className={`font-arial text-lg transition-colors duration-200 py-2 px-3
-                                                    ${router.pathname === '/' ? 'text-primary font-medium' : 'text-gray-700 hover:text-gray-900'}`}
-                                                href="/"
-                                            >
-                                                {t('nav.home')}
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link
-                                                onClick={ClickHandler}
-                                                className={`font-arial text-lg transition-colors duration-200 py-2 px-3
-                                                    ${router.pathname === '/about' ? 'text-primary font-medium' : 'text-gray-700 hover:text-gray-900'}`}
-                                                href="/about"
-                                            >
-                                                {t('nav.about')}
-                                            </Link>
-                                        </li>
-                                        <li className="flex items-center">
-                                            <NavDropdown
-                                                title={t('nav.strategic')}
-                                                items={navItems.strategic}
-                                                isOpen={openDropdown === 'strategic'}
-                                                onToggle={() => handleDropdownToggle('strategic')}
-                                            />
-                                        </li>
-                                        <li>
-                                            <Link
-                                                onClick={ClickHandler}
-                                                className={`font-arial text-lg transition-colors duration-200 py-2 px-3
-                                                    ${router.pathname === '/bgpz' ? 'text-primary font-medium' : 'text-gray-700 hover:text-gray-900'}`}
-                                                href="/bgpz"
-                                            >
-                                                {t('nav.bgpz')}
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link
-                                                onClick={ClickHandler}
-                                                className={`font-arial text-lg transition-colors duration-200 py-2 px-3
-                                                    ${router.pathname === '/contact' ? 'text-primary font-medium' : 'text-gray-700 hover:text-gray-900'}`}
-                                                href="/contact"
-                                            >
-                                                {t('nav.contacts')}
-                                            </Link>
-                                        </li>
-                                    </ul>
-                                    <div className="ml-8">
-                                        <LanguageSelector />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+          >
+            <div className="container mx-auto w-full">
+              <div className="flex items-center justify-end">
+                <div className="lg:hidden mr-auto">
+                  <div className="mobail-menu">
+                    <MobileMenu />
+                  </div>
+                </div>
+                <div className="hidden lg:flex w-full justify-end">
+                  <div className="flex items-center justify-end">
+                    <ul className="flex items-center space-x-8">
+                      <li>
+                        <Link
+                          onClick={ClickHandler}
+                          className={`font-arial text-lg transition-colors duration-200 py-2 px-3
+                                                    ${
+                                                      router.pathname === "/"
+                                                        ? "text-primary/80 font-medium"
+                                                        : "text-white/90 hover:text-white/75"
+                                                    }`}
+                          href="/"
+                        >
+                          {t("nav.home")}
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          onClick={ClickHandler}
+                          className={`font-arial text-lg transition-colors duration-200 py-2 px-3
+                                                    ${
+                                                      router.pathname ===
+                                                      "/about"
+                                                        ? "text-primary/80 font-medium"
+                                                        : "text-white/90 hover:text-white/75"
+                                                    }`}
+                          href="/about"
+                        >
+                          {t("nav.about")}
+                        </Link>
+                      </li>
+                      <li className="flex items-center">
+                        <NavDropdown
+                          title={t("nav.strategic")}
+                          items={navItems.strategic}
+                          isOpen={openDropdown === "strategic"}
+                          onToggle={() => handleDropdownToggle("strategic")}
+                        />
+                      </li>
+                      <li>
+                        <Link
+                          onClick={ClickHandler}
+                          className={`font-arial text-lg transition-colors duration-200 py-2 px-3
+                                                    ${
+                                                      router.pathname ===
+                                                      "/bgpz"
+                                                        ? "text-primary/80 font-medium"
+                                                        : "text-white/90 hover:text-white/75"
+                                                    }`}
+                          href="/bgpz"
+                        >
+                          {t("nav.bgpz")}
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          onClick={ClickHandler}
+                          className={`font-arial text-lg transition-colors duration-200 py-2 px-3
+                                                    ${
+                                                      router.pathname ===
+                                                      "/contact"
+                                                        ? "text-primary/80 font-medium"
+                                                        : "text-white/90 hover:text-white/75"
+                                                    }`}
+                          href="/contact"
+                        >
+                          {t("nav.contacts")}
+                        </Link>
+                      </li>
+                    </ul>
+                    <div className="ml-8">
+                      <LanguageSelector />
                     </div>
-                </motion.nav>
+                  </div>
+                </div>
+              </div>
             </div>
-        </motion.header>
+          </motion.nav>
+        </div>
+      </motion.header>
     );
 };
 

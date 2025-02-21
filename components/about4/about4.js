@@ -78,23 +78,11 @@ const About4 = () => {
     },
   };
 
-  const renderTitle = (title) => {
-    if (title.includes("-")) {
-      return title.split("-").map((part, idx, arr) => (
-        <React.Fragment key={idx}>
-          {part.trim()}
-          {idx < arr.length - 1 && <br />}
-        </React.Fragment>
-      ));
-    }
-    return title;
-  };
-
   return (
-    <section className="hero-with-services h-screen overflow-hidden flex flex-col">
+    <section className="hero-with-services sm:h-screen overflow-hidden flex flex-col">
       <div className="relative h-[35%] sm:h-[60%]">
         {/* Mobile */}
-        <div className="block md:hidden h-full relative overflow-hidden">
+        <div className="block md:hidden h-[30vh] relative overflow-hidden">
           <div className="absolute inset-0">
             <div
               className="w-full h-full bg-cover bg-center filter brightness-75 blur-[1px]"
@@ -163,50 +151,17 @@ const About4 = () => {
       <div className="relative h-[90%] sm:h-[40%] bg-white px-6 md:px-12 lg:px-24 py-4 overflow-hidden">
         <div className="container mx-auto h-full flex flex-col lg:flex-row items-center">
           {/* text */}
-          <div className="w-full lg:w-[414px]">
-            <div className="text-left lg:pr-8">
-              <h2 className="text-black text-2xl md:text-3xl font-normal leading-tight mb-2">
-                {content.sectionTitle}
-              </h2>
+          <div className="w-full">
+            <div className="text-left">
               <p className="text-black text-base md:text-base">
                 {data.description}
               </p>
-            </div>
-          </div>
-
-          {/* slider */}
-          <div className="w-full lg:w-[calc(100%-414px)] lg:ml-[10%] relative flex-1">
-            <div className="overflow-x-auto lg:overflow-hidden h-full">
-              <div
-                onTouchStart={() => setIsAutoPlaying(false)}
-                onMouseEnter={() => setIsAutoPlaying(false)}
-                className="flex transition-transform duration-500 ease-out h-full items-center"
-                style={{
-                  transform: `translateX(-${
-                    currentSlide * (isMobile ? mobileSlideWidth : 384)
-                  }px)`,
-                }}
-              >
-                {activities.map((direction, index) => (
-                  <div
-                    key={index}
-                    className="lg:w-96 w-64 flex-shrink-0"
-                    style={{ marginRight: "16px" }}
-                  >
-                    <div className="p-4 text-center bg-gradient-to-br from-gray-50 to-primary/25 h-full max-h-[14rem] min-h-[14rem] border border-gray-200">
-                      <div>
-                        <h2 className="mb-2 text-black sm:text-lg text-base">
-                          {renderTitle(direction.title)}
-                          <span className="block h-1 mt-2 bg-primary w-full"></span>
-                        </h2>
-                        <p className="text-black/80 sm:text-lg text-base">
-                          {renderTitle(direction.content.main)}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <p className="text-black text-base md:text-base">
+                {data.description2}
+              </p>
+              <p className="text-black text-base md:text-base">
+                {data.description3}
+              </p>
             </div>
           </div>
         </div>
