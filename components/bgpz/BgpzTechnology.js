@@ -78,20 +78,26 @@ const TechnologyCard = ({ tech, enlargeText, onImageClick, isMobile }) => {
 
           {/* details */}
           <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-            {tech.details.map((detail, idx) => (
-              <motion.li
-                key={idx}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: idx * 0.1 }}
-                className="flex items-start"
-              >
-                <ChevronRight className="text-primary mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 mt-1 flex-shrink-0" />
-                <span className="text-gray-700 text-base sm:text-lg">
-                  {renderTitle(detail)}
-                </span>
-              </motion.li>
-            ))}
+            {tech.details.map((detail, idx) => {
+              const displayDetail = isMobile
+                ? detail.replace(/:/g, "").trim()
+                : renderTitle(detail);
+
+              return (
+                <motion.li
+                  key={idx}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="flex items-start"
+                >
+                  <ChevronRight className="text-primary mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 mt-1 flex-shrink-0" />
+                  <span className="text-gray-700 text-base sm:text-lg">
+                    {displayDetail}
+                  </span>
+                </motion.li>
+              );
+            })}
           </ul>
 
           {/* statistic */}

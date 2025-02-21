@@ -21,7 +21,7 @@ export const strategicDirectionsData = {
       {
         id: 3,
         title:
-          "-\u200B  \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B  \u200B \u200B \u200B \u200B \u200B \u200B HSE \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B",
+          "-\u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B HSE \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B",
         description:
           "Соблюдать высокие стандарты безопасности и экологии. Инвестировать в обучение и технологии для защиты людей и природы.",
         details: [
@@ -79,7 +79,7 @@ export const strategicDirectionsData = {
       {
         id: 3,
         title:
-          "-\u200B -\u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B  \u200B \u200B \u200B \u200B \u200B \u200B HSE \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B",
+          "-\u200B -\u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B HSE \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B",
         description:
           "Қауіпсіздік пен экологияның жоғары стандарттарын сақтау. Адамдар мен табиғатты қорғау үшін оқыту мен технологияларға инвестиция салу.",
         details: [
@@ -137,7 +137,7 @@ export const strategicDirectionsData = {
       {
         id: 3,
         title:
-          " -\u200B  -\u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B  \u200B \u200B \u200B \u200B \u200B \u200B HSE \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B",
+          "-\u200B -\u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B HSE \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B",
         description:
           "Maintain high safety and environmental standards. Invest in training and technology to protect people and nature.",
         details: [

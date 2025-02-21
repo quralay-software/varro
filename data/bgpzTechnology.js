@@ -7,7 +7,7 @@ export const bgpzTechnologyData = {
       "Мы используем передовые технологии для обеспечения эффективной и экологичной переработки газа",
     technologies: [
       {
-        title: "Разделение и очистка природного газа",
+        title: "Разделение и очистка природн.газа",
         image: "/images/img-1.JPG",
         description: "Высокоэффективные системы сепарации и очистки газа.",
         details: [
@@ -211,11 +211,11 @@ export const bgpzTechnologyData = {
         details: [
           "Equipment readiness",
           "Construction works",
-          "Automated process control \u200B \u200B \u200B \u200B :\u200B ",
+          "Automated process control \u200B \u200B \u200B \u200B :\u200B :\u200B",
         ],
         stats: {
           readiness: {
-            value: ":\u200B 95%",
+            value: "95%",
             label: "readiness",
           },
           construction: {
@@ -231,11 +231,11 @@ export const bgpzTechnologyData = {
         details: [
           "Modern quality improvement system",
           "Gas loss minimization",
-          "Real-time quality control \u200B \u200B \u200B \u200B :\u200B",
+          "Real-time quality control \u200B \u200B \u200B \u200B :\u200B :\u200B",
         ],
         stats: {
           quality: {
-            value: ":\u200B 99.8%",
+            value: "99.8%",
             label: "quality",
           },
           recovery: {
@@ -251,11 +251,11 @@ export const bgpzTechnologyData = {
         details: [
           "Own supply infrastructure",
           "Quality control at all stages",
-          "Modern monitoring systems \u200B \u200B \u200B \u200B :\u200B",
+          "Modern monitoring systems \u200B \u200B \u200B \u200B :\u200B :\u200B",
         ],
         stats: {
           storage: {
-            value: ":\u200B 50000",
+            value: "50000",
             label: "m³ storage",
           },
           delivery: {
