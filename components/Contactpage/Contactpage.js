@@ -10,14 +10,14 @@ const isEmail = (text) => /\S+@\S+\.\S+/.test(text);
 const isPhone = (text) => /^\+?\d[\d\s()-]{7,}$/.test(text);
 
 const ContactInfoGroup = ({ info, icons }) => (
-  <div className="bg-black/20 p-6 rounded-xl shadow-sm border border-gray-100 relative overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-tl from-gray-50 to-primary opacity-90" />
+  <div className="bg-black/20 sm:p-16 p-6 rounded-xl shadow-sm border border-gray-100 relative overflow-hidden">
+    <div className="absolute inset-0 bg-primary/50 opacity-80" />
     <div className="relative z-10 space-y-6">
       {Object.entries(info).map(([key, data]) => {
         const { content, phone: extraPhone } = data;
         return (
           <div key={key} className="flex items-center gap-4">
-            <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/40">
+            <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/30">
               {React.createElement(icons[key], {
                 className: "w-6 h-6 text-white/90",
                 strokeWidth: 1.5,
@@ -26,7 +26,10 @@ const ContactInfoGroup = ({ info, icons }) => (
             <div className="flex-1">
               {Array.isArray(content) ? (
                 content.map((item, index) => (
-                  <p key={index} className="m-0 text-gray-600 leading-none">
+                  <p
+                    key={index}
+                    className="m-0 text-gray-600 leading-none sm:text-lg"
+                  >
                     {isEmail(item) ? (
                       <a
                         href={`mailto:${item}`}
@@ -52,7 +55,7 @@ const ContactInfoGroup = ({ info, icons }) => (
                   </p>
                 ))
               ) : (
-                <p className="m-0 text-white/90 leading-none">
+                <p className="m-0 text-white/90 leading-none sm:text-lg">
                   {isEmail(content) ? (
                     <a
                       href={`mailto:${content}`}
@@ -125,11 +128,11 @@ const Contactpage = () => {
 
       <section className="flex-1 py-14 ">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12">
-          <div className="w-full lg:w-[70%]">
+          <div className="w-full lg:w-[50%]">
             <ContactInfoGroup info={contact.info} icons={icons} />
           </div>
 
-          <div className="w-full sm:h-[23rem] lg:w-1/2 relative map-container -mb-28">
+          <div className="w-full sm:h-[28.5rem] lg:w-1/2 relative map-container -mb-28">
             <iframe
               className="w-full h-full border-0 rounded-xl shadow-md"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1049.05860520441!2d51.14169467442681!3d43.667971969205894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41b43110065855bd%3A0x80389120be3bc6e8!2z0JfQvtC00LjQsNC6LCDQsdC40LfQvdC10YEg0L7RgNGC0LDQu9GL0ps!5e0!3m2!1sru!2skz!4v1739713917354!5m2!1sru!2skz&output=embed"
