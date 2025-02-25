@@ -21,6 +21,7 @@
 /* 1.1	Theme Reset Style */
 html {
   font-size: 15px;
+   zoom: 1;
 }
 
 :root {
