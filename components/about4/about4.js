@@ -148,7 +148,7 @@ const About4 = () => {
       </div>
 
       {/* text+slider */}
-      <div className="relative h-[90%] sm:h-[40%] bg-white px-6 md:px-12 lg:px-24 py-4 overflow-hidden">
+      <div className="relative h-[90%] sm:h-[40%] bg-white px-6 md:px-12 lg:px-24 py-4 sm:py-40 overflow-hidden">
         <div className="container mx-auto h-full flex flex-col lg:flex-row items-center">
           {/* text */}
           <div className="w-full">

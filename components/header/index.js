@@ -23,7 +23,7 @@ const NavDropdown = ({ title, items, isOpen, onToggle }) => {
           onClick={onToggle}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className={`flex items-center font-arial bg-transparent border-none shadow-none text-lg font-medium px-3 py-2 rounded-md transition-colors duration-200
+          className={`flex items-center font-arial bg-transparent border-none shadow-none text-lg font-medium px-3 py-6 rounded-md transition-colors duration-200
                     ${
                       isActiveDropdown
                         ? "text-primary/80"

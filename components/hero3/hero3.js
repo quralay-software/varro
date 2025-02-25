@@ -81,7 +81,7 @@ const Hero3 = () => {
   return (
     <section className="hero-with-services h-screen overflow-hidden flex flex-col">
       {/* titel descr */}
-      <div className="relative bg-white px-6 md:px-12 lg:px-24 overflow-hidden h-[20%] flex-shrink-0 mt-20">
+      <div className="relative bg-white px-6 md:px-12 lg:px-24 overflow-hidden h-[20%] flex-shrink-0 mt-24">
         <div className="container mx-auto h-full flex flex-col lg:flex-row items-center justify-center">
           <div className="w-full">
             <div className="text-center">
