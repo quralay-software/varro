@@ -5,10 +5,16 @@ import { ChevronRight, X } from "lucide-react";
 import Image from "next/image";
 import { bgpzTechnologyData } from "../../data/bgpzTechnology";
 
-const TechnologyCard = ({ tech, enlargeText, onImageClick, isMobile }) => {
+const TechnologyCard = ({
+  tech,
+  enlargeText,
+  onImageClick,
+  isMobile,
+  cardIndex,
+}) => {
   const renderTitle = (title) => {
     if (isMobile) {
-      return title;
+      return title.replace(/[-:]/g, "");
     }
     if (title.includes(":")) {
       return title.split(":").map((part, idx, arr) => (
@@ -32,7 +38,7 @@ const TechnologyCard = ({ tech, enlargeText, onImageClick, isMobile }) => {
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-primary/25" />
         <div className="relative z-10 flex flex-col h-full">
           <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4 text-center relative">
+            <h3 className="text-xl sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4 text-center relative">
               {tech.title.split("-").map((part, index) => (
                 <React.Fragment key={index}>
                   {part}
@@ -76,13 +82,12 @@ const TechnologyCard = ({ tech, enlargeText, onImageClick, isMobile }) => {
             </p>
           </div>
 
-          {/* details */}
+          {/* detailos */}
           <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
             {tech.details.map((detail, idx) => {
               const displayDetail = isMobile
                 ? detail.replace(/:/g, "").trim()
                 : renderTitle(detail);
-
               return (
                 <motion.li
                   key={idx}
@@ -91,7 +96,7 @@ const TechnologyCard = ({ tech, enlargeText, onImageClick, isMobile }) => {
                   transition={{ delay: idx * 0.1 }}
                   className="flex items-start"
                 >
-                  <ChevronRight className="text-primary mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 mt-1 flex-shrink-0" />
+                  <ChevronRight className="text-primary mr-2 sm:mr-0 h-4 w-4 sm:h-5 sm:w-5 mt-1 flex-shrink-0" />
                   <span className="text-gray-700 text-base sm:text-lg">
                     {displayDetail}
                   </span>
@@ -100,25 +105,36 @@ const TechnologyCard = ({ tech, enlargeText, onImageClick, isMobile }) => {
             })}
           </ul>
 
-          {/* statistic */}
-          <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 sm:gap-6 mt-6 flex items-center justify-center">
-            {Object.entries(tech.stats).map(([key, stat]) => {
-              const displayValue = isMobile
-                ? stat.value.replace(/^:\s*/, "")
-                : stat.value;
-
-              return (
+          {/* statistics */}
+          {cardIndex !== 0 ? (
+            <div className="mt-auto">
+              <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 sm:gap-6 mt-6 flex items-center justify-center">
+                {Object.entries(tech.stats).map(([key, stat]) => (
+                  <div key={key} className="text-center">
+                    <div className="text-xl sm:text-2xl font-bold text-gray-800 mb-1">
+                      {renderTitle(stat.value)}
+                    </div>
+                    <div className="text-gray-700 text-sm sm:text-base md:text-lg">
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 sm:gap-6 mt-6 flex items-center justify-center">
+              {Object.entries(tech.stats).map(([key, stat]) => (
                 <div key={key} className="text-center">
                   <div className="text-xl sm:text-2xl font-bold text-gray-800 mb-1">
-                    {displayValue}
+                    {renderTitle(stat.value)}
                   </div>
                   <div className="text-gray-700 text-sm sm:text-base md:text-lg">
                     {stat.label}
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </motion.div>
@@ -174,7 +190,7 @@ const BgpzTechnology = () => {
           </p>
         </motion.div>
 
-        {/* cards grid */}
+        {/* carsd grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {data.technologies.map((tech, index) => (
             <TechnologyCard
@@ -183,6 +199,7 @@ const BgpzTechnology = () => {
               enlargeText={data.enlarge_label}
               onImageClick={openModal}
               isMobile={isMobile}
+              cardIndex={index}
             />
           ))}
         </div>
@@ -192,7 +209,6 @@ const BgpzTechnology = () => {
       {isModalOpen && selectedPhoto && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
           <div className="absolute inset-0" onClick={closeModal} />
-
           <div className="relative max-w-5xl max-h-[90vh] w-auto h-auto px-4">
             <Image
               src={selectedPhoto.src}

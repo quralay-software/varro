@@ -27,9 +27,9 @@ const TimelineEvent = ({ item, index, isDesktop, isMobile }) => {
   let heightClass = "";
   if (isDesktop) {
     if (index === 0) {
-      heightClass = "h-[26rem]";
+      heightClass = "min-h-[26rem]";
     } else if (index === 1) {
-      heightClass = "h-[28rem]";
+      heightClass = "min-h-[28rem]";
     } else {
       heightClass = "min-h-[500px]";
     }
@@ -113,7 +113,7 @@ const VisionCard = ({ vision, isDesktop, isMobile }) => {
 
   let heightClass = "";
   if (isDesktop) {
-    heightClass = "h-[37rem]";
+    heightClass = "min-h-[37rem]";
   } else {
     heightClass = "min-h-[300px]";
   }
