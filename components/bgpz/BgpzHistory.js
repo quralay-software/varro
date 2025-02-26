@@ -6,17 +6,30 @@ import { ChevronRight } from "lucide-react";
 import { useTranslation } from "next-i18next";
 import { bgpzHistoryData } from "../../data/bgpzHistory";
 
-const TimelineEvent = ({ item, index, isDesktop }) => {
+const TimelineEvent = ({ item, index, isDesktop, isMobile }) => {
   const { year, title, description, achievements } = item;
-
   const widthClass = isDesktop ? "w-[30%]" : "w-[80%] flex-shrink-0";
+  const renderTitle = (title) => {
+    if (isMobile) {
+      return title;
+    }
+    if (title.includes(":")) {
+      return title.split(":").map((part, idx, arr) => (
+        <React.Fragment key={idx}>
+          {part.trim()}
+          {idx < arr.length - 1 && <br />}
+        </React.Fragment>
+      ));
+    }
+    return title;
+  };
 
   let heightClass = "";
   if (isDesktop) {
     if (index === 0) {
-      heightClass = "min-h-[370px]";
+      heightClass = "h-[26rem]";
     } else if (index === 1) {
-      heightClass = "min-h-[400px]";
+      heightClass = "h-[28rem]";
     } else {
       heightClass = "min-h-[500px]";
     }
@@ -29,9 +42,9 @@ const TimelineEvent = ({ item, index, isDesktop }) => {
     if (index === 0) {
       marginTopClass = "-mt-4";
     } else if (index === 1) {
-      marginTopClass = "mt-[-50px]";
+      marginTopClass = "-mt-12";
     } else if (index === 2) {
-      marginTopClass = "mt-[-100px]";
+      marginTopClass = "-mt-4";
     }
   }
 
@@ -41,7 +54,7 @@ const TimelineEvent = ({ item, index, isDesktop }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
       className={`
-        relative bg-white p-4 sm:p-6 md:p-8
+        relative bg-white p-4 sm:p-6 md:p-4
         rounded border shadow-sm hover:shadow-md
         transition-shadow duration-300
         mr-4 last:mr-0
@@ -50,12 +63,14 @@ const TimelineEvent = ({ item, index, isDesktop }) => {
         ${marginTopClass}
       `}
     >
-      <div className="text-primary font-bold text-lg sm:text-xl md:text-2xl mb-1">
+      <div className="text-primary font-bold text-lg sm:text-xl md:text-2xl mb-1 text-center">
         {year}
       </div>
-      <h3 className="text-xl sm:text-2xl font-bold font-sans mb-2">{title}</h3>
-      <p className="text-gray-600 text-base sm:text-lg mb-4 sm:mb-6">
-        {description}
+      <h3 className="text-xl sm:text-2xl font-bold font-sans mb-2 text-center">
+        {renderTitle(title)}
+      </h3>
+      <p className="text-gray-600 text-base sm:text-lg mb-4 sm:mb-6 text-center">
+        {renderTitle(description)}
       </p>
 
       <div className="space-y-2 sm:space-y-3">
@@ -67,8 +82,10 @@ const TimelineEvent = ({ item, index, isDesktop }) => {
             transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
             className="flex items-center"
           >
-            <ChevronRight className="text-primary mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-            <span className="text-gray-600 text-base sm:text-lg">{ach}</span>
+            <ChevronRight className="text-primary mr-2 sm:mr-4 h-4 w-4 sm:h-6 sm:w-6" />
+            <span className="text-gray-600 text-base sm:text-lg">
+              {renderTitle(ach)}
+            </span>
           </motion.div>
         ))}
       </div>
@@ -76,19 +93,34 @@ const TimelineEvent = ({ item, index, isDesktop }) => {
   );
 };
 
-const VisionCard = ({ vision, isDesktop }) => {
-  const widthClass = isDesktop ? "w-[30%]" : "w-[80%] flex-shrink-0";
+const VisionCard = ({ vision, isDesktop, isMobile }) => {
+  const widthClass = isDesktop ? "w-[27%]" : "w-[80%] flex-shrink-0";
+
+  const renderTitle = (title) => {
+    if (isMobile) {
+      return title;
+    }
+    if (title.includes(":")) {
+      return title.split(":").map((part, idx, arr) => (
+        <React.Fragment key={idx}>
+          {part.trim()}
+          {idx < arr.length - 1 && <br />}
+        </React.Fragment>
+      ));
+    }
+    return title;
+  };
 
   let heightClass = "";
   if (isDesktop) {
-    heightClass = "min-h-[500px]";
+    heightClass = "h-[37rem]";
   } else {
     heightClass = "min-h-[300px]";
   }
 
   let marginTopClass = "";
   if (isDesktop) {
-    marginTopClass = "mt-[-150px]";
+    marginTopClass = "-mt-48";
   }
 
   return (
@@ -97,7 +129,7 @@ const VisionCard = ({ vision, isDesktop }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 2 * 0.2 }}
       className={`
-        relative bg-white p-4 sm:p-6 md:p-8
+        relative bg-white p-4 sm:p-6 md:p-4
         rounded border shadow-sm hover:shadow-md
         transition-shadow duration-300
         ${widthClass}
@@ -105,17 +137,17 @@ const VisionCard = ({ vision, isDesktop }) => {
         ${marginTopClass}
       `}
     >
-      <h3 className="text-2xl sm:text-3xl font-bold font-sans mb-4 sm:mb-6">
-        {vision.title}
+      <h3 className="text-2xl sm:text-3xl font-bold font-sans mb-4 sm:mb-6 text-center">
+        {renderTitle(vision.title)}
       </h3>
-      <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
-        {vision.description}
+      <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 text-center">
+        {renderTitle(vision.description)}
       </p>
       <div className="space-y-3 sm:space-y-4">
         {vision.goals.map((goal, idx) => (
           <div key={idx} className="flex items-center">
-            <ChevronRight className="text-primary mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6" />
-            <span className="text-base sm:text-lg">{goal}</span>
+            <ChevronRight className="text-primary mr-2 sm:mr-4 h-5 w-5 sm:h-6 sm:w-6" />
+            <span className="text-base sm:text-lg">{renderTitle(goal)}</span>
           </div>
         ))}
       </div>
@@ -168,7 +200,7 @@ const BgpzHistory = () => {
         {/* cards cobntainer */}
         {isDesktop ? (
           // desc colums
-          <div className="flex items-start w-full justify-between gap-0 relative mt-40">
+          <div className="flex items-start w-full justify-between gap-0 relative mt-60">
             <TimelineEvent item={timelineArray[0]} index={0} isDesktop />
             <TimelineEvent item={timelineArray[1]} index={1} isDesktop />
             <VisionCard vision={futureVision} isDesktop />
