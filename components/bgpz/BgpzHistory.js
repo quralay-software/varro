@@ -24,16 +24,16 @@ const TimelineEvent = ({ item, index, isDesktop }) => {
     heightClass = "min-h-[300px]";
   }
 
-let marginTopClass = "";
-if (isDesktop) {
-  if (index === 0) {
-    marginTopClass = "-mt-4";
-  } else if (index === 1) {
-    marginTopClass = "mt-[-50px]";
-  } else if (index === 2) {
-    marginTopClass = "mt-[-100px]";
+  let marginTopClass = "";
+  if (isDesktop) {
+    if (index === 0) {
+      marginTopClass = "-mt-4";
+    } else if (index === 1) {
+      marginTopClass = "mt-[-50px]";
+    } else if (index === 2) {
+      marginTopClass = "mt-[-100px]";
+    }
   }
-}
 
   return (
     <motion.div

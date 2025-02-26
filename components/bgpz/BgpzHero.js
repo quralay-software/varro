@@ -82,7 +82,7 @@ const BgpzHero = () => {
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.7 }}
-        className="hidden md:block absolute top-[45%] right-[15%] bg-white/10 backdrop-blur-sm p-4 md:p-6 lg:p-8 rounded-lg transform hover:scale-105 transition-transform duration-300"
+        className="hidden md:block absolute top-[50%] right-[7%] bg-white/10 backdrop-blur-sm p-4 md:p-6 lg:p-8 rounded-lg transform hover:scale-105 transition-transform duration-300"
       >
         <div className="text-white text-center">
           {renderCapacity(
