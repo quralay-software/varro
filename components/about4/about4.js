@@ -85,7 +85,7 @@ const About4 = () => {
         <div className="block md:hidden h-[30vh] relative overflow-hidden">
           <div className="absolute inset-0">
             <div
-              className="w-full h-full bg-cover bg-center filter brightness-75 blur-[1px]"
+              className="w-full h-full bg-cover bg-center filter brightness-75"
               style={{
                 backgroundImage: `url(${
                   content.backgroundImage || "/images/img-4.JPG"
@@ -118,7 +118,7 @@ const About4 = () => {
             animate="visible"
           >
             <div
-              className="w-full h-full bg-cover bg-center filter brightness-75 blur-[0.5px]"
+              className="w-full h-full bg-cover bg-center filter brightness-75 "
               style={{
                 backgroundImage: `url(${
                   content.backgroundImage || "/images/img-4.JPG"

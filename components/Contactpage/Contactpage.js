@@ -163,7 +163,7 @@ const ContactPage = () => {
             animate="visible"
           >
             <div
-              className="w-full h-full bg-cover bg-center filter brightness-75 blur-[0.5px]"
+              className="w-full h-full bg-cover bg-center filter brightness-75"
               style={{ backgroundImage: `url(${heroData.src})` }}
             />
             <div className="absolute inset-0 bg-black/30" />
