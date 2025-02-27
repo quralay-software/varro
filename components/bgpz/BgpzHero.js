@@ -6,9 +6,7 @@ import { bgpzHeroData } from "../../data/bgpzHero";
 
 const renderCapacity = (value, label, valueClass, labelClass) => {
   const labelParts = label.split(" ");
-  // Получаем первые два слова как единицу измерения
   const unit = labelParts.slice(0, 2).join(" ");
-  // Остальные слова — описание
   const description = labelParts.slice(2).join(" ");
 
   return (
@@ -38,10 +36,10 @@ const BgpzHero = () => {
           src={data.image.src}
           alt={data.image.alt}
           fill
-          className="object-cover"
+          className="object-fit md:object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-transparent" />
       </div>
 
       <div className="relative h-full container mx-auto px-4">
