@@ -240,11 +240,7 @@
 .map-container {
     position: relative;
     width: 600px;
-    height: 450px;
+    min-height: 16rem;
     overflow: hidden;
 }
 
-.map-container iframe {
-    position: absolute;
-    top: -8rem;
-}
