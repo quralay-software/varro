@@ -2,9 +2,9 @@ import blogImg1 from "/public/images/img1.jpg";
 import blogImg2 from "/public/images/img2.jpg";
 import blogImg3 from "/public/images/img3.jpg";
 
-import blogAvaterImg1 from "/public/images/blog/blog-avater/img1.jpg";
-import blogAvaterImg2 from "/public/images/blog/blog-avater/img2.jpg";
-import blogAvaterImg3 from "/public/images/blog/blog-avater/img3.jpg";
+import blogAvaterImg1 from "/public/images/blog/blog-avater/img-1.jpg";
+import blogAvaterImg2 from "/public/images/blog/blog-avater/img-2.jpg";
+import blogAvaterImg3 from "/public/images/blog/blog-avater/img-3.jpg";
 
 import blogSingleImg1 from "/public/images/img4.jpg";
 import blogSingleImg2 from "/public/images/img5.jpg";
