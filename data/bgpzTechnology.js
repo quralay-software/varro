@@ -8,7 +8,7 @@ export const bgpzTechnologyData = {
     technologies: [
       {
         title: "Разделение и очистка природн.газа",
-        image: "/images/img-1.JPG",
+        image: "/images/img1.jpg",
         description:
           "Высокоэффективные системы сепарации и :очистки газа.:\u200B",
         details: [
@@ -29,7 +29,7 @@ export const bgpzTechnologyData = {
       },
       {
         title: "Газофракционирующая установка",
-        image: "/images/img-2.JPG",
+        image: "/images/img2.jpg",
         description:
           "Комплексная система: разделения: углеводородных: фракций.",
         details: [
@@ -50,7 +50,7 @@ export const bgpzTechnologyData = {
       },
       {
         title: "Стабилизация -конденсата",
-        image: "/images/img-3.JPG",
+        image: "/images/img3.jpg",
         description: "Современная система повышения качества продукции.:\u200B",
         details: [
           "Современная: система повышения качества",
@@ -70,7 +70,7 @@ export const bgpzTechnologyData = {
       },
       {
         title: "Хранение и -транспортировка",
-        image: "/images/img-4.JPG",
+        image: "/images/img4.jpg",
         description: "Комплексная :инфраструктура :логистики.:\u200B ",
         details: [
           "Собственная :инфраструктура для поставок",
@@ -99,7 +99,7 @@ export const bgpzTechnologyData = {
     technologies: [
       {
         title: "Табиғи газды бөлу -және тазарту",
-        image: "/images/img-1.JPG",
+        image: "/images/img1.jpg",
         description: "Жоғары тиімді газ: сепарациясы және :тазарту жүйелері.",
         details: [
           "Сұйытылған көмірсутек фракцияларын өндіру",
@@ -119,7 +119,7 @@ export const bgpzTechnologyData = {
       },
       {
         title: "Газ фракциялау -қондырғысы",
-        image: "/images/img-2.JPG",
+        image: "/images/img2.jpg",
         description: "Көмірсутек: фракцияларын бөлудің :кешенді жүйесі.",
         details: [
           "Жабдық дайындығы (МЖ)",
@@ -139,7 +139,7 @@ export const bgpzTechnologyData = {
       },
       {
         title: "Конденсатты -тұрақтандыру",
-        image: "/images/img-3.JPG",
+        image: "/images/img3.jpg",
         description: "Өнім сапасын: арттырудың :заманауи жүйесі.",
         details: [
           "Сапаны арттырудың :заманауи жүйесі",
@@ -159,7 +159,7 @@ export const bgpzTechnologyData = {
       },
       {
         title: "Сақтау және -тасымалдау",
-        image: "/images/img-4.JPG",
+        image: "/images/img4.jpg",
         description: "Кешенді логистикалық :инфрақұрылым. :\u200B",
         details: [
           "Жеткізуге арналған меншікті инфрақұрылым",
@@ -188,7 +188,7 @@ export const bgpzTechnologyData = {
     technologies: [
       {
         title: "Natural Gas Separation -and Purification",
-        image: "/images/img-1.JPG",
+        image: "/images/img1.jpg",
         description:
           "High-efficiency gas :separation and :purification systems.",
         details: [
@@ -209,7 +209,7 @@ export const bgpzTechnologyData = {
       },
       {
         title: "Gas Fractionation-Unit",
-        image: "/images/img-2.JPG",
+        image: "/images/img2.jpg",
         description: "Comprehensive :hydrocarbon fraction :separation system.",
         details: [
           "Equipment readiness",
@@ -229,7 +229,7 @@ export const bgpzTechnologyData = {
       },
       {
         title: "Condensate-Stabilization",
-        image: "/images/img-3.JPG",
+        image: "/images/img3.jpg",
         description: "Modern product :quality improvement :system.",
         details: [
           "Modern quality improvement system",
@@ -249,7 +249,7 @@ export const bgpzTechnologyData = {
       },
       {
         title: "Storage and -Transportation",
-        image: "/images/img-4.JPG",
+        image: "/images/img4.jpg",
         description: "Comprehensive :logistics infrastructure.:\u200B",
         details: [
           "Own supply infrastructure",

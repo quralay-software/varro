@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { useTranslation } from "next-i18next";
-import { ChevronRight, X } from "lucide-react";
+import { ChevronRight, X, ZoomIn, ZoomOut } from "lucide-react";
 import Image from "next/image";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import { useTranslation } from "next-i18next";
 import { bgpzTechnologyData } from "../../data/bgpzTechnology";
 
 const TechnologyCard = ({
@@ -48,7 +49,7 @@ const TechnologyCard = ({
               <span className="block h-1 mt-2 bg-primary w-full"></span>
             </h3>
 
-            {/* pic */}
+            {/* pics */}
             <div className="flex justify-center mb-4 sm:mb-6">
               <div
                 className="relative cursor-pointer group"
@@ -82,7 +83,7 @@ const TechnologyCard = ({
             </p>
           </div>
 
-          {/* detailos */}
+          {/* details */}
           <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
             {tech.details.map((detail, idx) => {
               const displayDetail = isMobile
@@ -105,7 +106,7 @@ const TechnologyCard = ({
             })}
           </ul>
 
-          {/* statistics */}
+          {/* statistic */}
           {cardIndex !== 0 ? (
             <div className="mt-auto">
               <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 sm:gap-6 mt-6 flex items-center justify-center">
@@ -159,9 +160,11 @@ const BgpzTechnology = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState(null);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const openModal = (photo) => {
     setSelectedPhoto(photo);
+    setImageLoaded(false);
     setIsModalOpen(true);
   };
 
@@ -190,7 +193,7 @@ const BgpzTechnology = () => {
           </p>
         </motion.div>
 
-        {/* carsd grid */}
+        {/* cards grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {data.technologies.map((tech, index) => (
             <TechnologyCard
@@ -205,34 +208,83 @@ const BgpzTechnology = () => {
         </div>
       </div>
 
-      {/* modal */}
+      {/* modal zoom */}
       {isModalOpen && selectedPhoto && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
-          <div className="absolute inset-0" onClick={closeModal} />
-          <div className="relative max-w-5xl max-h-[90vh] w-auto h-auto px-4">
-            <Image
-              src={selectedPhoto.src}
-              alt={selectedPhoto.alt || "Fullscreen image"}
-              width={1200}
-              height={800}
-              className="object-contain"
-            />
-            <button
-              onClick={closeModal}
-              className="
-                absolute top-4 right-4
-                w-12 h-12
-                flex items-center justify-center
-                rounded-full
-                bg-black/70
-                border-2 border-white
-                text-white
-                hover:bg-black
-                transition-colors
-              "
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
+          onClick={closeModal}
+        >
+          <div
+            className="relative max-w-5xl max-h-[90vh] w-auto h-auto px-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <TransformWrapper
+              initialScale={1}
+              minScale={1}
+              maxScale={3}
+              wheel={{ step: 0.1 }}
+              doubleClick={{ disabled: true }}
             >
-              <X className="h-6 w-6" />
-            </button>
+              {({ zoomIn, zoomOut }) => (
+                <>
+                  {imageLoaded && (
+                    <div
+                      className="absolute top-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-30"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          zoomOut();
+                        }}
+                        className="p-3 bg-black/70 text-white rounded-full hover:bg-black transition-colors"
+                        aria-label="Отдалить"
+                      >
+                        <ZoomOut size={20} />
+                      </button>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          zoomIn();
+                        }}
+                        className="p-3 bg-black/70 text-white rounded-full hover:bg-black transition-colors"
+                        aria-label="Приблизить"
+                      >
+                        <ZoomIn size={20} />
+                      </button>
+                    </div>
+                  )}
+                  <TransformComponent>
+                    <div>
+                      <img
+                        src={selectedPhoto.src}
+                        alt={selectedPhoto.alt || "Fullscreen image"}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                        }}
+                        onLoad={() => setImageLoaded(true)}
+                      />
+                    </div>
+                  </TransformComponent>
+                </>
+              )}
+            </TransformWrapper>
+            {imageLoaded && (
+              <button
+                onClick={closeModal}
+                className="
+                  absolute top-4 right-4
+                  w-12 h-12 flex items-center justify-center
+                  rounded-full bg-black/70 border-2 border-white text-white
+                  hover:bg-black transition-colors
+                "
+                aria-label="Закрыть модалку"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            )}
           </div>
         </div>
       )}

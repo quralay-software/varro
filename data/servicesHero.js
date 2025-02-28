@@ -6,7 +6,7 @@ export const servicesHeroData = {
         description: 'Полный комплекс услуг по добыче, переработке и поставке нефтегазовых ресурсов с использованием передовых технологий и соблюдением экологических стандартов.',
         button: 'Подробнее о наших услугах',
         image: {
-            src: '/images/img-1.JPG',
+            src: '/images/img1.jpg',
             alt: 'Нефтегазовая промышленность'
         },
         stats: {
@@ -31,7 +31,7 @@ export const servicesHeroData = {
         description: 'Озық технологияларды қолдана отырып және экологиялық стандарттарды сақтай отырып, мұнай-газ ресурстарын өндіру, өңдеу және жеткізу бойынша толық қызметтер кешені.',
         button: 'Біздің қызметтер туралы толығырақ',
         image: {
-            src: '/images/img-1.JPG',
+            src: '/images/img1.jpg',
             alt: 'Мұнай-газ өнеркәсібі'
         },
         stats: {
@@ -56,7 +56,7 @@ export const servicesHeroData = {
         description: 'A full range of services for the extraction, processing, and supply of oil and gas resources using advanced technologies and compliance with environmental standards.',
         button: 'Learn More About Our Services',
         image: {
-            src: '/images/img-1.JPG',
+            src: '/images/img1.jpg',
             alt: 'Oil and Gas Industry'
         },
         stats: {

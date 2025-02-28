@@ -88,7 +88,7 @@ const About4 = () => {
               className="w-full h-full bg-cover bg-center filter brightness-75"
               style={{
                 backgroundImage: `url(${
-                  content.backgroundImage || "/images/img-4.JPG"
+                  content.backgroundImage || "/images/new2.jpg"
                 })`,
               }}
             />
@@ -121,7 +121,7 @@ const About4 = () => {
               className="w-full h-full bg-cover bg-center filter brightness-75 "
               style={{
                 backgroundImage: `url(${
-                  content.backgroundImage || "/images/img-4.JPG"
+                  content.backgroundImage || "/images/new2.jpg"
                 })`,
               }}
             />

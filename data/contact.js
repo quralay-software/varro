@@ -11,7 +11,7 @@ export const contactData = {
       },
     },
     image: {
-      src: "/images/img-1.JPG",
+      src: "/images/img1.jpg",
       alt: "Стратегиялық мақсаттар",
     },
     contact: {
@@ -55,7 +55,7 @@ export const contactData = {
       },
     },
     image: {
-      src: "/images/img-1.JPG",
+      src: "/images/img1.jpg",
       alt: "Стратегиялық мақсаттар",
     },
     contact: {
@@ -99,7 +99,7 @@ export const contactData = {
       },
     },
     image: {
-      src: "/images/img-1.JPG",
+      src: "/images/img1.jpg",
       alt: "Стратегиялық мақсаттар",
     },
     contact: {

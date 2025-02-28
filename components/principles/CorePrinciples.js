@@ -11,7 +11,7 @@ const PrincipleCard = ({ principle }) => {
   const colorClass = colorVariants[principle.color];
 
   const renderTitle = (title) => {
-    const parts = title.split("-");
+    const parts = title.split("+");
     return parts.map((part, index) => (
       <React.Fragment key={index}>
         {part.trim()}

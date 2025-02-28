@@ -15,7 +15,7 @@ export const activitiesMainContent = {
             "Повышение коэффициента извлечения нефти",
           ],
         },
-        image: "/images/img-1.JPG",
+        image: "/images/img1.jpg",
       },
 
       {
@@ -50,7 +50,7 @@ export const activitiesMainContent = {
             "Мұнай өндіру коэффициентін арттыру",
           ],
         },
-        image: "/images/img-1.JPG",
+        image: "/images/img1.jpg",
       },
 
       {
@@ -85,7 +85,7 @@ export const activitiesMainContent = {
             "Increasing oil recovery factor",
           ],
         },
-        image: "/images/img-1.JPG",
+        image: "/images/img1.jpg",
       },
 
       {
