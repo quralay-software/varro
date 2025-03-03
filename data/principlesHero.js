@@ -7,7 +7,7 @@ export const principlesHeroData = {
       "Мы придерживаемся высоких стандартов корпоративной ответственности, обеспечиваем безопасность сотрудников и заботимся об окружающей среде. Наши принципы — основа устойчивого развития компании.",
     button: "Подробнее о наших принципах",
     image: {
-      src: "/images/img10.jpg",
+      src: "/images/img1010.jpg",
       alt: "Промышленный ландшафт",
     },
     badges: [
@@ -42,7 +42,7 @@ export const principlesHeroData = {
       "Біз корпоративтік жауапкершіліктің жоғары стандарттарын ұстанамыз, қызметкерлердің қауіпсіздігін қамтамасыз етеміз және қоршаған ортаны қорғаймыз. Біздің қағидаларымыз - компанияның тұрақты дамуының негізі.",
     button: "Біздің қағидаларымыз туралы толығырақ",
     image: {
-      src: "/images/img10.jpg",
+      src: "/images/img1010.jpg",
       alt: "Өндірістік көрініс",
     },
     badges: [
@@ -77,7 +77,7 @@ export const principlesHeroData = {
       "We adhere to high standards of corporate responsibility, ensure employee safety, and care for the environment. Our principles are the foundation of the company's sustainable development.",
     button: "Learn More About Our Principles",
     image: {
-      src: "/images/img10.jpg",
+      src: "/images/img1010.jpg",
       alt: "Industrial Landscape",
     },
     badges: [
