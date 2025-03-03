@@ -52,7 +52,7 @@ export default function Navbar(props) {
                     <Image
                       src={Logo}
                       alt="Varro Operating Group"
-                      className="h-14 sm:h-16 w-auto drop-shadow-[0_0_2px_black]"
+                      className="h-14 sm:h-[4.7rem] w-auto drop-shadow-[0_0_2px_black]"
                       priority
                     />
                   </Link>

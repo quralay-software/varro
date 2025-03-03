@@ -60,8 +60,8 @@ const TechnologyCard = ({
                 <Image
                   src={tech.image}
                   alt={tech.title}
-                  width={250}
-                  height={250}
+                  width={700}
+                  height={700}
                   className="object-contain"
                 />
                 <div
@@ -78,7 +78,11 @@ const TechnologyCard = ({
               </div>
             </div>
 
-            <p className="text-gray-700 text-base sm:text-lg mb-4 sm:mb-6 text-center">
+            <p
+              className={`text-gray-700 text-base sm:text-lg mb-4 sm:mb-5 text-center ${
+                cardIndex === 3 ? "sm:mt-[29%]" : ""
+              }`}
+            >
               {renderTitle(tech.description)}
             </p>
           </div>
