@@ -79,9 +79,9 @@ export const bgpzHistoryData = {
   },
   en: {
     section_title: "Development History",
-    main_title: "BGPZ History",
+    main_title: "BGPP History",
     description:
-      "Since its foundation, BGPZ has been continuously developing, implementing new technologies and improving production efficiency.",
+      "Since its foundation, BGPP has been continuously developing, implementing new technologies and improving production efficiency.",
     timeline: [
       {
         year: "2007",
@@ -109,7 +109,7 @@ export const bgpzHistoryData = {
     future_vision: {
       title: ":Vision for the Future",
       description:
-        "By 2030, BGPZ plans to become :one of the most technologically :advanced gas processing plants in the region, with full process automation and minimal environmental impact.",
+        "By 2030, BGPP plans to become :one of the most technologically :advanced gas processing plants in the region, with full process automation and minimal environmental impact.",
       goals: [
         "Complete digitalization of :production",
         "Carbon neutrality",
