@@ -13,7 +13,7 @@ export const about4HeroData = {
     company: "Varro Operating Group",
 
     description:
-      "«Varro Operating Group» компаниясы 2022 жылғы 9 наурызда тіркеліп, жер қойнауын пайдалануға лицензияланған учаскелерде көмірсутектерді барлау және өндірумен айналысады. 2022 жылғы 6 қазанда біз Толқын кен орнында көмірсутектерді өндіру жөніндегі № 5113-УВС келісімшартына қол қойдық. Бұл келісім Қазақстан Республикасының Энергетика министрлігі өткізген аукцион нәтижесінде жасалып, 25 жылға (2047 жылға дейін) есептелген.",
+      "«Varro Operating Group» компаниясы 2022 жылдың 9 наурызында тіркелген және лицензияланған жер қойнауы учаскелерінде көмірсутектерді өңдеуге және өндіруге маманданған. 2022 жылдың 6 қазанында Қазақстан Республикасы Энергетика министрлігі өткізген аукцион қорытындысы бойынша жасалған «Толқын» кен орнында 25 жыл мерзімге (2047 жылға дейін) көмірсутектерді өндіруге арналған № 5113-УВС келісімшартқа қол қойылған.",
 
     description2:
       "Толқын кен орны Бейнеу ауданында, Атырау облысымен шекаралас жерде орналасқан. Ең жақын елді мекендер – Опорная теміржол станциясы (15 км), Сарықамыс ауылы (50 км) және Теңіз жұмысшы кенті (70 км). Облыс орталықтары – Ақтау (600 км) және Атырау (320 км). Кен орнының ауданы 49 км².",
@@ -25,12 +25,12 @@ export const about4HeroData = {
     company: "Varro Operating Group",
 
     description:
-      "Varro Operating Group was registered on March 9, 2022, and specializes in the development and production of hydrocarbons within licensed subsurface areas. On October 6, 2022, we signed Contract No. 5113-UWS for hydrocarbon production at the Tolkyn field for a period of 25 years (until 2047), following an auction conducted by the Ministry of Energy of the Republic of Kazakhstan.", 
+      "«Varro Operating Group» was registered on March 9, 2022, and specializes in the development and production of hydrocarbons within licensed subsoil areas. On October 6, 2022, we signed Contract No. 5113-UVS for hydrocarbon production at the Tolkyn field for a period of 25 years (until 2047), following an auction conducted by the Ministry of Energy of the Republic of Kazakhstan.",
 
     description2:
-      "The Tolkyn field is located in the Beineu district, on the border with the Atyrau region. The nearest settlements are the Opornaya railway station (15 km), the village of Sarykamys (50 km), and the workers' settlement of Tengiz (70 km). The regional centers are Aktau (600 km) and Atyrau (320 km). The field covers an area of 49 km².", 
+      "The Tolkyn field is located in the Beineu district, on the border with the Atyrau region. The nearest settlements are the Opornaya railway station (15 km), the village of Sarykamys (50 km), and the workers' settlement of Tengiz (70 km). The regional centers are Aktau (600 km) and Atyrau (320 km). The field covers an area of 49 km².",
 
     description3:
-      "We provide a wide range of services in oil and gas production and processing, focusing on innovation, sustainable development, and minimizing environmental impact. As part of our activities, we develop the Tolkyn field, operate the Borankol Gas Processing Plant (BGPP), and supply products to domestic and international markets. Our priorities are innovation, efficiency, and sustainable development.", 
+      "We provide a wide range of services in oil and gas production and processing, focusing on innovation, sustainable development, and minimizing environmental impact. As part of our activities, we develop the Tolkyn field, operate the Borankol Gas Processing Plant (BGPP), and supply products to domestic and international markets. Our priorities are innovation, efficiency, and sustainable development.",
   },
 };

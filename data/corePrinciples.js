@@ -10,7 +10,7 @@ export const corePrinciplesData = {
         icon: "trending-up",
         title: "+\u200B Устойчивое +развитие",
         description:
-          "Интегрируем в нашу бизнес-стратегию стремимся внести позитивный вклад как в отрасль, так и в сообщества, в которых мы работаем",
+          "Интегрируем в нашу бизнес-стратегию, стремимся внести позитивный вклад как в отрасль, так и в сообщества, в которых мы работаем",
         color: "darkBlue",
       },
       {
@@ -43,14 +43,14 @@ export const corePrinciplesData = {
     sectionTitle: "Біздің қағидаларымыз",
     mainTitle: "Жұмыстың негізгі қағидалары",
     description:
-      "Біздің қағидаларымыз біздің қызметіміздің барлық аспектілерін анықтайды және бизнес, қоғам және қоршаған орта арасындағы тепе-теңдікті сақтай отырып, жоғары нәтижелерге қол жеткізуге көмектеседі.",
+      "Біздің қағидаларымыз қызметіміздің барлық аспектілерін анықтайды және бизнес, қоғам және қоршаған орта арасындағы тепе-теңдікті сақтай отырып, жоғары нәтижелерге қол жеткізуге көмектеседі.",
     principles: [
       {
         id: 2,
         icon: "trending-up",
         title: "+\u200B Тұрақты +даму",
         description:
-          "Біздің бизнес-стратегиямызға интеграциялаймыз және салаға да, біз жұмыс істейтін қоғамдастықтарға да оң үлес қосуға тырысамыз",
+          "Бизнес-стратегиямызды интеграциялаймыз және біз жұмыс істейтін салаға да, қоғамдастықтарға да оң үлес қосуға тырысамыз",
         color: "darkBlue",
       },
       {
@@ -58,7 +58,7 @@ export const corePrinciplesData = {
         icon: "lightbulb",
         title: "+\u200B +Инновациялар",
         description:
-          "Үздіксіз жетілдіру және операциялық үздіктік. +Ағымдағы қорлардың мұнай +беру коэффициентін +арттыру. Ресурстық базаны ұлғайту\u200B",
+          "Үздіксіз жетілдіру: ағымдағы қорлардың мұнай беру коэффициентін арттыру және ресурстық базаны кеңейту\u200B",
         color: "darkBlue",
       },
       {
@@ -66,7 +66,7 @@ export const corePrinciplesData = {
         icon: "settings",
         title: "Өндірістік +процестерді оңтайландыру",
         description:
-          "Ресурстардың мұнай беруін арттыруға және +мұнай газ секторындағы технологиялық жетістіктердің алдыңғы қатарында қалуға тырысамыз",
+          "Мұнай өндіруді арттыруға және мұнай-газ секторындағы технологиялық жетістіктердің алдыңғы қатарында қалуға ұмтыламыз",
         color: "darkBlue",
       },
       {
@@ -98,7 +98,7 @@ export const corePrinciplesData = {
         icon: "lightbulb",
         title: "\u200B\u200B\u200B+Innovation",
         description:
-          "Continuous improvement and operational excellence. +Increasing the recovery factor of current reserves. Resource +base expansion",
+          "Continuous improvement of operations: enhance the oil recovery of reserves and expansion of the resource base",
         color: "darkBlue",
       },
       {
@@ -106,7 +106,7 @@ export const corePrinciplesData = {
         icon: "settings",
         title: "Production Process Optimization",
         description:
-          "We strive to increase resource recovery and stay +at the forefront of technological achievements in the +oil and gas sector",
+          "We strive to increase resource recovery and stay at the forefront of technological achievements in the oil and gas sector",
         color: "darkBlue",
       },
       {
@@ -114,7 +114,7 @@ export const corePrinciplesData = {
         icon: "cpu",
         title: "Advanced +Technologies",
         description:
-          "Developing promising +oil and gas reserves to boost production and value. Efficiently processing natural gas and byproducts.",
+          "Develop promising fields to increase production and value by efficiently processing natural gas and by-products",
         color: "darkBlue",
       },
     ],

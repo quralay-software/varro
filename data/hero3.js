@@ -63,7 +63,7 @@ export const hero3Data = {
     ],
   },
   en: {
-    generalTitle: "LLP «VARRO OPERATING GROUP»",
+    generalTitle: "«VARRO OPERATING GROUP» LLP",
     generalDescription:
       "An oil and gas company engaged in the extraction and processing of hydrocarbons in the Mangystau region",
     images: [
@@ -82,7 +82,7 @@ export const hero3Data = {
         id: "2",
         title: "Gas Processing and Storage",
         description:
-          "Efficient management of gas processing -facilities and storage infrastructure.",
+          "Efficient management of gas processing facilities and storage infrastructure.",
       },
       {
         id: "3",

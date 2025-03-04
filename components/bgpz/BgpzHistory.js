@@ -147,7 +147,9 @@ const VisionCard = ({ vision, isDesktop, isMobile }) => {
         {vision.goals.map((goal, idx) => (
           <div key={idx} className="flex items-center">
             <ChevronRight className="text-primary mr-2 sm:mr-4 h-5 w-5 sm:h-6 sm:w-6" />
-            <span className="text-base sm:text-lg">{renderTitle(goal)}</span>
+            <span className="text-gray-600 text-base sm:text-lg">
+              {renderTitle(goal)}
+            </span>
           </div>
         ))}
       </div>

@@ -54,11 +54,11 @@ const TechnologyCard = ({
               <div
                 className="relative cursor-pointer group"
                 onClick={() =>
-                  onImageClick({ src: tech.image, alt: tech.title })
+                  onImageClick({ src: tech.imageFull, alt: tech.title })
                 }
               >
                 <Image
-                  src={tech.image}
+                  src={tech.imagePreview}
                   alt={tech.title}
                   width={700}
                   height={700}
@@ -78,11 +78,7 @@ const TechnologyCard = ({
               </div>
             </div>
 
-            <p
-              className={`text-gray-700 text-base sm:text-lg mb-4 sm:mb-5 text-center ${
-                cardIndex === 3 ? "sm:mt-[29%]" : ""
-              }`}
-            >
+            <p className="text-gray-700 text-base sm:text-lg mb-4 sm:mb-6 text-center">
               {renderTitle(tech.description)}
             </p>
           </div>

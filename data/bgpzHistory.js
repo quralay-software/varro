@@ -87,7 +87,7 @@ export const bgpzHistoryData = {
         year: "2007",
         title: "Completion of Phase I Construction",
         description:
-          "Achieved design capacity of 3.6 billion m³ of gas per year.",
+          "Achieved design capacity of :3.6 billion m³ of gas per year.",
         achievements: [
           "Launch of main production :facilities",
           "Creation of basic infrastructure",
