@@ -5,7 +5,7 @@ export const hero3Data = {
       "НЕФТЕГАЗОВАЯ КОМПАНИЯ, ЗАНИМАЮЩАЯСЯ ДОБЫЧЕЙ И ПЕРЕРАБОТКОЙ УГЛЕВОДОРОДОВ В МАНГИСТАУСКОЙ ОБЛАСТИ",
 
     images: [
-      { src: "/images/new33.jpg" },
+      { src: "/images/1.jpg" },
       { src: "/images/img6.jpg" },
       { src: "/images/img7.jpg" },
     ],
@@ -15,7 +15,7 @@ export const hero3Data = {
         id: "1",
         title: "Добыча нефти и газа",
         description:
-          "Комплексный подход к разведке и добыче углеводородов с использованием современных технологий.",
+          "Комплексный подход к добыче углеводородов с использованием современных технологий.",
       },
       {
         id: "2",
@@ -37,7 +37,7 @@ export const hero3Data = {
     generalDescription:
       "Маңғыстау облысында көмірсутектерді өндіру және өңдеумен айналысатын мұнай-газ компаниясы",
     images: [
-      { src: "/images/new33.jpg" },
+      { src: "/images/1.jpg" },
       { src: "/images/img6.jpg" },
       { src: "/images/img7.jpg" },
     ],
@@ -46,7 +46,7 @@ export const hero3Data = {
         id: "1",
         title: "Мұнай және газ өндіру",
         description:
-          "Заманауи технологияларды қолдана отырып, көмірсутектерді барлау және өндіруге кешенді көзқарас.",
+          "Көмірсутектерді өндіруге заманауи технологияларды қолдана отырып кешенді тәсіл.",
       },
       {
         id: "2",
@@ -67,7 +67,7 @@ export const hero3Data = {
     generalDescription:
       "An oil and gas company engaged in the extraction and processing of hydrocarbons in the Mangystau region",
     images: [
-      { src: "/images/new33.jpg" },
+      { src: "/images/1.jpg" },
       { src: "/images/img6.jpg" },
       { src: "/images/img7.jpg" },
     ],
@@ -76,7 +76,7 @@ export const hero3Data = {
         id: "1",
         title: "Oil and Gas Production",
         description:
-          "Comprehensive approach to hydrocarbon exploration and production using modern technologies.",
+          "A comprehensive approach to hydrocarbon production using modern technologies.",
       },
       {
         id: "2",

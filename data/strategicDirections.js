@@ -27,7 +27,8 @@ export const strategicDirectionsData = {
       },
       {
         id: 5,
-        title: "-Восполнение запасов и разведка",
+        title:
+          "-Восполнение -\u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B запасов \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B ",
         description:
           "Реализовать стратегию пополнения запасов для стабильной добычи. -\u200B -\u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B",
       },
@@ -61,7 +62,7 @@ export const strategicDirectionsData = {
       {
         id: 5,
         title:
-          "Қорларды -толықтыру -\u200B \u200B \u200B \u200B \u200B \u200B және барлау \u200B \u200B \u200B \u200B \u200B \u200B",
+          "-Қорларды -\u200B \u200B \u200B \u200B \u200B \u200B  толықтыру \u200B \u200B \u200B \u200B \u200B \u200B ",
         description:
           "Тұрақты өндіру үшін -қорларды толықтыру стратегиясын -іске асыру. -\u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B",
       },
@@ -94,7 +95,8 @@ export const strategicDirectionsData = {
       },
       {
         id: 5,
-        title: "Reserves -replenishment and exploration",
+        title:
+          "-Reserves -\u200B \u200B \u200B \u200B \u200B \u200B replenishment \u200B \u200B \u200B \u200B \u200B \u200B ",
         description:
           "Implement a reserves replenishment strategy for stable production. -\u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B \u200B",
       },

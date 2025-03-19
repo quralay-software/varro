@@ -4,7 +4,7 @@ export const bgpzHeroData = {
     title: "Боранкольский газоперерабатывающий завод (БГПЗ)",
     subtitle: "Высокие технологии переработки газа",
     description:
-      "БГПЗ — один из газоперерабатывающих заводов Казахстана, обеспечивающий переработку попутного и природного газа с использованием передовых технологий и соблюдением высоких экологических стандартов.",
+      "БГПЗ — один из газоперерабатывающих заводов Казахстана, обеспечивающий переработку попутного и природного газа и соблюдением высоких экологических стандартов.",
     button: "Подробнее о заводе",
     image: {
       src: "/images/new1.jpg",
@@ -30,7 +30,7 @@ export const bgpzHeroData = {
     title: "Боранкөл газ өңдеу зауыты (БГӨЗ)",
     subtitle: "Газ өңдеудің жоғары технологиялары",
     description:
-      "БГӨЗ — Қазақстандағы газ өңдеу зауыттарының бірі, ілеспе және табиғи газды заманауи технологияларды пайдалана отырып, жоғары экологиялық стандарттарды сақтай отырып өңдеуді қамтамасыз етеді.",
+      "БГӨЗ — Ілеспе және табиғи газды өңдеуді қамтамасыз ететін, жоғары экологиялық стандарттарды сақтайтын Қазақстандағы газ өңдеу зауыттарының бірі.",
     button: "Зауыт туралы толығырақ",
     image: {
       src: "/images/new1.jpg",
@@ -56,7 +56,7 @@ export const bgpzHeroData = {
     title: "Borankol Gas Processing Plant (BGPP)",
     subtitle: "Advanced Gas Processing Technologies",
     description:
-      "BGPP is one of gas processing plants in Kazakhstan, ensuring the processing of associated and natural gas using advanced technologies and maintaining high environmental standards.",
+      "BGPP is one of gas processing plants in Kazakhstan, ensuring the processing of associated and natural gas and maintaining high environmental standards.",
     button: "Learn More About the Plant",
     image: {
       src: "/images/new1.jpg",
