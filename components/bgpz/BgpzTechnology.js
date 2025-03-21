@@ -107,7 +107,7 @@ const TechnologyCard = ({
           </ul>
 
           {/* statistic */}
-          {cardIndex !== 0 ? (
+          {cardIndex !== 5 ? (
             <div className="mt-auto">
               <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 sm:gap-6 mt-6 flex items-center justify-center">
                 {Object.entries(tech.stats).map(([key, stat]) => (

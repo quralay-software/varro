@@ -16,10 +16,10 @@ export const bgpzHistoryData = {
         ],
       },
       {
-        year: "2024 -2026",
-        title: ":II этап модернизации",
+        year: "2025",
+        title: "II этап модернизации",
         description:
-          "Начало масштабной программы по повышению эффективности производства.",
+          "Строительство УНТС (Установка Низко-Температурной Сепарации).",
         achievements: [
           "Внедрение новых технологий :очистки",
           "Автоматизация :производственных процессов",
@@ -55,10 +55,9 @@ export const bgpzHistoryData = {
         ],
       },
       {
-        year: "2024 - 2026",
-        title: ":II кезең жаңғырту",
-        description:
-          "Өндіріс тиімділігін арттыру бойынша: ауқымды бағдарламаның басталуы.",
+        year: "2025",
+        title: "II кезең жаңғырту",
+        description: "Төмен температуралы бөлу қондырғысын (ТТБҚ) салу.",
         achievements: [
           "Жаңа тазарту технологияларын :енгізу",
           "Өндірістік процестерді :автоматтандыру",
@@ -95,10 +94,10 @@ export const bgpzHistoryData = {
         ],
       },
       {
-        year: "2024 - 2026",
-        title: ":Phase II Modernization",
+        year: "2025",
+        title: "Phase II Modernization",
         description:
-          "Start of a large-scale program to improve production efficiency.",
+          "Construction of the Low-Temperature Separation Unit (LTSU).",
         achievements: [
           "Implementation of new cleaning technologies",
           "Automation of production :processes",

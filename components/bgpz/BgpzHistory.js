@@ -94,7 +94,7 @@ const TimelineEvent = ({ item, index, isDesktop, isMobile }) => {
 };
 
 const VisionCard = ({ vision, isDesktop, isMobile }) => {
-  const widthClass = isDesktop ? "w-[27%]" : "w-[80%] flex-shrink-0";
+  const widthClass = isDesktop ? "w-[30%]" : "w-[80%] flex-shrink-0";
 
   const renderTitle = (title) => {
     if (isMobile) {
@@ -113,14 +113,14 @@ const VisionCard = ({ vision, isDesktop, isMobile }) => {
 
   let heightClass = "";
   if (isDesktop) {
-    heightClass = "min-h-[37rem]";
+    heightClass = "min-h-[35rem]";
   } else {
     heightClass = "min-h-[300px]";
   }
 
   let marginTopClass = "";
   if (isDesktop) {
-    marginTopClass = "-mt-48";
+    marginTopClass = "-mt-40";
   }
 
   return (

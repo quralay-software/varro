@@ -35,8 +35,8 @@ export const bgpzTechnologyData = {
         description:
           "Комплексная система: разделения: углеводородных: фракций.",
         details: [
-          "Монтаж оборудования",
-          "Строительно-:монтажные работы",
+          "Разделения смеси лёгких углеводородов на индивидуальные, или технически чистые, вещества.",
+          "Обеспечение получение продуктов с чистотой в 98-99%",
           "Автоматизированное управление процессами",
         ],
         stats: {
@@ -87,8 +87,8 @@ export const bgpzTechnologyData = {
             label: "м³ хранения",
           },
           delivery: {
-            value: "24/7",
-            label: "доставка",
+            value: "70.6 км",
+            label: "трубопровод",
           },
         },
       },
@@ -128,8 +128,8 @@ export const bgpzTechnologyData = {
         imagePreview: "/images/img4.jpg",
         description: "Көмірсутек: фракцияларын бөлудің :кешенді жүйесі.",
         details: [
-          "Жабдық дайындығы (МЖ)",
-          "Құрылыс жұмыстары (ҚМЖ)",
+          "Жеңіл көмірсутектер қоспасын жекелеген немесе техникалық таза заттарға бөлу.",
+          "Өнімдерді 98–99% тазалықпен алу қамтамасыз етіледі.",
           "Процестерді автоматтандырылған басқару ",
         ],
         stats: {
@@ -180,8 +180,8 @@ export const bgpzTechnologyData = {
             label: "м³ сақтау",
           },
           delivery: {
-            value: "24/7",
-            label: "жеткізу",
+            value: "70.6 км",
+            label: "құбыр желісі",
           },
         },
       },
@@ -222,8 +222,8 @@ export const bgpzTechnologyData = {
         imagePreview: "/images/img4.jpg",
         description: "Comprehensive :hydrocarbon fraction :separation system.",
         details: [
-          "Equipment readiness",
-          "Construction works",
+          "Separation of light hydrocarbon mixtures into individual or technically pure substances.",
+          "Ensuring the production of products with 98–99% purity.",
           "Automated process control",
         ],
         stats: {
@@ -274,8 +274,8 @@ export const bgpzTechnologyData = {
             label: "m³ storage",
           },
           delivery: {
-            value: "24/7",
-            label: "delivery",
+            value: "70.6 km",
+            label: "pipeline",
           },
         },
       },

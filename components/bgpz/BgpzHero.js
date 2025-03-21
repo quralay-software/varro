@@ -72,7 +72,16 @@ const BgpzHero = () => {
             )}
           </div>
         </div>
-
+        <div className="bg-white/10 backdrop-blur-sm p-3 rounded-lg">
+          <div className="text-white text-center">
+            {renderCapacity(
+              data.stats.construction.value,
+              data.stats.construction.label,
+              "text-xl font-bold mb-1",
+              "text-[10px] font-semibold"
+            )}
+          </div>
+        </div>
       </div>
 
       {/* Desktop Statistics */}
@@ -86,7 +95,22 @@ const BgpzHero = () => {
           {renderCapacity(
             data.stats.capacity.value,
             data.stats.capacity.label,
-            "text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-1 md:mb-2",
+            "text-2xl md:text-3xl lg:text-4xl xl:text-3xl font-bold mb-1 md:mb-2",
+            "text-xs md:text-sm lg:text-base xl:text-lg font-semibold"
+          )}
+        </div>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.9 }}
+        className="hidden md:block absolute top-[75%] right-[10%] bg-white/10 backdrop-blur-sm p-4 md:p-6 lg:p-8 rounded-lg transform hover:scale-105 transition-transform duration-300 sm:min-h-[8rem] sm:min-w-[16rem]"
+      >
+        <div className="text-white text-center">
+          {renderCapacity(
+            data.stats.construction.value,
+            data.stats.construction.label,
+            "text-2xl md:text-3xl lg:text-4xl xl:text-3xl font-bold mb-1 md:mb-2",
             "text-xs md:text-sm lg:text-base xl:text-lg font-semibold"
           )}
         </div>
