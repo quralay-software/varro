@@ -2,48 +2,54 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "next-i18next";
 import { corePrinciplesData } from "../../data/corePrinciples";
+import { Globe, Zap, Settings, Cpu } from "lucide-react";
 
 const colorVariants = {
   darkBlue: "from-gray-50 to-primary/15 bg-gradient-to-br",
 };
 
-const PrincipleCard = ({ principle }) => {
-  const colorClass = colorVariants[principle.color];
+const renderTitle = (title) => {
+  const parts = title.split("+");
+  return parts.map((part, index) => (
+    <React.Fragment key={index}>
+      {part.trim()}
+      {index < parts.length - 1 && <br />}
+    </React.Fragment>
+  ));
+};
 
-  const renderTitle = (title) => {
-    const parts = title.split("+");
-    return parts.map((part, index) => (
-      <React.Fragment key={index}>
-        {part.trim()}
-        {index < parts.length - 1 && <br />}
-      </React.Fragment>
-    ));
-  };
+const PrincipleCard = ({ principle, index }) => {
+  const colorClass = colorVariants[principle.color];
+  const icons = [
+    <Globe className="w-8 h-8 text-primary" />,
+    <Zap className="w-8 h-8 text-primary" />,
+    <Settings className="w-8 h-8 text-primary" />,
+    <Cpu className="w-8 h-8 text-primary" />,
+  ];
+  const IconElement = icons[index] || icons[0];
+
   return (
     <motion.div
-      className="bg-white/75 rounded-xl overflow-hidden border border-gray-200 relative"
+      className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-md relative p-6"
       whileHover={{ y: -5 }}
       initial={false}
     >
-      <div className="p-6 md:p-8 h-full">
-        <div
-          className={`absolute inset-0 bg-gradient-to-br ${colorClass} transition-all duration-300`}
-        />
-
-        <div className="relative z-10">
-          <h3 className="text-2xl font-bold text-gray-800 mb-3 sm:mb-4 text-center relative">
-            {renderTitle(principle.title)}
-            <span className="block h-1 mt-2 bg-primary w-full"></span>
-          </h3>
-
-          <p className="text-gray-700 text-base leading-relaxed text-center">
-            {renderTitle(principle.description)}
-          </p>
-        </div>
+      <div
+        className={`absolute inset-0 ${colorClass} transition-all duration-300`}
+      />
+      <div className="relative z-10 flex flex-col items-center">
+        <h3 className="text-2xl font-bold text-gray-800 text-center">
+          {renderTitle(principle.title)}
+        </h3>
+        {IconElement}
+        <p className="text-gray-700 text-base leading-relaxed text-center mt-4">
+          {renderTitle(principle.description)}
+        </p>
       </div>
     </motion.div>
   );
 };
+
 
 const CorePrinciples = () => {
   const [activePrinciple, setActivePrinciple] = useState(null);
@@ -69,10 +75,11 @@ const CorePrinciples = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {content.principles.map((principle) => (
+          {content.principles.map((principle, index) => (
             <PrincipleCard
               key={principle.id}
               principle={principle}
+              index={index}
               isActive={activePrinciple === principle.id}
               onClick={() =>
                 setActivePrinciple(
