@@ -11,7 +11,7 @@ const isPhone = (text) => /^\+?\d[\d\s()-]{7,}$/.test(text);
 
 const ContactInfoGroup = ({ info, icons }) => (
   <div className="bg-white/20 sm:p-8 p-4 rounded-xl shadow-sm border border-gray-100 relative overflow-hidden">
-    <div className="absolute inset-0 bg-[#1E2E3E]/90 opacity-90" />
+    <div className="absolute inset-0 bg-[#8B7952]/90 opacity-90" />
     <div className="relative z-10 sm:space-y-6 space-y-4">
       {Object.entries(info).map(([key, data]) => {
         const { content, phone: extraPhone } = data;
