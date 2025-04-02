@@ -2,55 +2,12 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "next-i18next";
 import Footer from "../footer/Footer";
-import { activitiesMainContent } from "../../data/activitiesMainContent";
 import { about4HeroData } from "../../data/about4Hero";
 
 const About4 = () => {
   const { i18n } = useTranslation();
   const currentLang = i18n.language || "ru";
-  const content = activitiesMainContent[currentLang];
   const data = about4HeroData[currentLang];
-
-  const activities = content.activities;
-
-  const mobileSlideWidth = 256;
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const slidesPerView = isMobile ? 1 : 3;
-  const totalPages = Math.max(1, activities.length - slidesPerView + 1);
-
-  useEffect(() => {
-    let interval;
-    if (
-      !isMobile &&
-      isAutoPlaying &&
-      !isTransitioning &&
-      currentSlide < totalPages - 2
-    ) {
-      interval = setInterval(() => {
-        setCurrentSlide((prev) => Math.min(prev + 1, totalPages - 2));
-      }, 3000);
-    }
-    return () => clearInterval(interval);
-  }, [currentSlide, isAutoPlaying, isTransitioning, totalPages, isMobile]);
-
-  const goToSlide = (index) => {
-    if (!isTransitioning) {
-      setCurrentSlide(index);
-    }
-  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -87,9 +44,7 @@ const About4 = () => {
             <div
               className="w-full h-full bg-cover bg-center filter brightness-75"
               style={{
-                backgroundImage: `url(${
-                  content.backgroundImage || "/images/new2.jpg"
-                })`,
+                backgroundImage: `url(${"/images/new2.jpg"})`,
               }}
             />
             <div className="absolute inset-0 bg-black/30" />
@@ -120,9 +75,7 @@ const About4 = () => {
             <div
               className="w-full h-full bg-cover bg-center filter brightness-75 "
               style={{
-                backgroundImage: `url(${
-                  content.backgroundImage || "/images/new2.jpg"
-                })`,
+                backgroundImage: `url(${"/images/new2.jpg"})`,
               }}
             />
             <div className="absolute inset-0 bg-black/30" />
