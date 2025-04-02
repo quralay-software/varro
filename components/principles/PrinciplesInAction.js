@@ -78,7 +78,7 @@ const PrinciplesInAction = () => {
                     <span className="text-primary">Принципы в действии</span>
                     <h2 className="text-4xl font-bold mt-2">Реальные результаты</h2>
                     <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-                        Наши принципы — это не просто слова. Мы ежедневно воплощаем их в жизнь 
+                        Наши принципы — это не просто слова. Мы ежедневно воплощаем их в жизнь
                         через конкретные проекты и инициативы.
                     </p>
                 </motion.div>
@@ -101,7 +101,7 @@ const PrinciplesInAction = () => {
                             Наши корпоративные ценности
                         </h3>
                         <p className="text-gray-600 mb-6">
-                            Узнайте больше о том, как мы воплощаем наши принципы в жизнь 
+                            Узнайте больше о том, как мы воплощаем наши принципы в жизнь
                             через конкретные действия и проекты.
                         </p>
                         <div className="relative h-[400px] rounded-lg overflow-hidden">
