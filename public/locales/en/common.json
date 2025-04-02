@@ -68,5 +68,35 @@
     "phone": "+7 7292 201 909 (External number: 2069)",
     "address": "Republic of Kazakhstan, Mangystau region, Aktau city, Zodiac BC, microdistrict 17, building 39.",
     "rights": " © 2025 Varro Operating Group. All rights reserved."
+  },
+  "about": {
+    "company": "LLP «VARRO OPERATING GROUP»",
+    "title": "About us",
+    "description": "Varro Operating Group, registered in 2022, specializes in the extraction and processing of hydrocarbons at the Tolkyn field. Our priorities are innovation, efficiency, and sustainable development."
+  },
+  "main": {
+    "company": "LLP «VARRO OPERATING GROUP»",
+    "title": "Home",
+    "description": "LLP «VARRO OPERATING GROUP»: an oil and gas company engaged in the extraction and processing of hydrocarbons in the Mangystau region"
+  },
+  "principles": {
+    "company": "LLP «VARRO OPERATING GROUP»",
+    "title": "Principles",
+    "description": "Explore the key principles of Varro Operating Group: corporate responsibility, employee safety, environmental care, innovation, and advanced technologies for sustainable development."
+  },
+  "goals": {
+    "company": "LLP «VARRO OPERATING GROUP»",
+    "title": "Goals",
+    "description": "Explore the strategic goals of Varro Operating Group: increasing production efficiency, developing the resource base, implementing innovations, complying with HSE standards, and actively cooperating with partners for sustainable development in the oil and gas industry."
+  },
+  "bgpz": {
+    "company": "LLP «VARRO OPERATING GROUP»",
+    "title": "BGPP",
+    "description": "The Borankol Gas Processing Plant (BGPP) is one of Kazakhstan’s facilities processing associated and natural gas, with a design capacity of 3.6 billion m³/year of gas and 730 thousand m³/year of liquid. Since the completion of the first stage in 2007, the plant has continuously evolved, implementing innovative technologies, automation, and energy optimization. The second modernization stage in 2025 and the vision for 2030 aim at full production digitalization, carbon neutrality, and minimal environmental impact."
+  },
+  "contacts": {
+    "company": "LLP «VARRO OPERATING GROUP»",
+    "title": "Contacts",
+    "description": "Contact information of Varro Operating Group: our office is located in Aktau, Mangystau region, Republic of Kazakhstan, Zodiac Business Center, microdistrict 17, building 39. Contact us via email at Varro@btmg.kz or by phone at +7 7292 201 909 ext. 2069."
   }
 }
