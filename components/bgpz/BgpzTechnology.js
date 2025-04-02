@@ -84,7 +84,7 @@ const TechnologyCard = ({
           </div>
 
           {/* details */}
-          <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+          <ul className="space-y-3 sm:space-y-4 mb-4">
             {tech.details.map((detail, idx) => {
               const displayDetail = isMobile
                 ? detail.replace(/:/g, "").trim()
@@ -107,7 +107,7 @@ const TechnologyCard = ({
           </ul>
 
           {/* statistic */}
-          {cardIndex !== 5 ? (
+          {/* {cardIndex !== 5 ? (
             <div className="mt-auto">
               <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 sm:gap-6 mt-6 flex items-center justify-center">
                 {Object.entries(tech.stats).map(([key, stat]) => (
@@ -135,7 +135,7 @@ const TechnologyCard = ({
                 </div>
               ))}
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </motion.div>
