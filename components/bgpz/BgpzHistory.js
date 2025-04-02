@@ -29,7 +29,7 @@ const TimelineEvent = ({ item, index, isDesktop, isMobile }) => {
     if (index === 0) {
       heightClass = "min-h-[26rem]";
     } else if (index === 1) {
-      heightClass = "min-h-[28rem]";
+      heightClass = "min-h-[31rem]";
     } else {
       heightClass = "min-h-[500px]";
     }
@@ -42,7 +42,7 @@ const TimelineEvent = ({ item, index, isDesktop, isMobile }) => {
     if (index === 0) {
       marginTopClass = "-mt-4";
     } else if (index === 1) {
-      marginTopClass = "-mt-12";
+      marginTopClass = "-mt-24";
     } else if (index === 2) {
       marginTopClass = "-mt-4";
     }
