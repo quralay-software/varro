@@ -7,7 +7,7 @@ export const hero3Data = {
     images: [
       { src: "/images/1.jpg" },
       { src: "/images/img6.jpg" },
-      { src: "/images/img-10.jpg" },
+      { src: "/images/img-10.JPG" },
     ],
 
     services: [
@@ -39,7 +39,7 @@ export const hero3Data = {
     images: [
       { src: "/images/1.jpg" },
       { src: "/images/img6.jpg" },
-      { src: "/images/img-10.jpg" },
+      { src: "/images/img-10.JPG" },
     ],
     services: [
       {
@@ -69,7 +69,7 @@ export const hero3Data = {
     images: [
       { src: "/images/1.jpg" },
       { src: "/images/img6.jpg" },
-      { src: "/images/img-10.jpg" },
+      { src: "/images/img-10.JPG" },
     ],
     services: [
       {
