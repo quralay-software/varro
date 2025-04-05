@@ -56,12 +56,12 @@ const About4 = () => {
               initial="hidden"
               animate="visible"
             >
-              <motion.h2
+              <motion.h1
                 variants={itemVariants}
                 className="text-4xl font-bold text-white text-center"
               >
                 {data.title}
-              </motion.h2>
+              </motion.h1>
             </motion.div>
           </div>
         </div>
@@ -89,12 +89,12 @@ const About4 = () => {
                 initial="hidden"
                 animate="visible"
               >
-                <motion.h2
+                <motion.h1
                   className="title text-white font-bold text-6xl text-center"
                   variants={itemVariants}
                 >
                   {data.title}
-                </motion.h2>
+                </motion.h1>
               </motion.div>
             </div>
           </div>

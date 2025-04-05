@@ -61,9 +61,9 @@ const Hero3 = () => {
         <div className="container mx-auto h-full flex flex-col lg:flex-row items-center justify-center">
           <div className="w-full">
             <div className="text-center">
-              <h2 className="text-black text-2xl md:text-4xl font-normal leading-tight mb-2">
+              <h1 className="text-black text-2xl md:text-4xl font-normal leading-tight mb-2">
                 {heroData.generalTitle}
-              </h2>
+              </h1>
               <span className="block h-1 mt-2 mb-2 bg-primary w-full"></span>
               <p className="text-black text-sm md:text-lg">
                 {heroData.generalDescription}
