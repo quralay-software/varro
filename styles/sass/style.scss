@@ -10,46 +10,9 @@
 // base
 @import "base/base";
 
-
-// components
-@import "components/section-title";
-@import "components/buttons";
-@import "components/form";
-@import "components/social-links";
-@import "components/page-title";
-@import "components/blog-sidebar";
-@import "components/pagination";
-
 // layout
 @import "layout/header";
-@import "layout/hero-slider";
 @import "layout/footer";
-
-// page
-@import "page/home-default";
-@import "page/home-style-2";
-@import "page/home-style-3";
-
-@import "page/_team-single";
-
-@import "page/shop";
-@import "page/shop-single";
-
-@import "page/cart";
-
-@import "page/checkout";
-
-@import "page/project-single";
-
-@import "page/service-single";
-
-@import "page/_blog";
-
-@import "page/_blog-single";
-
-@import "page/contact";
-
-@import "page/_faq";
 
 
 @import "page/_error-404";
