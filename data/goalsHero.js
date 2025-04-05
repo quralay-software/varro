@@ -7,8 +7,8 @@ export const goalsHeroData = {
       "Мы стремимся к увеличению эффективности добычи, развитию ресурсной базы и внедрению инноваций для создания устойчивого будущего в нефтегазовой отрасли.",
     button: "Подробнее о наших стратегиях",
     image: {
-      src: "/images/img8.jpg",
-      alt: "Стратегические цели",
+      src: "/images/img8.webp",
+      alt: "",
     },
     stats: {
       efficiency: {
@@ -33,8 +33,8 @@ export const goalsHeroData = {
       "Біз мұнай-газ саласында тұрақты болашақ құру үшін өндіріс тиімділігін арттыруға, ресурстық базаны дамытуға және инновацияларды енгізуге ұмтыламыз.",
     button: "Біздің стратегиялар туралы толығырақ",
     image: {
-      src: "/images/img8.jpg",
-      alt: "Стратегиялық мақсаттар",
+      src: "/images/img8.webp",
+      alt: "",
     },
     stats: {
       efficiency: {
@@ -60,8 +60,8 @@ export const goalsHeroData = {
       "We strive to increase production efficiency, develop our resource base, and implement innovations to create a sustainable future in the oil and gas industry.",
     button: "Learn More About Our Strategies",
     image: {
-      src: "/images/img8.jpg",
-      alt: "Strategic Goals",
+      src: "/images/img8.webp",
+      alt: "",
     },
     stats: {
       efficiency: {

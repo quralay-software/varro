@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslation } from "next-i18next";
 import Footer from "../footer/Footer";
@@ -41,11 +42,11 @@ const About4 = () => {
         {/* Mobile */}
         <div className="block md:hidden h-[30vh] relative overflow-hidden">
           <div className="absolute inset-0">
-            <div
-              className="w-full h-full bg-cover bg-center filter brightness-75"
-              style={{
-                backgroundImage: `url(${"/images/new2.jpg"})`,
-              }}
+            <Image
+              src="/images/new2.webp"
+              alt=""
+              fill
+              className="object-cover brightness-75"
             />
             <div className="absolute inset-0 bg-black/30" />
           </div>
@@ -72,11 +73,11 @@ const About4 = () => {
             initial="hidden"
             animate="visible"
           >
-            <div
-              className="w-full h-full bg-cover bg-center filter brightness-75 "
-              style={{
-                backgroundImage: `url(${"/images/new2.jpg"})`,
-              }}
+            <Image
+              src="/images/new2.webp"
+              alt=""
+              fill
+              className="object-cover brightness-75"
             />
             <div className="absolute inset-0 bg-black/30" />
           </motion.div>
