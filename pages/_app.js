@@ -7,7 +7,6 @@ import "../styles/font-awesome.min.css";
 import "../styles/themify-icons.css";
 import "../styles/sass/style.scss";
 import "../styles/masonry.css";
-import Head from "next/head";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { PersistGate } from "redux-persist/integration/react";
@@ -21,9 +20,6 @@ function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-        </Head>
         <Component {...pageProps} />
         <ToastContainer />
       </PersistGate>

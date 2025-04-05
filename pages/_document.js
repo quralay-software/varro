@@ -13,10 +13,6 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
           />
-          <meta
-            name="description"
-            content="TOO «VARRO OPERATING GROUP» НЕФТЕГАЗОВАЯ КОМПАНИЯ, ЗАНИМАЮЩАЯСЯ ДОБЫЧЕЙ И ПЕРЕРАБОТКОЙ УГЛЕВОДОРОДОВ В МАНГИСТАУСКОЙ ОБЛАСТИ"
-          />
         </Head>
         <body>
           <Main />

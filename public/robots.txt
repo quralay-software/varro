@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://varro.kz/sitemap.xml
