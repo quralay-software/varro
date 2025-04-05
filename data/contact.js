@@ -5,14 +5,10 @@ export const contactData = {
       subtitle: "Всегда на связи",
       description:
         "Мы готовы ответить на ваши вопросы и помочь в решении любых задач. Наша команда профессионалов всегда рада новым вызовам и интересным проектам.",
-      image: {
-        src: "/images/contact-hero.jpg",
-        alt: "Офис Varro Operating Group",
-      },
     },
     image: {
-      src: "/images/img-1.JPG",
-      alt: "Стратегиялық мақсаттар",
+      src: "/images/img1.webp",
+      alt: "",
     },
     contact: {
       title: "Свяжитесь с нами",
@@ -49,14 +45,10 @@ export const contactData = {
       subtitle: "Әрдайым байланыста",
       description:
         "Біз сіздің сұрақтарыңызға жауап беруге және кез-келген мәселелерді шешуге дайынбыз. Біздің кәсіби команда жаңа сын-қатерлер мен қызықты жобаларға әрдайым қуанышты.",
-      image: {
-        src: "/images/contact-hero.jpg",
-        alt: "Varro Operating Group кеңсесі",
-      },
     },
     image: {
-      src: "/images/img-1.JPG",
-      alt: "Стратегиялық мақсаттар",
+      src: "/images/img1.webp",
+      alt: "",
     },
     contact: {
       title: "Бізбен байланысыңыз",
@@ -93,14 +85,10 @@ export const contactData = {
       subtitle: "Always Connected",
       description:
         "We are ready to answer your questions and help solve any challenges. Our team of professionals is always excited about new challenges and interesting projects.",
-      image: {
-        src: "/images/contact-hero.jpg",
-        alt: "Varro Operating Group Office",
-      },
     },
     image: {
-      src: "/images/img-1.JPG",
-      alt: "Стратегиялық мақсаттар",
+      src: "/images/img1.webp",
+      alt: "",
     },
     contact: {
       title: "Contact Us",

@@ -8,17 +8,17 @@ export const corePrinciplesData = {
       {
         id: 2,
         icon: "trending-up",
-        title: "-\u200B Устойчивое -развитие",
+        title: "+\u200B Устойчивое +развитие",
         description:
-          "Интегрируем в нашу бизнес-стратегию стремимся внести позитивный вклад как в отрасль, так и в сообщества, в которых мы работаем",
+          "Интегрируем в нашу бизнес-стратегию, стремимся внести позитивный вклад как в отрасль, так и в сообщества, в которых мы работаем",
         color: "darkBlue",
       },
       {
         id: 3,
         icon: "lightbulb",
-        title: "-\u200B -Инновации",
+        title: "+\u200B +Инновации",
         description:
-          "Постоянное совершенствование и операционное совершенство. Повышение коэффициента нефтеотдачи текущих запасов. Увеличение ресурсной базы",
+          "Постоянное совершенствование операций: рост нефтеотдачи запасов и расширение ресурсной базы",
         color: "darkBlue",
       },
       {
@@ -26,15 +26,15 @@ export const corePrinciplesData = {
         icon: "settings",
         title: "Оптимизация производственных процессов",
         description:
-          "Стремимся повысить -нефтеотдачу ресурсов и -оставаться в авангарде технологических достижений в нефтегазовом секторе",
+          "Стремимся повысить +нефтеотдачу ресурсов и +оставаться в авангарде технологических достижений в нефтегазовом секторе",
         color: "darkBlue",
       },
       {
         id: 5,
         icon: "cpu",
-        title: "-\u200B Передовые -технологии",
+        title: "+\u200B Передовые +технологии",
         description:
-          "Разрабатываем перспективные нефтегазовые запасы для увеличения добычи и стоимости. Эффективно обрабатываем природный газ и побочные продукты.",
+          "Разрабатываем перспективные месторождения для роста добычи и стоимости, эффективно обрабатывая природный газ и побочные продукты",
         color: "darkBlue",
       },
     ],
@@ -43,38 +43,38 @@ export const corePrinciplesData = {
     sectionTitle: "Біздің қағидаларымыз",
     mainTitle: "Жұмыстың негізгі қағидалары",
     description:
-      "Біздің қағидаларымыз біздің қызметіміздің барлық аспектілерін анықтайды және бизнес, қоғам және қоршаған орта арасындағы тепе-теңдікті сақтай отырып, жоғары нәтижелерге қол жеткізуге көмектеседі.",
+      "Біздің қағидаларымыз қызметіміздің барлық аспектілерін анықтайды және бизнес, қоғам және қоршаған орта арасындағы тепе-теңдікті сақтай отырып, жоғары нәтижелерге қол жеткізуге көмектеседі.",
     principles: [
       {
         id: 2,
         icon: "trending-up",
-        title: "-\u200B Тұрақты -даму",
+        title: "+\u200B Тұрақты +даму",
         description:
-          "Біздің бизнес-стратегиямызға интеграциялаймыз және салаға да, біз жұмыс істейтін қоғамдастықтарға да оң үлес қосуға тырысамыз",
+          "Бизнес-стратегиямызды интеграциялаймыз және біз жұмыс істейтін салаға да, қоғамдастықтарға да оң үлес қосуға тырысамыз",
         color: "darkBlue",
       },
       {
         id: 3,
         icon: "lightbulb",
-        title: "-\u200B -Инновациялар",
+        title: "+\u200B +Инновациялар",
         description:
-          "Үздіксіз жетілдіру және операциялық үздіктік. -Ағымдағы қорлардың мұнай -беру коэффициентін -арттыру. Ресурстық -базаны ұлғайту\u200B",
+          "Үздіксіз жетілдіру: ағымдағы қорлардың мұнай беру коэффициентін арттыру және ресурстық базаны кеңейту\u200B",
         color: "darkBlue",
       },
       {
         id: 4,
         icon: "settings",
-        title: "Өндірістік -процестерді оңтайландыру",
+        title: "Өндірістік +процестерді оңтайландыру",
         description:
-          "Ресурстардың мұнай беруін арттыруға және -мұнай газ секторындағы технологиялық жетістіктердің алдыңғы қатарында қалуға тырысамыз",
+          "Мұнай өндіруді арттыруға және мұнай-газ секторындағы технологиялық жетістіктердің алдыңғы қатарында қалуға ұмтыламыз",
         color: "darkBlue",
       },
       {
         id: 5,
         icon: "cpu",
-        title: "-\u200B Озық -технологиялар",
+        title: "+\u200B Озық +технологиялар",
         description:
-          "Өндірісті және құндылықты арттыру мақсатында перспективалы -мұнай мен газ қоры дамытамыз. Табиғи газды және қосалқы өнімдерді тиімді өңдейміз.",
+          "Табиғи газды және жанама өнімдерді тиімді өңдей отырып, өндіріс пен құнның өсуі үшін перспективалы кен орындарын игереміз",
         color: "darkBlue",
       },
     ],
@@ -88,7 +88,7 @@ export const corePrinciplesData = {
       {
         id: 2,
         icon: "trending-up",
-        title: "Sustainable -Development",
+        title: "Sustainable +Development",
         description:
           "We integrate into our business strategy and strive to make a positive contribution to both the industry and the communities in which we operate",
         color: "darkBlue",
@@ -96,9 +96,9 @@ export const corePrinciplesData = {
       {
         id: 3,
         icon: "lightbulb",
-        title: "\u200B\u200B\u200B-Innovation",
+        title: "\u200B\u200B\u200B+Innovation",
         description:
-          "Continuous improvement and operational excellence. -Increasing the recovery factor of current reserves. Resource -base expansion",
+          "Continuous improvement of operations: enhance the oil recovery of reserves and expansion of the resource base",
         color: "darkBlue",
       },
       {
@@ -106,15 +106,15 @@ export const corePrinciplesData = {
         icon: "settings",
         title: "Production Process Optimization",
         description:
-          "We strive to increase resource recovery and stay -at the forefront of technological achievements in the -oil and gas sector",
+          "We strive to increase resource recovery and stay at the forefront of technological achievements in the oil and gas sector",
         color: "darkBlue",
       },
       {
         id: 5,
         icon: "cpu",
-        title: "Advanced -Technologies",
+        title: "Advanced +Technologies",
         description:
-          "Developing promising -oil and gas reserves to boost production and value. Efficiently processing natural gas and byproducts.",
+          "Develop promising fields to increase production and value by efficiently processing natural gas and by-products",
         color: "darkBlue",
       },
     ],

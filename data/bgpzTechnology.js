@@ -7,37 +7,41 @@ export const bgpzTechnologyData = {
       "Мы используем передовые технологии для обеспечения эффективной и экологичной переработки газа",
     technologies: [
       {
-        title: "Разделение и очистка природн.газа",
-        image: "/images/img-1.JPG",
-        description: "Высокоэффективные системы сепарации и очистки газа.",
+        title: "Разделение и очистка природного газа",
+        imageFull: "/images/img3.webp",
+        imagePreview: "/images/img3.webp",
+        description:
+          "Высокоэффективные системы сепарации и :очистки газа.:\u200B",
         details: [
-          "Производство фракций сжиженных углеводородов",
-          "Высокоточные системы фильтрации и очистки",
-          "Современные катализаторы и адсорбенты",
+          "Производство :фракций сжиженных углеводородов",
+          "Высокоточные :системы фильтрации и очистки",
+          "Современные :катализаторы и адсорбенты",
         ],
         stats: {
           efficiency: {
-            value: "\u200B 99.9%",
+            value: "99.9%",
             label: "эффективность",
           },
           capacity: {
-            value: "3.6",
-            label: "млрд м3/год проектная мощность завода",
+            value: "3.6 млрд. м³/г.",
+            label: "мощность завода",
           },
         },
       },
       {
         title: "Газофракционирующая установка",
-        image: "/images/img-2.JPG",
-        description: "Комплексная система разделения углеводородных фракций.",
+        imageFull: "/images/img4.webp",
+        imagePreview: "/images/img4.webp",
+        description:
+          "Комплексная система: разделения: углеводородных: фракций.",
         details: [
-          "Монтаж оборудования",
-          "Строительно-монтажные работы",
-          "Автоматизированное управление процессами :\u200B",
+          "Разделения смеси лёгких углеводородов на индивидуальные, или технически чистые, вещества.",
+          "Обеспечение получение продуктов с чистотой в 98-99%",
+          "Автоматизированное управление процессами",
         ],
         stats: {
           readiness: {
-            value: "95%",
+            value: ":95%",
             label: "готовность",
           },
           construction: {
@@ -47,13 +51,14 @@ export const bgpzTechnologyData = {
         },
       },
       {
-        title: "Стабилизация конденсата",
-        image: "/images/img-3.JPG",
-        description: "Современная система повышения качества продукции.",
+        title: "Стабилизация -конденсата",
+        imageFull: "/images/img1.webp",
+        imagePreview: "/images/img1.webp",
+        description: "Современная система повышения качества продукции.:\u200B",
         details: [
-          "Современная система повышения качества",
+          "Современная: система повышения качества",
           "Минимизация потерь газа",
-          "Контроль качества в реальном времени :\u200B",
+          "Контроль качества в реальном времени",
         ],
         stats: {
           quality: {
@@ -67,22 +72,23 @@ export const bgpzTechnologyData = {
         },
       },
       {
-        title: "Хранение и транспортировка",
-        image: "/images/img-4.JPG",
-        description: "Комплексная инфраструктура логистики.",
+        title: "Хранение и -транспортировка",
+        imageFull: "/images/new4.webp",
+        imagePreview: "/images/new46.webp",
+        description: "Комплексная :инфраструктура :логистики.:\u200B ",
         details: [
-          "Собственная инфраструктура для поставок",
+          "Собственная :инфраструктура для поставок",
           "Контроль качества на всех этапах",
-          "Современные системы мониторинга",
+          "Современные системы мониторинга ",
         ],
         stats: {
           storage: {
-            value: "50000",
+            value: "20000",
             label: "м³ хранения",
           },
           delivery: {
-            value: "24/7",
-            label: "доставка",
+            value: "70.6 км",
+            label: "трубопровод",
           },
         },
       },
@@ -96,13 +102,14 @@ export const bgpzTechnologyData = {
       "Біз газды тиімді және экологиялық өңдеуді қамтамасыз ету үшін озық технологияларды қолданамыз",
     technologies: [
       {
-        title: "Табиғи газды бөлу және тазарту",
-        image: "/images/img-1.JPG",
-        description: "Жоғары тиімді газ сепарациясы және тазарту жүйелері.",
+        title: "Табиғи газды бөлу -және тазарту",
+        imageFull: "/images/img3.webp",
+        imagePreview: "/images/img3.webp",
+        description: "Жоғары тиімді газ: сепарациясы және :тазарту жүйелері.",
         details: [
           "Сұйытылған көмірсутек фракцияларын өндіру",
           "Жоғары дәлдікті сүзу және тазарту жүйелері",
-          "Заманауи катализаторлар мен адсорбенттер",
+          "Заманауи :катализаторлар мен адсорбенттер",
         ],
         stats: {
           efficiency: {
@@ -110,23 +117,24 @@ export const bgpzTechnologyData = {
             label: "тиімділік",
           },
           capacity: {
-            value: "3.6 млрд м³/жыл",
-            label: "проектная мощность завода",
+            value: "3.6 млрд. м³/ж.",
+            label: "зауыттың қуаты",
           },
         },
       },
       {
-        title: "Газ фракциялау қондырғысы",
-        image: "/images/img-2.JPG",
-        description: "Көмірсутек фракцияларын бөлудің кешенді жүйесі.",
+        title: "Газ фракциялау -қондырғысы",
+        imageFull: "/images/img4.webp",
+        imagePreview: "/images/img4.webp",
+        description: "Көмірсутек: фракцияларын бөлудің :кешенді жүйесі.",
         details: [
-          "Жабдық дайындығы (МЖ)",
-          "Құрылыс жұмыстары (ҚМЖ)",
-          "Процестерді автоматтандырылған басқару :\u200B",
+          "Жеңіл көмірсутектер қоспасын жекелеген немесе техникалық таза заттарға бөлу.",
+          "Өнімдерді 98–99% тазалықпен алу қамтамасыз етіледі.",
+          "Процестерді автоматтандырылған басқару ",
         ],
         stats: {
           readiness: {
-            value: "95%",
+            value: ":95%",
             label: "дайындық",
           },
           construction: {
@@ -136,13 +144,14 @@ export const bgpzTechnologyData = {
         },
       },
       {
-        title: "Конденсатты тұрақтандыру",
-        image: "/images/img-3.JPG",
-        description: "Өнім сапасын арттырудың заманауи жүйесі.",
+        title: "Конденсатты -тұрақтандыру",
+        imageFull: "/images/img1.webp",
+        imagePreview: "/images/img1.webp",
+        description: "Өнім сапасын: арттырудың :заманауи жүйесі.",
         details: [
-          "Сапаны арттырудың заманауи жүйесі",
+          "Сапаны арттырудың :заманауи жүйесі",
           "Газ шығынын азайту",
-          "Нақты уақыттағы сапаны бақылау :\u200B",
+          "Нақты уақыттағы :сапаны бақылау ",
         ],
         stats: {
           quality: {
@@ -156,9 +165,10 @@ export const bgpzTechnologyData = {
         },
       },
       {
-        title: "Сақтау және тасымалдау",
-        image: "/images/img-4.JPG",
-        description: "Кешенді логистикалық инфрақұрылым.",
+        title: "Сақтау және -тасымалдау",
+        imageFull: "/images/new4.webp",
+        imagePreview: "/images/new46.webp",
+        description: "Кешенді :логистикалық :инфрақұрылым. ",
         details: [
           "Жеткізуге арналған меншікті инфрақұрылым",
           "Барлық кезеңдерде сапаны бақылау",
@@ -166,12 +176,12 @@ export const bgpzTechnologyData = {
         ],
         stats: {
           storage: {
-            value: "50000",
+            value: "20000",
             label: "м³ сақтау",
           },
           delivery: {
-            value: "24/7",
-            label: "жеткізу",
+            value: "70.6 км",
+            label: "құбыр желісі",
           },
         },
       },
@@ -186,8 +196,10 @@ export const bgpzTechnologyData = {
     technologies: [
       {
         title: "Natural Gas Separation -and Purification",
-        image: "/images/img-1.JPG",
-        description: "High-efficiency gas separation and purification systems.",
+        imageFull: "/images/img3.webp",
+        imagePreview: "/images/img3.webp",
+        description:
+          "High-efficiency gas :separation and :purification systems.",
         details: [
           "Production of liquefied hydrocarbon fractions",
           "High-precision filtration and purification systems",
@@ -199,19 +211,20 @@ export const bgpzTechnologyData = {
             label: "efficiency",
           },
           capacity: {
-            value: "3.6",
-            label: "billion m³/year project capacity",
+            value: "3.6 bill. m³/y.",
+            label: "plant capacity",
           },
         },
       },
       {
         title: "Gas Fractionation-Unit",
-        image: "/images/img-2.JPG",
-        description: "Comprehensive hydrocarbon fraction separation system.",
+        imageFull: "/images/img4.webp",
+        imagePreview: "/images/img4.webp",
+        description: "Comprehensive :hydrocarbon fraction :separation system.",
         details: [
-          "Equipment readiness",
-          "Construction works",
-          "Automated process control \u200B \u200B \u200B \u200B :\u200B :\u200B",
+          "Separation of light hydrocarbon mixtures into individual or technically pure substances.",
+          "Ensuring the production of products with 98–99% purity.",
+          "Automated process control",
         ],
         stats: {
           readiness: {
@@ -226,12 +239,13 @@ export const bgpzTechnologyData = {
       },
       {
         title: "Condensate-Stabilization",
-        image: "/images/img-3.JPG",
-        description: "Modern product quality improvement system.",
+        imageFull: "/images/img1.webp",
+        imagePreview: "/images/img1.webp",
+        description: "Modern product :quality improvement :system.",
         details: [
           "Modern quality improvement system",
           "Gas loss minimization",
-          "Real-time quality control \u200B \u200B \u200B \u200B :\u200B :\u200B",
+          "Real-time quality control",
         ],
         stats: {
           quality: {
@@ -246,21 +260,22 @@ export const bgpzTechnologyData = {
       },
       {
         title: "Storage and -Transportation",
-        image: "/images/img-4.JPG",
-        description: "Comprehensive logistics infrastructure.",
+        imageFull: "/images/new4.webp",
+        imagePreview: "/images/new46.webp",
+        description: "Comprehensive :logistics :infrastructure.",
         details: [
           "Own supply infrastructure",
           "Quality control at all stages",
-          "Modern monitoring systems \u200B \u200B \u200B \u200B :\u200B :\u200B",
+          "Modern monitoring systems",
         ],
         stats: {
           storage: {
-            value: "50000",
+            value: "20000",
             label: "m³ storage",
           },
           delivery: {
-            value: "24/7",
-            label: "delivery",
+            value: "70.6 km",
+            label: "pipeline",
           },
         },
       },

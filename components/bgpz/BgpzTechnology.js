@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { useTranslation } from "next-i18next";
-import { ChevronRight, X } from "lucide-react";
+import { ChevronRight, X, ZoomIn, ZoomOut } from "lucide-react";
 import Image from "next/image";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import { useTranslation } from "next-i18next";
 import { bgpzTechnologyData } from "../../data/bgpzTechnology";
 
-const TechnologyCard = ({ tech, enlargeText, onImageClick, isMobile }) => {
+const TechnologyCard = ({
+  tech,
+  enlargeText,
+  onImageClick,
+  isMobile,
+  cardIndex,
+}) => {
   const renderTitle = (title) => {
     if (isMobile) {
-      return title;
+      return title.replace(/[-:]/g, "");
     }
     if (title.includes(":")) {
       return title.split(":").map((part, idx, arr) => (
@@ -32,7 +39,7 @@ const TechnologyCard = ({ tech, enlargeText, onImageClick, isMobile }) => {
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-primary/25" />
         <div className="relative z-10 flex flex-col h-full">
           <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4 text-center relative">
+            <h3 className="text-xl sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4 text-center relative">
               {tech.title.split("-").map((part, index) => (
                 <React.Fragment key={index}>
                   {part}
@@ -42,19 +49,19 @@ const TechnologyCard = ({ tech, enlargeText, onImageClick, isMobile }) => {
               <span className="block h-1 mt-2 bg-primary w-full"></span>
             </h3>
 
-            {/* pic */}
+            {/* pics */}
             <div className="flex justify-center mb-4 sm:mb-6">
               <div
                 className="relative cursor-pointer group"
                 onClick={() =>
-                  onImageClick({ src: tech.image, alt: tech.title })
+                  onImageClick({ src: tech.imageFull, alt: tech.title })
                 }
               >
                 <Image
-                  src={tech.image}
+                  src={tech.imagePreview}
                   alt={tech.title}
-                  width={250}
-                  height={250}
+                  width={700}
+                  height={700}
                   className="object-contain"
                 />
                 <div
@@ -77,12 +84,11 @@ const TechnologyCard = ({ tech, enlargeText, onImageClick, isMobile }) => {
           </div>
 
           {/* details */}
-          <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+          <ul className="space-y-3 sm:space-y-4 mb-4">
             {tech.details.map((detail, idx) => {
               const displayDetail = isMobile
                 ? detail.replace(/:/g, "").trim()
                 : renderTitle(detail);
-
               return (
                 <motion.li
                   key={idx}
@@ -91,7 +97,7 @@ const TechnologyCard = ({ tech, enlargeText, onImageClick, isMobile }) => {
                   transition={{ delay: idx * 0.1 }}
                   className="flex items-start"
                 >
-                  <ChevronRight className="text-primary mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 mt-1 flex-shrink-0" />
+                  <ChevronRight className="text-primary mr-2 sm:mr-0 h-4 w-4 sm:h-5 sm:w-5 mt-1 flex-shrink-0" />
                   <span className="text-gray-700 text-base sm:text-lg">
                     {displayDetail}
                   </span>
@@ -101,24 +107,35 @@ const TechnologyCard = ({ tech, enlargeText, onImageClick, isMobile }) => {
           </ul>
 
           {/* statistic */}
-          <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 sm:gap-6 mt-6 flex items-center justify-center">
-            {Object.entries(tech.stats).map(([key, stat]) => {
-              const displayValue = isMobile
-                ? stat.value.replace(/^:\s*/, "")
-                : stat.value;
-
-              return (
+          {/* {cardIndex !== 5 ? (
+            <div className="mt-auto">
+              <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 sm:gap-6 mt-6 flex items-center justify-center">
+                {Object.entries(tech.stats).map(([key, stat]) => (
+                  <div key={key} className="text-center">
+                    <div className="text-xl sm:text-2xl font-bold text-gray-800 mb-1">
+                      {renderTitle(stat.value)}
+                    </div>
+                    <div className="text-gray-700 text-sm sm:text-base md:text-lg">
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 sm:gap-6 mt-6 flex items-center justify-center">
+              {Object.entries(tech.stats).map(([key, stat]) => (
                 <div key={key} className="text-center">
                   <div className="text-xl sm:text-2xl font-bold text-gray-800 mb-1">
-                    {displayValue}
+                    {renderTitle(stat.value)}
                   </div>
                   <div className="text-gray-700 text-sm sm:text-base md:text-lg">
                     {stat.label}
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              ))}
+            </div>
+          )} */}
         </div>
       </div>
     </motion.div>
@@ -143,9 +160,11 @@ const BgpzTechnology = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState(null);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const openModal = (photo) => {
     setSelectedPhoto(photo);
+    setImageLoaded(false);
     setIsModalOpen(true);
   };
 
@@ -183,40 +202,89 @@ const BgpzTechnology = () => {
               enlargeText={data.enlarge_label}
               onImageClick={openModal}
               isMobile={isMobile}
+              cardIndex={index}
             />
           ))}
         </div>
       </div>
 
-      {/* modal */}
+      {/* modal zoom */}
       {isModalOpen && selectedPhoto && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
-          <div className="absolute inset-0" onClick={closeModal} />
-
-          <div className="relative max-w-5xl max-h-[90vh] w-auto h-auto px-4">
-            <Image
-              src={selectedPhoto.src}
-              alt={selectedPhoto.alt || "Fullscreen image"}
-              width={1200}
-              height={800}
-              className="object-contain"
-            />
-            <button
-              onClick={closeModal}
-              className="
-                absolute top-4 right-4
-                w-12 h-12
-                flex items-center justify-center
-                rounded-full
-                bg-black/70
-                border-2 border-white
-                text-white
-                hover:bg-black
-                transition-colors
-              "
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
+          onClick={closeModal}
+        >
+          <div
+            className="relative max-w-5xl max-h-[90vh] w-auto h-auto px-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <TransformWrapper
+              initialScale={1}
+              minScale={1}
+              maxScale={3}
+              wheel={{ step: 0.1 }}
+              doubleClick={{ disabled: true }}
             >
-              <X className="h-6 w-6" />
-            </button>
+              {({ zoomIn, zoomOut }) => (
+                <>
+                  {imageLoaded && (
+                    <div
+                      className="absolute top-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-30"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          zoomOut();
+                        }}
+                        className="p-3 bg-black/70 text-white rounded-full hover:bg-black transition-colors"
+                        aria-label="Отдалить"
+                      >
+                        <ZoomOut size={20} />
+                      </button>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          zoomIn();
+                        }}
+                        className="p-3 bg-black/70 text-white rounded-full hover:bg-black transition-colors"
+                        aria-label="Приблизить"
+                      >
+                        <ZoomIn size={20} />
+                      </button>
+                    </div>
+                  )}
+                  <TransformComponent>
+                    <div>
+                      <img
+                        src={selectedPhoto.src}
+                        alt={selectedPhoto.alt || "Fullscreen image"}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                        }}
+                        onLoad={() => setImageLoaded(true)}
+                      />
+                    </div>
+                  </TransformComponent>
+                </>
+              )}
+            </TransformWrapper>
+            {imageLoaded && (
+              <button
+                onClick={closeModal}
+                className="
+                  absolute top-4 right-4
+                  w-12 h-12 flex items-center justify-center
+                  rounded-full bg-black/70 border-2 border-white text-white
+                  hover:bg-black transition-colors
+                "
+                aria-label="Закрыть модалку"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            )}
           </div>
         </div>
       )}

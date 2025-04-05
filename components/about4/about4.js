@@ -1,56 +1,14 @@
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslation } from "next-i18next";
 import Footer from "../footer/Footer";
-import { activitiesMainContent } from "../../data/activitiesMainContent";
 import { about4HeroData } from "../../data/about4Hero";
 
 const About4 = () => {
   const { i18n } = useTranslation();
   const currentLang = i18n.language || "ru";
-  const content = activitiesMainContent[currentLang];
   const data = about4HeroData[currentLang];
-
-  const activities = content.activities;
-
-  const mobileSlideWidth = 256;
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const slidesPerView = isMobile ? 1 : 3;
-  const totalPages = Math.max(1, activities.length - slidesPerView + 1);
-
-  useEffect(() => {
-    let interval;
-    if (
-      !isMobile &&
-      isAutoPlaying &&
-      !isTransitioning &&
-      currentSlide < totalPages - 2
-    ) {
-      interval = setInterval(() => {
-        setCurrentSlide((prev) => Math.min(prev + 1, totalPages - 2));
-      }, 3000);
-    }
-    return () => clearInterval(interval);
-  }, [currentSlide, isAutoPlaying, isTransitioning, totalPages, isMobile]);
-
-  const goToSlide = (index) => {
-    if (!isTransitioning) {
-      setCurrentSlide(index);
-    }
-  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -84,13 +42,11 @@ const About4 = () => {
         {/* Mobile */}
         <div className="block md:hidden h-[30vh] relative overflow-hidden">
           <div className="absolute inset-0">
-            <div
-              className="w-full h-full bg-cover bg-center filter brightness-75 blur-[1px]"
-              style={{
-                backgroundImage: `url(${
-                  content.backgroundImage || "/images/img-4.JPG"
-                })`,
-              }}
+            <Image
+              src="/images/new2.webp"
+              alt=""
+              fill
+              className="object-cover brightness-75"
             />
             <div className="absolute inset-0 bg-black/30" />
           </div>
@@ -100,12 +56,12 @@ const About4 = () => {
               initial="hidden"
               animate="visible"
             >
-              <motion.h2
+              <motion.h1
                 variants={itemVariants}
                 className="text-4xl font-bold text-white text-center"
               >
                 {data.title}
-              </motion.h2>
+              </motion.h1>
             </motion.div>
           </div>
         </div>
@@ -117,13 +73,11 @@ const About4 = () => {
             initial="hidden"
             animate="visible"
           >
-            <div
-              className="w-full h-full bg-cover bg-center filter brightness-75 blur-[0.5px]"
-              style={{
-                backgroundImage: `url(${
-                  content.backgroundImage || "/images/img-4.JPG"
-                })`,
-              }}
+            <Image
+              src="/images/new2.webp"
+              alt=""
+              fill
+              className="object-cover brightness-75"
             />
             <div className="absolute inset-0 bg-black/30" />
           </motion.div>
@@ -135,12 +89,12 @@ const About4 = () => {
                 initial="hidden"
                 animate="visible"
               >
-                <motion.h2
+                <motion.h1
                   className="title text-white font-bold text-6xl text-center"
                   variants={itemVariants}
                 >
                   {data.title}
-                </motion.h2>
+                </motion.h1>
               </motion.div>
             </div>
           </div>
@@ -148,7 +102,7 @@ const About4 = () => {
       </div>
 
       {/* text+slider */}
-      <div className="relative h-[90%] sm:h-[40%] bg-white px-6 md:px-12 lg:px-24 py-4 overflow-hidden">
+      <div className="relative h-[90%] sm:h-[40%] bg-white px-6 md:px-12 lg:px-24 py-4 sm:py-40 overflow-hidden">
         <div className="container mx-auto h-full flex flex-col lg:flex-row items-center">
           {/* text */}
           <div className="w-full">

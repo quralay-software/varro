@@ -2,17 +2,17 @@
 const nextConfig = {
   reactStrictMode: true,
   i18n: {
-    defaultLocale: 'ru',
-    locales: ['ru', 'kk', 'en'],
-    localeDetection: true
+    defaultLocale: "ru",
+    locales: ["ru", "kk", "en"],
+    localeDetection: true,
   },
   images: {
-    domains: ['picsum.photos'],
+    domains: ["picsum.photos"],
   },
   webpack: (config) => {
     config.resolve.fallback = { fs: false };
     return config;
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

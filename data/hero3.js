@@ -5,9 +5,9 @@ export const hero3Data = {
       "НЕФТЕГАЗОВАЯ КОМПАНИЯ, ЗАНИМАЮЩАЯСЯ ДОБЫЧЕЙ И ПЕРЕРАБОТКОЙ УГЛЕВОДОРОДОВ В МАНГИСТАУСКОЙ ОБЛАСТИ",
 
     images: [
-      { src: "/images/img-5.jpg" },
-      { src: "/images/img-6.jpg" },
-      { src: "/images/img-7.jpg" },
+      { src: "/images/colored2.webp" },
+      { src: "/images/img6.webp" },
+      { src: "/images/img-10.webp" },
     ],
 
     services: [
@@ -15,7 +15,7 @@ export const hero3Data = {
         id: "1",
         title: "Добыча нефти и газа",
         description:
-          "Комплексный подход к разведке и добыче углеводородов с использованием современных технологий.",
+          "Комплексный подход к добыче углеводородов с использованием современных технологий.",
       },
       {
         id: "2",
@@ -37,16 +37,16 @@ export const hero3Data = {
     generalDescription:
       "Маңғыстау облысында көмірсутектерді өндіру және өңдеумен айналысатын мұнай-газ компаниясы",
     images: [
-      { src: "/images/img-5.jpg" },
-      { src: "/images/img-6.jpg" },
-      { src: "/images/img-7.jpg" },
+      { src: "/images/colored2.webp" },
+      { src: "/images/img6.webp" },
+      { src: "/images/img-10.webp" },
     ],
     services: [
       {
         id: "1",
         title: "Мұнай және газ өндіру",
         description:
-          "Заманауи технологияларды қолдана отырып, көмірсутектерді барлау және өндіруге кешенді көзқарас.",
+          "Көмірсутектерді өндіруге заманауи технологияларды қолдана отырып кешенді тәсіл.",
       },
       {
         id: "2",
@@ -63,26 +63,26 @@ export const hero3Data = {
     ],
   },
   en: {
-    generalTitle: "LLP «VARRO OPERATING GROUP»",
+    generalTitle: "«VARRO OPERATING GROUP» LLP",
     generalDescription:
       "An oil and gas company engaged in the extraction and processing of hydrocarbons in the Mangystau region",
     images: [
-      { src: "/images/img-5.jpg" },
-      { src: "/images/img-6.jpg" },
-      { src: "/images/img-7.jpg" },
+      { src: "/images/colored2.webp" },
+      { src: "/images/img6.webp" },
+      { src: "/images/img-10.webp" },
     ],
     services: [
       {
         id: "1",
         title: "Oil and Gas Production",
         description:
-          "Comprehensive approach to hydrocarbon exploration and production using modern technologies.",
+          "A comprehensive approach to hydrocarbon production using modern technologies.",
       },
       {
         id: "2",
         title: "Gas Processing and Storage",
         description:
-          "Efficient management of gas processing -facilities and storage infrastructure.",
+          "Efficient management of gas processing facilities and storage infrastructure.",
       },
       {
         id: "3",

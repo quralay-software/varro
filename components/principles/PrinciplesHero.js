@@ -29,11 +29,11 @@ const PrinciplesHero = () => {
           transition={{ duration: 0.8 }}
           className="max-w-3xl"
         >
-          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-arial font-sans font-bold text-white mb-4 md:mb-6">
+          <h1 className="text-5xl md:text-4xl lg:text-5xl xl:text-6xl font-arial font-sans font-bold text-white mb-4 md:mb-6">
             {data.title}
           </h1>
 
-          <p className="text-base md:text-lg text-gray-200 mb-6 md:mb-8">
+          <p className="text-lg md:text-xl text-gray-200 mb-6 md:mb-8">
             {data.description}
           </p>
         </motion.div>

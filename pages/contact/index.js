@@ -1,6 +1,6 @@
 import React from "react";
+import Seo from "../../components/Seo";
 import Contactpage from "../../components/Contactpage/Contactpage";
-import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Play } from "next/font/google";
@@ -8,12 +8,12 @@ import { Play } from "next/font/google";
 const play = Play({ subsets: ["latin"], weight: ["400", "700"] });
 
 const ContactPage = () => {
+
   return (
-    <div className={`flex flex-col min-h-screen bg-gray-50 ${play.className}`}>
+    <div className={` ${play.className}`}>
+      <Seo />
       <Navbar hclass={"wpo-header-style-2"} />
-      <main className="flex-1">
-        <Contactpage />
-      </main>
+      <Contactpage />
     </div>
   );
 };

@@ -4,15 +4,15 @@ export const bgpzHeroData = {
     title: "Боранкольский газоперерабатывающий завод (БГПЗ)",
     subtitle: "Высокие технологии переработки газа",
     description:
-      "БГПЗ — один из газоперерабатывающих заводов Казахстана, обеспечивающий переработку попутного и природного газа с использованием передовых технологий и соблюдением высоких экологических стандартов.",
+      "БГПЗ — один из газоперерабатывающих заводов Казахстана, обеспечивающий переработку попутного и природного газа и соблюдением высоких экологических стандартов.",
     button: "Подробнее о заводе",
     image: {
-      src: "/images/img-8.JPG",
+      src: "/images/new1.webp",
       alt: "Боранкольский ГПЗ",
     },
     stats: {
       capacity: {
-        value: "3.6",
+        value: "Газ 3.6",
         label: "млрд м³/год проектная мощность завода",
       },
       equipment: {
@@ -20,8 +20,8 @@ export const bgpzHeroData = {
         label: "Монтаж оборудования",
       },
       construction: {
-        value: "73%",
-        label: "Строительно-монтажные работы",
+        value: "Жидкость 730",
+        label: "тыс м³/год проектная мощность завода",
       },
     },
   },
@@ -30,15 +30,15 @@ export const bgpzHeroData = {
     title: "Боранкөл газ өңдеу зауыты (БГӨЗ)",
     subtitle: "Газ өңдеудің жоғары технологиялары",
     description:
-      "БГӨЗ — Қазақстандағы газ өңдеу зауыттарының бірі, ілеспе және табиғи газды заманауи технологияларды пайдалана отырып, жоғары экологиялық стандарттарды сақтай отырып өңдеуді қамтамасыз етеді.",
+      "БГӨЗ — Ілеспе және табиғи газды өңдеуді қамтамасыз ететін, жоғары экологиялық стандарттарды сақтайтын Қазақстандағы газ өңдеу зауыттарының бірі.",
     button: "Зауыт туралы толығырақ",
     image: {
-      src: "/images/img-8.JPG",
+      src: "/images/new1.webp",
       alt: "Боранкөл ГӨЗ",
     },
     stats: {
       capacity: {
-        value: "3.6",
+        value: "3.6 газ",
         label: "млрд м³/жыл зауыттың жобалық қуаты",
       },
       equipment: {
@@ -46,8 +46,8 @@ export const bgpzHeroData = {
         label: "МЖ дайындығы",
       },
       construction: {
-        value: "73%",
-        label: "ҚМЖ дайындығы",
+        value: "730 сұйықтық",
+        label: "мың м³/жыл зауыттың жобалық қуаты",
       },
     },
   },
@@ -56,15 +56,15 @@ export const bgpzHeroData = {
     title: "Borankol Gas Processing Plant (BGPP)",
     subtitle: "Advanced Gas Processing Technologies",
     description:
-      "BGPP is one of gas processing plants in Kazakhstan, ensuring the processing of associated and natural gas using advanced technologies and maintaining high environmental standards.",
+      "BGPP is one of gas processing plants in Kazakhstan, ensuring the processing of associated and natural gas and maintaining high environmental standards.",
     button: "Learn More About the Plant",
     image: {
-      src: "/images/img-8.JPG",
+      src: "/images/new1.webp",
       alt: "Borankol GPP",
     },
     stats: {
       capacity: {
-        value: "3.6",
+        value: "Gas 3.6",
         label: "billion m³/year plant capacity",
       },
       equipment: {
@@ -72,8 +72,8 @@ export const bgpzHeroData = {
         label: "equipment readiness",
       },
       construction: {
-        value: "73%",
-        label: "construction readiness",
+        value: "Liquid 730",
+        label: "thousand m³/year plant design capacity",
       },
     },
   },

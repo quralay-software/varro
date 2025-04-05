@@ -1,4 +1,5 @@
 import React from "react";
+import Seo from "../../components/Seo";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Navbar from "../../components/Navbar/Navbar";
 import BgpzHero from "../../components/bgpz/BgpzHero";
@@ -13,6 +14,7 @@ const play = Play({ subsets: ["latin"], weight: ["400", "700"] });
 const BgpzPage = () => {
   return (
     <div className={`flex flex-col min-h-screen ${play.className}`}>
+      <Seo />
       <Navbar hclass={"wpo-header-style-2"} />
       <BgpzHero />
       <BgpzHistory />

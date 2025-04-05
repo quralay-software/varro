@@ -36,10 +36,10 @@ export default function Navbar(props) {
         className={`fixed top-0 left-0 w-full ${bgClass} ${transitionClass} z-50`}
       >
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-20 sm:mt-2">
             <AnimatePresence>
               {(!isMobile || showElements) && (
-                <motion.div
+                <div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -47,16 +47,16 @@ export default function Navbar(props) {
                 >
                   <Link
                     href="/"
-                    className="flex-shrink-0 relative z-[9999] sm:ml-20"
+                    className="flex-shrink-0 relative z-[9999] sm:ml-10"
                   >
                     <Image
                       src={Logo}
                       alt="Varro Operating Group"
-                      className="h-12 w-auto drop-shadow-[0_0_2px_black]"
+                      className="h-14 sm:h-[4.7rem] w-auto drop-shadow-[0_0_2px_black]"
                       priority
                     />
                   </Link>
-                </motion.div>
+                </div>
               )}
             </AnimatePresence>
 

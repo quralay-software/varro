@@ -23,10 +23,10 @@ const NavDropdown = ({ title, items, isOpen, onToggle }) => {
           onClick={onToggle}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className={`flex items-center font-arial bg-transparent border-none shadow-none text-lg font-medium px-3 py-2 rounded-md transition-colors duration-200
+          className={`flex items-center font-arial bg-transparent border-none shadow-none text-lg font-medium px-3 py-6 rounded-md transition-colors duration-200
                     ${
                       isActiveDropdown
-                        ? "text-primary/80"
+                        ? "text-[#E2B36A]"
                         : "text-white/90 hover:text-white/75"
                     }`}
         >
@@ -54,7 +54,7 @@ const NavDropdown = ({ title, items, isOpen, onToggle }) => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.95 }}
               transition={{ duration: 0.2 }}
-              className="absolute left-0 mt-1 w-56 bg-[#1E2E3E]/90 rounded-lg shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none z-50 overflow-hidden"
+              className="absolute left-0 mt-1 w-56 bg-[#8B7952]/90 rounded-lg shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none z-50 overflow-hidden"
             >
               <motion.div
                 className="py-1"
@@ -81,10 +81,10 @@ const NavDropdown = ({ title, items, isOpen, onToggle }) => {
                     >
                       <Link
                         href={item.link}
-                        className={`block px-4 py-2 text-base hover:bg-[#1E2E3E]/70 transition-colors duration-200
+                        className={`block px-4 py-2 text-base hover:bg-[#E2B36A]/70 transition-colors duration-200
                                                 ${
                                                   isActive
-                                                    ? "text-primary/80 font-medium bg-[#1E2E3E]/80"
+                                                    ? "text-white font-medium bg-[#E2B36A]"
                                                     : "text-white/90 hover:text-white/75"
                                                 }`}
                       >
@@ -148,7 +148,7 @@ const Header = (props) => {
       >
         <div className="">
           <motion.nav
-            className="px-4 py-3 bg-[#1E2E3E]"
+            className="px-4 py-3 bg-[#8B7952]"
             animate={{
               height: isScrolled ? "auto" : "auto",
               paddingTop: isScrolled ? "0.5rem" : "0.75rem",
@@ -172,7 +172,7 @@ const Header = (props) => {
                           className={`font-arial text-lg transition-colors duration-200 py-2 px-3
                                                     ${
                                                       router.pathname === "/"
-                                                        ? "text-primary/80 font-medium"
+                                                        ? "text-[#E2B36A] font-medium"
                                                         : "text-white/90 hover:text-white/75"
                                                     }`}
                           href="/"
@@ -187,7 +187,7 @@ const Header = (props) => {
                                                     ${
                                                       router.pathname ===
                                                       "/about"
-                                                        ? "text-primary/80 font-medium"
+                                                        ? "text-[#E2B36A] font-medium"
                                                         : "text-white/90 hover:text-white/75"
                                                     }`}
                           href="/about"
@@ -210,7 +210,7 @@ const Header = (props) => {
                                                     ${
                                                       router.pathname ===
                                                       "/bgpz"
-                                                        ? "text-primary/80 font-medium"
+                                                        ? "text-[#E2B36A] font-medium"
                                                         : "text-white/90 hover:text-white/75"
                                                     }`}
                           href="/bgpz"
@@ -225,7 +225,7 @@ const Header = (props) => {
                                                     ${
                                                       router.pathname ===
                                                       "/contact"
-                                                        ? "text-primary/80 font-medium"
+                                                        ? "text-[#E2B36A] font-medium"
                                                         : "text-white/90 hover:text-white/75"
                                                     }`}
                           href="/contact"
