@@ -23,7 +23,7 @@ const NavDropdown = ({ title, items, isOpen, onToggle }) => {
           onClick={onToggle}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className={`flex items-center font-arial bg-transparent border-none shadow-none text-lg font-medium px-3 py-6 rounded-md transition-colors duration-200
+          className={`flex items-center  bg-transparent border-none shadow-none text-lg font-medium px-3 py-6 rounded-md transition-colors duration-200
                     ${
                       isActiveDropdown
                         ? "text-[#E2B36A]"
@@ -169,7 +169,7 @@ const Header = (props) => {
                       <li>
                         <Link
                           onClick={ClickHandler}
-                          className={`font-arial text-lg transition-colors duration-200 py-2 px-3
+                          className={` text-lg transition-colors duration-200 py-2 px-3
                                                     ${
                                                       router.pathname === "/"
                                                         ? "text-[#E2B36A] font-medium"
@@ -183,7 +183,7 @@ const Header = (props) => {
                       <li>
                         <Link
                           onClick={ClickHandler}
-                          className={`font-arial text-lg transition-colors duration-200 py-2 px-3
+                          className={` text-lg transition-colors duration-200 py-2 px-3
                                                     ${
                                                       router.pathname ===
                                                       "/about"
@@ -206,7 +206,7 @@ const Header = (props) => {
                       <li>
                         <Link
                           onClick={ClickHandler}
-                          className={`font-arial text-lg transition-colors duration-200 py-2 px-3
+                          className={` text-lg transition-colors duration-200 py-2 px-3
                                                     ${
                                                       router.pathname ===
                                                       "/bgpz"
@@ -221,7 +221,7 @@ const Header = (props) => {
                       <li>
                         <Link
                           onClick={ClickHandler}
-                          className={`font-arial text-lg transition-colors duration-200 py-2 px-3
+                          className={` text-lg transition-colors duration-200 py-2 px-3
                                                     ${
                                                       router.pathname ===
                                                       "/contact"

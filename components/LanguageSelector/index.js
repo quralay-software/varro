@@ -15,7 +15,7 @@ const LanguageSelector = () => {
       <div className="flex items-center space-x-3">
         <button
           onClick={() => changeLanguage("ru")}
-          className={`px-3 py-1.5 font-arial transition-colors duration-200 bg-transparent border-none shadow-none ${
+          className={`px-3 py-1.5 transition-colors duration-200 bg-transparent border-none shadow-none ${
             i18n.language === "ru"
               ? "text-[#E2B36A]"
               : "text-white/90 hover:text-white/75"
@@ -25,7 +25,7 @@ const LanguageSelector = () => {
         </button>
         <button
           onClick={() => changeLanguage("kk")}
-          className={`px-3 py-1.5 font-arial transition-colors duration-200 bg-transparent border-none shadow-none ${
+          className={`px-3 py-1.5 transition-colors duration-200 bg-transparent border-none shadow-none ${
             i18n.language === "kk"
               ? "text-[#E2B36A]"
               : "text-white/90 hover:text-white/75"
@@ -35,7 +35,7 @@ const LanguageSelector = () => {
         </button>
         <button
           onClick={() => changeLanguage("en")}
-          className={`px-3 py-1.5 font-arial transition-colors duration-200 bg-transparent border-none shadow-none ${
+          className={`px-3 py-1.5 transition-colors duration-200 bg-transparent border-none shadow-none ${
             i18n.language === "en"
               ? "text-[#E2B36A]"
               : "text-white/90 hover:text-white/75"

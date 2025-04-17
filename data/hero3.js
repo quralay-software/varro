@@ -5,7 +5,7 @@ export const hero3Data = {
       "НЕФТЕГАЗОВАЯ КОМПАНИЯ, ЗАНИМАЮЩАЯСЯ ДОБЫЧЕЙ И ПЕРЕРАБОТКОЙ УГЛЕВОДОРОДОВ В МАНГИСТАУСКОЙ ОБЛАСТИ",
 
     images: [
-      { src: "/images/colore.webp" },
+      { src: "/images/colored.webp" },
       { src: "/images/img6.webp" },
       { src: "/images/img-10.webp" },
     ],
@@ -37,7 +37,7 @@ export const hero3Data = {
     generalDescription:
       "Маңғыстау облысында көмірсутектерді өндіру және өңдеумен айналысатын мұнай-газ компаниясы",
     images: [
-      { src: "/images/colore.webp" },
+      { src: "/images/colored.webp" },
       { src: "/images/img6.webp" },
       { src: "/images/img-10.webp" },
     ],
@@ -67,7 +67,7 @@ export const hero3Data = {
     generalDescription:
       "An oil and gas company engaged in the extraction and processing of hydrocarbons in the Mangystau region",
     images: [
-      { src: "/images/colore.webp" },
+      { src: "/images/colored.webp" },
       { src: "/images/img6.webp" },
       { src: "/images/img-10.webp" },
     ],

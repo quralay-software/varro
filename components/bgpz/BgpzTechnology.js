@@ -185,7 +185,7 @@ const BgpzTechnology = () => {
           <span className="text-primary text-lg sm:text-xl mb-3 sm:mb-4 block">
             {data.section_title}
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 font-sans">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             {data.main_title}
           </h2>
           <p className="text-gray-700 text-base sm:text-lg md:text-xl max-w-3xl mx-auto">

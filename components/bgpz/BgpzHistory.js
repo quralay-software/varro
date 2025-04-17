@@ -66,7 +66,7 @@ const TimelineEvent = ({ item, index, isDesktop, isMobile }) => {
       <div className="text-primary font-bold text-lg sm:text-xl md:text-2xl mb-1 text-center">
         {year}
       </div>
-      <h3 className="text-xl sm:text-2xl font-bold font-sans mb-2 text-center">
+      <h3 className="text-xl sm:text-2xl font-bold mb-2 text-center">
         {renderTitle(title)}
       </h3>
       <p className="text-gray-600 text-base sm:text-lg mb-4 sm:mb-6 text-center">
@@ -137,7 +137,7 @@ const VisionCard = ({ vision, isDesktop, isMobile }) => {
         ${marginTopClass}
       `}
     >
-      <h3 className="text-2xl sm:text-3xl font-bold font-sans mb-4 sm:mb-6 text-center">
+      <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-center">
         {renderTitle(vision.title)}
       </h3>
       <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 text-center">
@@ -188,10 +188,10 @@ const BgpzHistory = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8 sm:mb-12 md:mb-16"
         >
-          <span className="text-primary text-lg sm:text-xl font-sans">
+          <span className="text-primary text-lg sm:text-xl">
             {data.section_title}
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-sans mt-2 sm:mt-3 mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-2 sm:mt-3 mb-4 sm:mb-6">
             {data.main_title}
           </h2>
           <p className="text-gray-600 text-base sm:text-lg md:text-xl mt-3 sm:mt-4 max-w-3xl mx-auto">
