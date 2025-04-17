@@ -7,47 +7,45 @@ const Seo = ({ title, description, image = "/images/img6.webp" }) => {
   const { locale, asPath } = useRouter();
   const { t } = useTranslation("common");
 
-  const slug = asPath.split("/").filter(Boolean).pop() || "main";
+  const path = asPath.replace(/^\/(en|kk)/, "") || "/";
+  const base = "https://varro.kz";
 
+  const slug = path.split("/").filter(Boolean).pop() || "main";
   const pageTitle = title || `${t(`${slug}.title`)} | ${t(`${slug}.company`)}`;
-  const pageDescription = description || t(`${slug}.description`);
-  const url = `https://varro.kz${asPath}`;
-
-  const autoSchema = seoSchemas[slug] || seoSchemas["main"];
+  const pageDesc = description || t(`${slug}.description`);
+  const canonicalHref =
+    locale === "ru" ? `${base}${path}` : `${base}/${locale}${path}`;
 
   return (
     <Head>
       <title>{pageTitle}</title>
-      <meta name="description" content={pageDescription} />
+      <meta name="description" content={pageDesc} />
 
-      <link rel="canonical" href={url} />
+      <link rel="canonical" href={canonicalHref} />
 
-      <link
-        rel="alternate"
-        hrefLang="kk"
-        href={`https://varro.kz/kk${asPath}`}
-      />
-      <link
-        rel="alternate"
-        hrefLang="en"
-        href={`https://varro.kz/en${asPath}`}
-      />
+      {["ru", "en", "kk"].map((lng) => {
+        const href = lng === "ru" ? `${base}${path}` : `${base}/${lng}${path}`;
+        return <link key={lng} rel="alternate" hrefLang={lng} href={href} />;
+      })}
+
+      <link rel="alternate" hrefLang="x-default" href={`${base}${path}`} />
 
       <meta property="og:title" content={pageTitle} />
-      <meta property="og:description" content={pageDescription} />
+      <meta property="og:description" content={pageDesc} />
       <meta property="og:image" content={image} />
-      <meta property="og:url" content={url} />
+      <meta property="og:url" content={canonicalHref} />
       <meta property="og:type" content="website" />
-
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={pageTitle} />
-      <meta name="twitter:description" content={pageDescription} />
+      <meta name="twitter:description" content={pageDesc} />
       <meta name="twitter:image" content={image} />
 
-      {autoSchema && (
+      {seoSchemas[slug] && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(autoSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(seoSchemas[slug]),
+          }}
         />
       )}
     </Head>
