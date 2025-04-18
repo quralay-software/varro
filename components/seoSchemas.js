@@ -62,11 +62,11 @@ export const seoSchemas = {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+7-7292-201-909",
+      telephone: "+7-7292-200-888",
       contactType: "customer support",
       email: "Varro@btmg.kz",
       availableLanguage: ["ru", "kk", "en"],
-      description: "Внутренний номер: 2069",
+      description: "Внутренний номер: 2001",
     },
   },
   about: {

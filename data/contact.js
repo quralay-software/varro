@@ -25,8 +25,8 @@ export const contactData = {
           content: ["Varro@btmg.kz"],
         },
         phone: {
-          phone: "вн. 2069",
-          content: ["+7 7292 201 909"],
+          phone: "вн. 2001",
+          content: ["+7 7292 200 888"],
         },
       },
       form: {
@@ -65,8 +65,8 @@ export const contactData = {
           content: ["Varro@btmg.kz"],
         },
         phone: {
-          phone: "ішкі 2069",
-          content: ["+7 7292 201 909"],
+          phone: "ішкі 2001",
+          content: ["+7 7292 200 888"],
         },
       },
       form: {
@@ -105,8 +105,8 @@ export const contactData = {
           content: ["Varro@btmg.kz"],
         },
         phone: {
-          phone: "int. 2069",
-          content: ["+7 7292 201 909"],
+          phone: "int. 2001",
+          content: ["+7 7292 200 888"],
         },
       },
       form: {
